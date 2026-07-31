@@ -1,15 +1,20 @@
 ---
-import { SITE } from '@consts';
+import { SITE } from "@consts";
 ---
 
-<section id="contact" class="contact">
+<section id="contacto" class="contact">
   <div class="section-container contact-container">
     <div class="contact-top">
       <div class="contact-top-left">
-        <span class="section-tag">CONTACT US</span>
+        <span class="section-tag">CONTACTO</span>
         <h2 class="section-title">
-          Let's create a space that feels truly yours.
+          ¿Listo para optimizar la administración de tu empresa?
         </h2>
+        <p class="contact-cta-text">
+          Nuestro equipo está preparado para ayudarte. Contáctanos y descubre
+          cómo podemos convertirnos en el aliado estratégico que tu organización
+          necesita.
+        </p>
       </div>
 
       <address class="contact-top-right contact-info">
@@ -42,14 +47,19 @@ import { SITE } from '@consts';
               </svg>
             </div>
           </div>
-          <h3 class="contact-subtitle">Say hello</h3>
+          <h3 class="contact-subtitle">Escríbenos</h3>
           <div class="contact-details">
-            <a href=`mailto:${SITE.EMAIL}` class="contact-detail contact-email"
-              >{SITE.EMAIL}</a
+            <a
+              href={`mailto:${SITE.EMAIL}`}
+              class="contact-detail contact-email">{SITE.EMAIL}</a
             >
-            <a href=`tel:${SITE.TELEPHONE}` class="contact-detail contact-phone"
-              >{SITE.TELEPHONE}</a
+            <a
+              href={`tel:${SITE.TELEPHONE.replace(/\s|\(|\)/g, "")}`}
+              class="contact-detail contact-phone">{SITE.TELEPHONE}</a
             >
+            <p class="contact-detail contact-provisional">
+              <small>Datos de contacto provisionales.</small>
+            </p>
           </div>
         </div>
         <div>
@@ -67,12 +77,16 @@ import { SITE } from '@consts';
               ></path>
             </svg>
           </div>
-          <h3 class="contact-subtitle">Location</h3>
-          <a
-            class="contact-detail"
-            href=`https://maps.google.com/?q=${SITE.ADDRESS}`
-            class="contact-address">{SITE.ADDRESS}</a
-          >
+          <h3 class="contact-subtitle">Ubicación</h3>
+          <p class="contact-detail contact-location-name">
+            Servicios Especializados GROW
+          </p>
+          <p class="contact-detail">Calle Torreón No. 1719, Interior 11</p>
+          <p class="contact-detail">Colonia Mitras Centro, C.P. 64460</p>
+          <p class="contact-detail">Monterrey, Nuevo León, México.</p>
+          <p class="contact-detail contact-reference">
+            <small>Entre Av. Paseo de los Leones.</small>
+          </p>
         </div>
       </address>
     </div>
@@ -80,37 +94,37 @@ import { SITE } from '@consts';
       <form class="contact-form" action="">
         <div class="contact-form-fields">
           <div class="form-group">
-            <label class="form-label" for="name">Name</label>
+            <label class="form-label" for="name">Nombre</label>
             <input
               class="form-input"
               id="name"
               type="text"
-              placeholder="Enter your name"
+              placeholder="Ingresa tu nombre"
               required
             />
           </div>
           <div class="form-group">
-            <label class="form-label" for="email">Email</label>
+            <label class="form-label" for="email">Correo electrónico</label>
             <input
               class="form-input"
               id="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder="Ingresa tu correo electrónico"
               required
             />
           </div>
           <div class="form-group message-group">
-            <label class="form-label" for="message">Message</label>
+            <label class="form-label" for="message">Mensaje</label>
             <textarea
               class="form-input form-textarea"
               id="message"
-              placeholder="Enter your message"
+              placeholder="Escribe tu mensaje"
               rows="4"
               required></textarea>
           </div>
         </div>
         <div class="form-submit">
-          <button type="submit" class="btn btn--primary">SEND MESSAGE</button>
+          <button type="submit" class="btn btn--primary">ENVIAR MENSAJE</button>
           <div class="contact-terms">
             <span class="contact-terms-icon">
               <svg
@@ -120,24 +134,26 @@ import { SITE } from '@consts';
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
+                aria-hidden="true"
                 ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
                 ></path><path d="M12 8h.01"></path></svg
               >
             </span>
-            All the fields are required. By sending the form you agree to the
-            <a class="text-link" href="legal/terms">Terms & Conditions</a> and
-            <a class="text-link" href="legal/privacy">Privacy Policy</a>.
+            Todos los campos son obligatorios. Al enviar el formulario aceptas los
+            <a class="text-link" href="legal/terms">Términos y Condiciones</a> y la
+            <a class="text-link" href="legal/privacy">Política de Privacidad</a
+            >.
           </div>
         </div>
         <div id="form-feedback" class="form-feedback" hidden>
-          <p>Thank you! Your Message has been sent</p>
+          <p>¡Gracias! Tu mensaje ha sido enviado.</p>
         </div>
       </form>
 
       <div class="contact-map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52871.78694097431!2d-118.44073380549868!3d34.0826707144581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA%2C%20USA!5e0!3m2!1sen!2spl!4v1743960669502!5m2!1sen!2spl"
-          title="Map showing location of Beverly Hills, California, USA"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.0!2d-100.4029!3d25.6866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662bfb5e7e4a3a7%3A0x0!2sAv.%20Puerta%20de%20Hierro%20526%2C%20Puerta%20de%20Hierro%2C%2064460%20Monterrey%2C%20N.L.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+          title="Mapa de ubicación de Servicios Especializados GROW en Monterrey, Nuevo León"
           width="600"
           height="450"
           style="border:0;"
@@ -177,6 +193,12 @@ import { SITE } from '@consts';
   .contact-top-left,
   .contact-form {
     margin-right: var(--px-48);
+  }
+
+  .contact-cta-text {
+    margin-top: calc(-1 * var(--px-32));
+    margin-bottom: var(--px-32);
+    line-height: 1.6;
   }
 
   .contact-form-fields {
@@ -230,7 +252,7 @@ import { SITE } from '@consts';
   }
 
   .contact-info > div::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -291,12 +313,27 @@ import { SITE } from '@consts';
     transition: opacity var(--transition-short);
   }
 
-  .contact-detail:active {
+  a.contact-detail:active {
     opacity: 1;
   }
 
   .contact-email {
     margin-bottom: var(--px-6);
+  }
+
+  .contact-provisional {
+    margin-top: var(--px-8);
+    opacity: 0.5;
+  }
+
+  .contact-location-name {
+    font-weight: 500;
+    margin-bottom: var(--px-4);
+  }
+
+  .contact-reference {
+    margin-top: var(--px-8);
+    opacity: 0.6;
   }
 
   .contact-icon {
@@ -328,7 +365,7 @@ import { SITE } from '@consts';
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .contact-detail:hover {
+    a.contact-detail:hover {
       opacity: 1;
     }
 
@@ -382,23 +419,23 @@ import { SITE } from '@consts';
 
 <script>
   document
-    .querySelector('.contact-form')
-    ?.addEventListener('submit', async e => {
+    .querySelector(".contact-form")
+    ?.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const form = e.target as HTMLFormElement;
-      const feedback = document.getElementById('form-feedback');
+      const feedback = document.getElementById("form-feedback");
       const submitButton = form.querySelector(
-        'button[type="submit"]'
+        'button[type="submit"]',
       ) as HTMLButtonElement;
 
       if (!feedback || !submitButton) return;
 
       submitButton.disabled = true;
       const originalText = submitButton.textContent;
-      submitButton.textContent = 'SENDING...';
+      submitButton.textContent = "ENVIANDO...";
 
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       feedback.hidden = false;
 

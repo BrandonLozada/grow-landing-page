@@ -8,49 +8,54 @@ const currentYear = new Date().getFullYear();
 <footer class="main-footer">
     <div class="section-container footer footer-primary">
         <div class="footer-brand">
-            <a href="/" class="headline logo" aria-label="One Space Away home">
-                One Space Away
+            <a href="/" class="headline logo" aria-label="Servicios Especializados GROW - Inicio">
+                Servicios Especializados GROW
             </a>
-            <p class="site-description">{SITE.DESCRIPTION}</p>
+            <p class="site-description">
+                Impulsamos el crecimiento de las empresas mediante soluciones administrativas, contables y jurídicas enfocadas en la eficiencia, el cumplimiento y la mejora continua.
+            </p>
 
             <address class="footer-nav-list contact-info">
                 <p class="phone">
                     <span class="label">T.</span>
-                    <a href=`tel:${SITE.TELEPHONE}`>{SITE.TELEPHONE}</a>
+                    <a href={`tel:${SITE.TELEPHONE.replace(/\s|\(|\)/g, '')}`}>{SITE.TELEPHONE}</a>
                 </p>
                 <p class="email">
                     <span class="label">E.</span>
-                    <a href=`mailto:${SITE.EMAIL}`>{SITE.EMAIL}</a>
+                    <a href={`mailto:${SITE.EMAIL}`}>{SITE.EMAIL}</a>
+                </p>
+                <p class="provisional-note">
+                    <small>Datos de contacto provisionales.</small>
                 </p>
             </address>
         </div>
 
-        <nav class="footer-navigation" aria-label="Footer navigation">
+        <nav class="footer-navigation" aria-label="Navegación del footer">
             <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Company</h2>
+                <h2 class="headline footer-heading">Empresa</h2>
                 <ul class="footer-nav-list">
                     <li>
-                        <a href="#hero" class="footer-link">Home</a>
+                        <a href="#hero" class="footer-link">Inicio</a>
                     </li>
                     <li>
-                        <a href="#about" class="footer-link">About</a>
+                        <a href="#servicios" class="footer-link">Servicios</a>
                     </li>
                     <li>
-                        <a href="#how-it-works" class="footer-link"
-                            >How it Works</a
+                        <a href="#nosotros" class="footer-link"
+                            >Nosotros</a
                         >
                     </li>
                     <li>
-                        <a href="#portfolio" class="footer-link">Portfolio</a>
+                        <a href="#testimonios" class="footer-link">Testimonios</a>
                     </li>
                     <li>
-                        <a href="#contact" class="footer-link">Contact</a>
+                        <a href="#contacto" class="footer-link">Contacto</a>
                     </li>
                 </ul>
             </div>
 
             <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Social Media</h2>
+                <h2 class="headline footer-heading">Redes Sociales</h2>
                 <ul class="footer-nav-list social-links-list">
                     {
                         SOCIALS.map((social) => (
@@ -76,21 +81,21 @@ const currentYear = new Date().getFullYear();
             </div>
 
             <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Legal & Press</h2>
+                <h2 class="headline footer-heading">Legal</h2>
                 <ul class="footer-nav-list">
                     <li>
                         <a href="legal/privacy" class="footer-link"
-                            >Privacy Policy</a
+                            >Política de Privacidad</a
                         >
                     </li>
                     <li>
                         <a href="legal/terms" class="footer-link"
-                            >Terms & Conditions</a
+                            >Términos y Condiciones</a
                         >
                     </li>
                     <li>
                         <a href="/sitemap-index.xml" class="footer-link"
-                            >SiteMap</a
+                            >Mapa del Sitio</a
                         >
                     </li>
                 </ul>
@@ -103,7 +108,7 @@ const currentYear = new Date().getFullYear();
             <p>&copy; {SITE.COMPANY_NAME} {currentYear}.</p>
         </div>
         <div class="location">
-            <p>Based in Beverly Hills, California.</p>
+            <p>Monterrey, Nuevo León, México.</p>
         </div>
     </div>
 </footer>
@@ -151,6 +156,11 @@ const currentYear = new Date().getFullYear();
 
     .site-description {
         margin-bottom: var(--px-32);
+    }
+
+    .provisional-note {
+        opacity: 0.5;
+        margin-top: var(--px-4);
     }
 
     .footer-navigation {

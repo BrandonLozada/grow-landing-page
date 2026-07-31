@@ -1,0 +1,117 @@
+---
+/*
+  TODO (siguiente iteración):
+  - Rediseñar con un layout visual más impactante (columnas side-by-side, iconografía, colores)
+  - Agregar animaciones de revelación
+  - Considerar un diseño de comparativa visual más elaborado
+*/
+
+const beforeItems = [
+  'Procesos de nómina realizados manualmente.',
+  'Retrasos en pagos y errores de cálculo.',
+  'Alto riesgo de incumplimiento fiscal y laboral.',
+  'Falta de seguimiento jurídico.',
+  'Procesos administrativos lentos.',
+  'Sobrecarga de trabajo para Recursos Humanos.',
+  'Incremento en costos operativos.',
+];
+
+const afterItems = [
+  'Nómina procesada de forma puntual y segura.',
+  'Cumplimiento de obligaciones fiscales y laborales.',
+  'Reducción de errores administrativos.',
+  'Asesoría jurídica permanente.',
+  'Mayor eficiencia operativa.',
+  'Información financiera organizada.',
+  'Más tiempo para enfocarse en el crecimiento del negocio.',
+];
+---
+
+<section id="antes-despues" class="before-after">
+    <div class="section-container">
+        <span class="section-tag">ANTES Y DESPUÉS</span>
+        <h2 class="section-title">Descubre el impacto de nuestros servicios.</h2>
+
+        <div class="comparison-grid">
+            <div class="comparison-column comparison-before">
+                <h3 class="section-subtitle comparison-heading">Antes de GROW</h3>
+                <ul class="comparison-list">
+                    {beforeItems.map((item) => (
+                        <li class="comparison-item comparison-item--before">{item}</li>
+                    ))}
+                </ul>
+            </div>
+            <div class="comparison-column comparison-after">
+                <h3 class="section-subtitle comparison-heading">Después de contratar GROW</h3>
+                <ul class="comparison-list">
+                    {afterItems.map((item) => (
+                        <li class="comparison-item comparison-item--after">{item}</li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .comparison-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--px-64);
+    }
+
+    .comparison-column {
+        padding: var(--px-32);
+        border-radius: var(--radius-lg);
+    }
+
+    .comparison-before {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    .comparison-after {
+        background-color: rgba(0, 0, 0, 0.06);
+    }
+
+    .comparison-heading {
+        margin-bottom: var(--px-24);
+    }
+
+    .comparison-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-14);
+        list-style: none;
+    }
+
+    .comparison-item {
+        position: relative;
+        padding-left: var(--px-28);
+        line-height: 1.5;
+    }
+
+    .comparison-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: var(--px-8);
+        height: var(--px-8);
+        border-radius: 50%;
+    }
+
+    .comparison-item--before::before {
+        background-color: var(--color-text-secondary);
+    }
+
+    .comparison-item--after::before {
+        background-color: var(--color-text-primary);
+    }
+
+    @media screen and (max-width: 48rem) {
+        .comparison-grid {
+            grid-template-columns: 1fr;
+            gap: var(--px-32);
+        }
+    }
+</style>

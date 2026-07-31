@@ -1,0 +1,207 @@
+---
+/*
+  TODO (siguiente iteración):
+  - Rediseñar como sección de servicios completa con:
+    - Iconografía por categoría
+    - Cards interactivas
+    - CTAs por servicio
+    - Posibles páginas/secciones de detalle
+    - Animaciones de entrada
+    - Diseño responsive mejorado
+  - Los servicios jurídicos tienen subcategorías que deberán tener su propia jerarquía visual
+*/
+
+interface ServiceCategory {
+  id: number;
+  title: string;
+  items: string[];
+  subcategories?: {
+    title: string;
+    items: string[];
+  }[];
+}
+
+const serviceCategories: ServiceCategory[] = [
+  {
+    id: 1,
+    title: 'Servicios Administrativos',
+    items: [
+      'Administración integral de nómina.',
+      'Gestión de incidencias.',
+      'Altas y bajas de personal.',
+      'Control de expedientes.',
+      'Administración documental.',
+      'Elaboración de reportes administrativos.',
+      'Gestión de contratos laborales.',
+      'Control de vacaciones y prestaciones.',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Servicios Contables',
+    items: [
+      'Contabilidad general.',
+      'Elaboración de estados financieros.',
+      'Conciliaciones bancarias.',
+      'Declaraciones fiscales.',
+      'Planeación fiscal.',
+      'Control de ingresos y egresos.',
+      'Facturación electrónica.',
+      'Asesoría contable.',
+      'Cumplimiento de obligaciones fiscales.',
+    ],
+  },
+  {
+    id: 3,
+    title: 'Servicios Jurídicos',
+    items: [],
+    subcategories: [
+      {
+        title: 'Asesoría Laboral',
+        items: [
+          'Consultoría en materia laboral.',
+          'Prevención de riesgos legales.',
+          'Interpretación de la legislación laboral.',
+        ],
+      },
+      {
+        title: 'Apoyo Jurídico',
+        items: [
+          'Elaboración de contratos.',
+          'Revisión de documentos legales.',
+          'Atención a requerimientos.',
+        ],
+      },
+      {
+        title: 'Gestión Legal',
+        items: [
+          'Defensa laboral.',
+          'Representación ante autoridades.',
+          'Atención de auditorías laborales.',
+          'Cumplimiento normativo.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: 'Servicios Relacionados con Nómina',
+    items: [
+      'Cumplimiento en materia laboral.',
+      'Revisión de obligaciones patronales.',
+      'Asesoría en IMSS, INFONAVIT y autoridades laborales.',
+      'Prevención de contingencias legales.',
+    ],
+  },
+];
+---
+
+<section id="servicios" class="services">
+    <div class="section-container">
+        <div class="services-header">
+            <span class="section-tag">SERVICIOS</span>
+            <h2 class="section-title">Soluciones integrales para tu empresa.</h2>
+        </div>
+        <div class="services-grid">
+            {serviceCategories.map((category) => (
+                <div class="service-category">
+                    <h3 class="section-subtitle service-category-title">{category.title}</h3>
+
+                    {category.items.length > 0 && (
+                        <ul class="service-list">
+                            {category.items.map((item) => (
+                                <li class="service-item">{item}</li>
+                            ))}
+                        </ul>
+                    )}
+
+                    {category.subcategories && category.subcategories.map((sub) => (
+                        <div class="service-subcategory">
+                            <h4 class="service-subcategory-title">{sub.title}</h4>
+                            <ul class="service-list">
+                                {sub.items.map((item) => (
+                                    <li class="service-item">{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .services-header {
+        max-width: 37.5rem;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--px-48);
+    }
+
+    .service-category {
+        padding: var(--px-32);
+        border-radius: var(--radius-lg);
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    .service-category-title {
+        margin-bottom: var(--px-24);
+        font-size: 1.313rem;
+    }
+
+    .service-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-10);
+        list-style: none;
+    }
+
+    .service-item {
+        position: relative;
+        padding-left: var(--px-20);
+        line-height: 1.5;
+        font-size: var(--text-sm);
+    }
+
+    .service-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+        width: var(--px-6);
+        height: var(--px-6);
+        border-radius: 50%;
+        background-color: var(--color-text-secondary);
+    }
+
+    .service-subcategory {
+        margin-top: var(--px-24);
+    }
+
+    .service-subcategory-title {
+        font-size: var(--text-lg);
+        font-weight: 500;
+        margin-bottom: var(--px-14);
+    }
+
+    @media screen and (max-width: 64rem) {
+        .services-grid {
+            gap: var(--px-32);
+        }
+    }
+
+    @media screen and (max-width: 48rem) {
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: var(--px-24);
+        }
+
+        .service-category {
+            padding: var(--px-24);
+        }
+    }
+</style>

@@ -2,63 +2,45 @@
 const faqItems = [
   {
     id: 1,
-    question: 'What services do you offer?',
+    question: '¿Qué incluye el servicio de administración de nómina?',
     answer:
-      'We provide end-to-end interior design solutions — from the initial consultation and custom design plans (including mood boards and 3D renderings) to complete transformations with expert craftsmanship.',
+      'Incluye el cálculo de nómina, incidencias, recibos de pago, administración de movimientos de personal y cumplimiento de obligaciones relacionadas.',
   },
   {
     id: 2,
-    question: 'How does the consultation process work?',
+    question: '¿También ofrecen asesoría jurídica?',
     answer:
-      "It all starts with a friendly conversation. We sit down (or hop on a video call) to chat about your style, how you use your space, and what makes you feel at home. Our goal is to really get to know you so we can create a design that's totally you.",
+      'Sí. Contamos con servicios de asesoría laboral, elaboración de contratos, apoyo legal y representación en temas relacionados con el ámbito laboral.',
   },
   {
     id: 3,
-    question: 'Can I see what my design will look like before the work begins?',
+    question: '¿Qué servicios administrativos ofrecen?',
     answer:
-      "Absolutely! Once we've talked things through, we whip up a design plan complete with mood boards, layouts, and 3D renderings. This way, you can see exactly how your ideas come together before we break out the tools.",
+      'Administración de nómina, gestión documental, control administrativo, expedientes, reportes y administración de personal.',
   },
   {
     id: 4,
-    question: "What's the typical timeline for a project?",
+    question: '¿Qué servicios contables ofrecen?',
     answer:
-      "Every project is different. After we nail down your design plan, we'll work together to set a realistic timeline that fits your needs. We keep you in the loop from start to finish, making sure the process is smooth and stress-free.",
+      'Contabilidad general, declaraciones fiscales, estados financieros, facturación, planeación fiscal y conciliaciones bancarias.',
   },
   {
     id: 5,
-    question: 'How do you work with different budgets?',
+    question: '¿Qué son los servicios especializados?',
     answer:
-      "We believe great design should work for everyone. Early on, we'll talk about your budget and find creative, cost-effective ways to bring your vision to life — without skimping on quality or style.",
+      'Son soluciones diseñadas para atender procesos específicos de una empresa mediante personal y conocimiento especializado, permitiendo optimizar recursos y mejorar la eficiencia operativa.',
   },
   {
     id: 6,
-    question: 'Can I incorporate my current furniture or design pieces?',
+    question: '¿Atienden empresas de cualquier tamaño?',
     answer:
-      "For sure! We love adding personal touches that make your space uniquely yours. Whether you're bringing in favorite pieces or working with your existing layout, we'll blend everything together seamlessly.",
+      'Sí. Trabajamos con pequeñas, medianas y grandes empresas, adaptando nuestros servicios a las necesidades de cada cliente.',
   },
   {
     id: 7,
-    question: 'How do you make sure my personal style comes through?',
+    question: '¿Cómo puedo solicitar una cotización?',
     answer:
-      'Your style is our blueprint. We start by listening closely to your ideas and preferences, then tailor every detail — from the materials we choose to the final layout — to make sure your personality shines through in every corner of your home.',
-  },
-  {
-    id: 8,
-    question: 'What if I have new ideas or changes during the project?',
-    answer:
-      'No problem at all. We get that plans can evolve. Our process is super flexible, so we can tweak things as we go along to make sure your space always matches your vision.',
-  },
-  {
-    id: 9,
-    question: 'Do you offer virtual consultations?',
-    answer:
-      "Yep! Whether you're down the street or across the country, we offer both in-person and virtual consultations. It's all about making the process as convenient as possible for you.",
-  },
-  {
-    id: 10,
-    question: 'How do I get started?',
-    answer:
-      "It's simple — just give us a call or shoot us an email. We'll set up your initial consultation, get to know your ideas, and kick off the journey to creating a space that feels just right.",
+      'Puedes comunicarte con nosotros por teléfono, correo electrónico o mediante el formulario de contacto disponible en nuestro sitio web.',
   },
 ];
 ---
@@ -67,7 +49,7 @@ const faqItems = [
   <div class="section-container faq-container">
     <div class="faq-header">
       <span class="section-tag">FAQ</span>
-      <h2 class="section-title">We’ve got answers.</h2>
+      <h2 class="section-title">Preguntas frecuentes.</h2>
     </div>
 
     <div class="faq-content">
@@ -75,7 +57,7 @@ const faqItems = [
         {
           faqItems.map(item => (
             <div class="accordion-item">
-              <button class="accordion-button">
+              <button class="accordion-button" aria-expanded="false">
                 <span class="button-text">{item.question}</span>
                 <svg
                   class="button-icon"
@@ -84,11 +66,12 @@ const faqItems = [
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  aria-hidden="true"
                 >
                   <path d="M12 5v14M5 12h14" />
                 </svg>
               </button>
-              <div class="accordion-content">
+              <div class="accordion-content" aria-hidden="true">
                 <div class="content-wrapper">
                   <p>{item.answer}</p>
                 </div>
