@@ -1,7 +1,10 @@
 ---
+import { Image } from "astro:assets";
+import benefitImage1 from "/src/assets/images/benefit-1.webp";
+
 /*
   Sección: Después de contratar GROW / Beneficios
-  - Bento Grid asimétrico homologado desde BenefitsSection.html.
+  - Bento Grid asimétrico con tarjeta principal destacada con fotografía de fondo.
   - Tarjetas con estilo glassmorphism, elevación interactiva e íconos vectoriales.
 */
 ---
@@ -20,14 +23,36 @@
 
         <!-- Asymmetrical Bento Grid of Benefits -->
         <div class="bento-grid">
-            <!-- Large Feature 1 -->
-            <div class="glass-card card-large md-col-span-2 lg-col-span-2 md-row-span-2">
-                <div class="icon-circle" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <!-- Large Feature 1 con Imagen de Fondo -->
+            <div
+                class="glass-card card-large md-col-span-2 lg-col-span-2 md-row-span-2"
+            >
+                <Image
+                    src={benefitImage1}
+                    alt="Más tiempo libre para enfocarse en el crecimiento del negocio"
+                    class="card-bg-image"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                />
+                <div class="card-image-overlay"></div>
+                <div class="icon-circle icon-circle-glass" aria-hidden="true">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
                 </div>
-                <div class="card-content-bottom">
-                    <h3 class="card-title">Más tiempo libre</h3>
-                    <p class="card-text card-text-lg">
+                <div class="card-content-bottom z-relative">
+                    <h3 class="card-title text-white">Más tiempo libre</h3>
+                    <p class="card-text card-text-lg text-white-sub">
                         Más tiempo para enfocarse en el crecimiento del negocio.
                     </p>
                 </div>
@@ -36,7 +61,18 @@
             <!-- Medium Feature 1 -->
             <div class="glass-card md-col-span-1 lg-col-span-2">
                 <div class="icon-circle" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
                 </div>
                 <p class="card-text card-text-tight card-content-bottom">
                     Nómina procesada de forma puntual y segura.
@@ -46,7 +82,18 @@
             <!-- Small Feature 1 -->
             <div class="glass-card md-col-span-1 lg-col-span-1">
                 <div class="icon-circle" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
                 </div>
                 <p class="card-text card-text-tight card-content-bottom">
                     Cumplimiento de obligaciones fiscales y laborales.
@@ -56,7 +103,18 @@
             <!-- Small Feature 2 -->
             <div class="glass-card md-col-span-1 lg-col-span-1">
                 <div class="icon-circle" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
                 </div>
                 <p class="card-text card-text-tight card-content-bottom">
                     Reducción de errores administrativos.
@@ -66,7 +124,18 @@
             <!-- Small Feature 3 -->
             <div class="glass-card md-col-span-1 lg-col-span-1">
                 <div class="icon-circle" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
                 </div>
                 <p class="card-text card-text-tight card-content-bottom">
                     Asesoría jurídica permanente.
@@ -76,7 +145,18 @@
             <!-- Small Feature 4 -->
             <div class="glass-card md-col-span-1 lg-col-span-1">
                 <div class="icon-circle" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
                 </div>
                 <p class="card-text card-text-tight card-content-bottom">
                     Mayor eficiencia operativa.
@@ -86,7 +166,18 @@
             <!-- Wide Feature 2 -->
             <div class="glass-card md-col-span-1 lg-col-span-2">
                 <div class="icon-circle" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><polyline points="20 6 9 17 4 12"></polyline></svg
+                    >
                 </div>
                 <p class="card-text card-text-tight card-content-bottom">
                     Información financiera organizada.
@@ -146,7 +237,11 @@
         flex: 0 0 85%;
         min-width: 17rem;
         scroll-snap-align: start;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.6) 100%);
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(250, 250, 250, 0.6) 100%
+        );
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(0, 0, 0, 0.08);
@@ -157,7 +252,10 @@
         flex-direction: column;
         align-items: flex-start;
         gap: var(--px-16);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
     }
 
     @media (min-width: 48rem) {
@@ -218,10 +316,42 @@
         }
     }
 
-    /* Card Details */
+    /* Card Details & Background Image Styling for Card Large */
     .card-large {
+        position: relative;
+        overflow: hidden;
         padding: var(--px-32);
         gap: var(--px-24);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .card-bg-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card-large:hover .card-bg-image {
+        transform: scale(1.05);
+    }
+
+    .card-image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(15, 23, 42, 0.1) 0%,
+            rgba(15, 23, 42, 0.4) 40%,
+            rgba(6, 9, 15, 0.88) 100%
+        );
+        /* backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px); */
+        z-index: 2;
+        transition: opacity 0.3s ease;
     }
 
     .icon-circle {
@@ -237,6 +367,22 @@
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
+    .icon-circle-glass {
+        position: relative;
+        z-index: 3;
+        background-color: rgba(255, 255, 255, 0.25) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .z-relative {
+        position: relative;
+        z-index: 3;
+    }
+
     .card-content-bottom {
         margin-top: auto;
     }
@@ -247,6 +393,11 @@
         font-weight: 600;
         margin-bottom: var(--px-8);
         line-height: 1.25;
+    }
+
+    .card-large .card-title.text-white {
+        color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .card-text {
@@ -263,7 +414,42 @@
         opacity: 0.85;
     }
 
+    .card-large .card-text.text-white-sub {
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
     .card-text-tight {
         line-height: 1.35;
+    }
+
+    @media screen and (max-width: 48rem) {
+        .card-large {
+            padding: var(--px-24);
+        }
+
+        .services-slider-track {
+            padding-bottom: var(--px-8);
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+        }
+
+        .services-slider-track::-webkit-scrollbar {
+            display: block;
+            height: 4px;
+        }
+
+        .services-slider-track::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+    }
+
+    @media screen and (max-width: 36rem) {
+        .slider-item {
+            flex: 0 0 calc(82% - var(--px-8));
+            min-width: 14rem;
+            scroll-snap-align: start;
+        }
     }
 </style>
