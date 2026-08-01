@@ -5,12 +5,6 @@ import howItWorksImage2 from "/src/assets/images/how-it-works-2.webp";
 import howItWorksImage3 from "/src/assets/images/how-it-works-3.webp";
 import howItWorksImage4 from "/src/assets/images/how-it-works-4.webp";
 
-/*
-  Sección: ¿Cómo trabajamos? (Proceso de trabajo GROW)
-  - Estructura y diseño extraídos de HowItWorksSection.html (tarjetas interactivas con imagen, números flotantes y efecto hover overlay).
-  - Mantiene 100% el contenido copy oficial de GROW.
-*/
-
 const processSteps = [
     {
         step: "01",
@@ -103,13 +97,11 @@ const processSteps = [
         margin: 0;
     }
 
-    /* Grid de tarjetas de proceso (inspirado en HowItWorksSection.html) */
     .process-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: var(--px-24);
         padding-top: var(--px-32);
-        border-top: 1px solid var(--color-border, rgba(0, 0, 0, 0.12));
     }
 
     @media (min-width: 48rem) {
