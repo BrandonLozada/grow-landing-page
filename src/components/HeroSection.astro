@@ -2,6 +2,21 @@
 import { Image } from "astro:assets";
 import heroImage from "/src/assets/images/hero.webp";
 
+const foundedDate = new Date("2015-08-28");
+const today = new Date();
+
+let years = today.getFullYear() - foundedDate.getFullYear();
+
+// Si aún no ha llegado el aniversario de este año, resta uno
+const hasHadAnniversary =
+    today.getMonth() > foundedDate.getMonth() ||
+    (today.getMonth() === foundedDate.getMonth() &&
+        today.getDate() >= foundedDate.getDate());
+
+if (!hasHadAnniversary) {
+    years--;
+}
+
 const heroServices = [
     {
         title: "Nómina",
@@ -31,10 +46,10 @@ const heroServices = [
 ];
 
 const heroMetrics = [
-    { number: "+10", label: "Servicios Especializados" },
-    { number: "+15", label: "Empresas & Clientes" },
-    { number: "+10", label: "Años de Experiencia" },
-    { number: "100%", label: "Cumplimiento Normativo" },
+    { number: "4", label: "Áreas de Expertise" },
+    { number: "+30", label: "Procesos Empresariales" },
+    { number: "Atención", label: "Personalizada" },
+    { number: "Cumplimiento", label: "Laboral y Fiscal" },
 ];
 ---
 
@@ -46,25 +61,29 @@ const heroMetrics = [
             <div class="bento-card hero-card">
                 <div class="hero-blob"></div>
                 <div class="hero-card-content">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text"
+                            >Servicios Especializados GROW</span
+                        >
+                    </div>
                     <h1 class="hero-title">
-                        Servicios Especializados <span>GROW</span>
+                        Impulsamos el crecimiento de tu empresa
                     </h1>
                     <p class="hero-subtitle">
-                        Soluciones administrativas, contables y jurídicas que
-                        impulsan el crecimiento de tu empresa.
+                        Con soluciones integrales en administración,
+                        contabilidad y derecho, GROW es tu aliado estratégico
+                        para el éxito empresarial.
                     </p>
                     <p class="hero-description">
-                        En Servicios Especializados GROW ayudamos a las
-                        organizaciones a optimizar sus procesos administrativos
-                        mediante la gestión integral de nómina, servicios
-                        contables, asesoría jurídica y soluciones
-                        especializadas.
+                        En GROW ayudamos a las organizaciones a optimizar sus
+                        procesos administrativos mediante la gestión integral de
+                        nómina, servicios contables, asesoría jurídica y
+                        soluciones especializadas.
                     </p>
                     <p class="hero-description">
-                        Nos convertimos en un aliado estratégico para que
-                        nuestros clientes puedan enfocarse en hacer crecer su
-                        negocio mientras nosotros nos encargamos de la
-                        operación.
+                        Convertimos la operación de tu empresa en una ventaja
+                        competitiva.
                     </p>
                     <div class="hero-cta">
                         <a href="#contacto" class="btn btn--primary"
@@ -98,13 +117,41 @@ const heroMetrics = [
                     loading="eager"
                 />
                 <div class="image-overlay"></div>
-                <div class="image-content">
+                <!-- <div class="image-content">
                     <span class="image-badge">
                         <span class="image-badge-dot"></span> Equipo Experto
                     </span>
                     <p class="image-text">
                         Conviértenos en tu aliado estratégico.
                     </p>
+                </div> -->
+                <!-- Floating Badge -->
+                <div class="floating-card">
+                    <div class="card-content">
+                        <div class="card-icon-wrapper" aria-hidden="true">
+                            <svg
+                                class="card-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                width="24"
+                                height="24"
+                            >
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"
+                                ></polyline>
+                                <polyline points="17 6 23 6 23 12"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="card-title">+{years} Años</h3>
+                            <p class="card-desc">
+                                Experiencia en el mercado impulsando empresas
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -464,13 +511,109 @@ const heroMetrics = [
         margin: 0;
     }
 
-    /* Bento Metrics Card */
-    .bento-metrics-card {
-        background-color: var(--color-white, #ffffff);
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        padding: var(--px-24);
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 12px;
+        background-color: rgba(134, 242, 228, 0.2);
+        /* secondary-container/20 */
+        border-radius: 9999px;
+        width: fit-content;
+    }
+
+    .badge-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--secondary);
+    }
+
+    .badge-text {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .floating-card {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        right: 24px;
+
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        color: #ffffff;
+
+        border: 1px solid rgba(198, 198, 205, 0.5);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow:
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s;
+    }
+
+    @media (min-width: 768px) {
+        .floating-card {
+            right: auto;
+            width: 320px;
+        }
+    }
+
+    .floating-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .card-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .card-icon-wrapper {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
         display: flex;
         align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: #ffffff;
+    }
+
+    .card-icon {
+        width: 22px;
+        height: 22px;
+        color: #ffffff;
+    }
+
+    .card-title {
+        font-family: var(--font-headline);
+        font-size: 24px;
+        line-height: 1.2;
+        font-weight: 600;
+        color: var(--primary);
+    }
+
+    .card-desc {
+        font-size: 16px;
+        color: var(--on-surface-variant);
+        line-height: 1.4;
+        margin-top: 4px;
+    }
+
+    /* Bento Metrics Card */
+    .bento-metrics-card {
+        /* background-color: var(--color-white, #ffffff); */
+        /* border: 1px solid rgba(0, 0, 0, 0.08); */
+        /* padding: var(--px-24); */
+        display: flex;
+        /* align-items: center; */
         justify-content: center;
     }
 
@@ -496,11 +639,15 @@ const heroMetrics = [
     .metric-item {
         display: flex;
         flex-direction: column;
-        gap: var(--px-4);
+        gap: var(--px-6);
         padding: var(--px-14);
         border-radius: var(--radius-md);
-        background-color: rgba(0, 0, 0, 0.025);
-        border: 1px solid rgba(0, 0, 0, 0.04);
+        align-items: center;
+        justify-content: center;
+        /* background-color: rgba(0, 0, 0, 0.025); */
+        /* border: 1px solid rgba(0, 0, 0, 0.04); */
+        background-color: var(--color-white, #ffffff);
+        border: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .metric-number {
