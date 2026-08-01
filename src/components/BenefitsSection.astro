@@ -1,18 +1,9 @@
 ---
 /*
   Sección: Después de contratar GROW / Beneficios
-  - Secciones con fondo neutro de la plantilla base.
+  - Bento Grid asimétrico homologado desde BenefitsSection.html.
+  - Tarjetas con estilo glassmorphism, elevación interactiva e íconos vectoriales.
 */
-
-const benefits = [
-  'Nómina procesada de forma puntual y segura.',
-  'Cumplimiento de obligaciones fiscales y laborales.',
-  'Reducción de errores administrativos.',
-  'Asesoría jurídica permanente.',
-  'Mayor eficiencia operativa.',
-  'Información financiera organizada.',
-  'Más tiempo para enfocarse en el crecimiento del negocio.',
-];
 ---
 
 <section id="beneficios" class="benefits-section">
@@ -21,26 +12,95 @@ const benefits = [
             <span class="section-tag">RESULTADOS GARANTIZADOS</span>
             <h2 class="section-title">Después de contratar GROW.</h2>
             <p class="benefits-intro">
-                Transformamos la gestión interna de tu organización brindándote tranquilidad, precisión operacional y tiempo para enfocarte en tu estrategia comercial.
+                Transformamos la gestión interna de tu organización brindándote
+                tranquilidad, precisión operacional y tiempo para enfocarte en
+                tu estrategia comercial.
             </p>
         </div>
 
-        <div class="benefits-grid">
-            {benefits.map((benefit) => (
-                <div class="benefit-card">
-                    <div class="benefit-icon-wrapper" aria-hidden="true">✓</div>
-                    <div class="benefit-content">
-                        <p class="benefit-text">{benefit}</p>
-                    </div>
+        <!-- Asymmetrical Bento Grid of Benefits -->
+        <div class="bento-grid">
+            <!-- Large Feature 1 -->
+            <div class="glass-card card-large md-col-span-2 lg-col-span-2 md-row-span-2">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 </div>
-            ))}
+                <div class="card-content-bottom">
+                    <h3 class="card-title">Más tiempo libre</h3>
+                    <p class="card-text card-text-lg">
+                        Más tiempo para enfocarse en el crecimiento del negocio.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Medium Feature 1 -->
+            <div class="glass-card md-col-span-1 lg-col-span-2">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <p class="card-text card-text-tight card-content-bottom">
+                    Nómina procesada de forma puntual y segura.
+                </p>
+            </div>
+
+            <!-- Small Feature 1 -->
+            <div class="glass-card md-col-span-1 lg-col-span-1">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <p class="card-text card-text-tight card-content-bottom">
+                    Cumplimiento de obligaciones fiscales y laborales.
+                </p>
+            </div>
+
+            <!-- Small Feature 2 -->
+            <div class="glass-card md-col-span-1 lg-col-span-1">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <p class="card-text card-text-tight card-content-bottom">
+                    Reducción de errores administrativos.
+                </p>
+            </div>
+
+            <!-- Small Feature 3 -->
+            <div class="glass-card md-col-span-1 lg-col-span-1">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <p class="card-text card-text-tight card-content-bottom">
+                    Asesoría jurídica permanente.
+                </p>
+            </div>
+
+            <!-- Small Feature 4 -->
+            <div class="glass-card md-col-span-1 lg-col-span-1">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <p class="card-text card-text-tight card-content-bottom">
+                    Mayor eficiencia operativa.
+                </p>
+            </div>
+
+            <!-- Wide Feature 2 -->
+            <div class="glass-card md-col-span-1 lg-col-span-2">
+                <div class="icon-circle" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <p class="card-text card-text-tight card-content-bottom">
+                    Información financiera organizada.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 
 <style>
     .benefits-section {
-        background-color: var(--color-white);
+        background-color: var(--color-white, #ffffff);
+        position: relative;
+        overflow: hidden;
     }
 
     .benefits-header {
@@ -59,56 +119,121 @@ const benefits = [
         margin: 0;
     }
 
-    .benefits-grid {
+    /* Asymmetrical Bento Grid */
+    .bento-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        grid-template-columns: 1fr;
         gap: var(--px-24);
+        grid-auto-rows: minmax(10rem, auto);
     }
 
-    .benefit-card {
-        padding: var(--px-24);
-        border-radius: var(--radius-lg);
-        background-color: rgba(0, 0, 0, 0.025);
-        display: flex;
-        align-items: center;
-        gap: var(--px-16);
+    @media (min-width: 48rem) {
+        .bento-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (min-width: 64rem) {
+        .bento-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    /* Glass Cards */
+    .glass-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.6) 100%);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(0, 0, 0, 0.08);
-        transition: transform var(--transition-short), box-shadow var(--transition-short);
-    }
-
-    .benefit-icon-wrapper {
-        width: var(--px-32);
-        height: var(--px-32);
-        border-radius: 50%;
-        background: var(--color-primary);
-        color: var(--color-white);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+        border-radius: var(--radius-lg, 1rem);
+        padding: var(--px-24);
         display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: var(--text-xs);
-        flex-shrink: 0;
-    }
-
-    .benefit-text {
-        font-size: var(--text-base);
-        font-weight: 500;
-        line-height: 1.4;
-        color: var(--color-text-primary);
-        margin: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--px-16);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
     @media (hover: hover) and (pointer: fine) {
-        .benefit-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.15);
         }
     }
 
-    @media screen and (max-width: 48rem) {
-        .benefits-grid {
-            grid-template-columns: 1fr;
-            gap: var(--px-16);
+    /* Column and Row Span Utilities */
+    @media (min-width: 48rem) {
+        .md-col-span-1 {
+            grid-column: span 1 / span 1;
         }
+
+        .md-col-span-2 {
+            grid-column: span 2 / span 2;
+        }
+
+        .md-row-span-2 {
+            grid-row: span 2 / span 2;
+        }
+    }
+
+    @media (min-width: 64rem) {
+        .lg-col-span-1 {
+            grid-column: span 1 / span 1;
+        }
+
+        .lg-col-span-2 {
+            grid-column: span 2 / span 2;
+        }
+    }
+
+    /* Card Details */
+    .card-large {
+        padding: var(--px-32);
+        gap: var(--px-24);
+    }
+
+    .icon-circle {
+        background-color: var(--color-text-primary, #010101);
+        color: var(--color-white, #ffffff);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-content-bottom {
+        margin-top: auto;
+    }
+
+    .card-title {
+        color: var(--color-text-primary);
+        font-size: var(--text-2xl);
+        font-weight: 600;
+        margin-bottom: var(--px-8);
+        line-height: 1.25;
+    }
+
+    .card-text {
+        color: var(--color-text-primary);
+        font-size: var(--text-base);
+        font-weight: 500;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .card-text-lg {
+        font-size: var(--text-lg);
+        line-height: 1.5;
+        opacity: 0.85;
+    }
+
+    .card-text-tight {
+        line-height: 1.35;
     }
 </style>
