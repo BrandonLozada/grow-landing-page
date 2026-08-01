@@ -119,28 +119,33 @@
         margin: 0;
     }
 
-    /* Asymmetrical Bento Grid */
+    /* Asymmetrical Bento Grid (Desktop & Tablet) / Horizontal Snap Slider (Mobile Only) */
     .bento-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--px-24);
-        grid-auto-rows: minmax(10rem, auto);
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: var(--px-16);
+        padding-bottom: var(--px-16);
+        padding-top: var(--px-8);
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+        -webkit-overflow-scrolling: touch;
     }
 
-    @media (min-width: 48rem) {
-        .bento-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
+    .bento-grid::-webkit-scrollbar {
+        height: 4px;
     }
 
-    @media (min-width: 64rem) {
-        .bento-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
+    .bento-grid::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
     }
 
     /* Glass Cards */
     .glass-card {
+        flex: 0 0 85%;
+        min-width: 17rem;
+        scroll-snap-align: start;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.6) 100%);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
@@ -153,6 +158,31 @@
         align-items: flex-start;
         gap: var(--px-16);
         transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    @media (min-width: 48rem) {
+        .bento-grid {
+            display: grid;
+            overflow-x: visible;
+            scroll-snap-type: none;
+            padding-bottom: 0;
+            padding-top: 0;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--px-24);
+            grid-auto-rows: minmax(10rem, auto);
+        }
+
+        .glass-card {
+            flex: initial;
+            min-width: auto;
+            scroll-snap-align: none;
+        }
+    }
+
+    @media (min-width: 64rem) {
+        .bento-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 
     @media (hover: hover) and (pointer: fine) {
