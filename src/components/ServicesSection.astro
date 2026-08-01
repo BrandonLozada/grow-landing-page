@@ -1,14 +1,17 @@
 ---
-/*
-  Sección: Nuestros Servicios
-  - Presenta las 4 categorías principales de servicios GROW de manera estructurada.
-*/
+import { Image } from "astro:assets";
+import serviceImage1 from "/src/assets/images/service-1.webp";
+import serviceImage2 from "/src/assets/images/service-2.webp";
+import serviceImage3 from "/src/assets/images/service-3.webp";
+import serviceImage4 from "/src/assets/images/service-4.webp";
 
 interface ServiceCategory {
   id: string;
   badge: string;
   title: string;
   description: string;
+  image: ImageMetadata;
+  iconSvg: string;
   items: string[];
   subcategories?: {
     title: string;
@@ -19,15 +22,16 @@ interface ServiceCategory {
 const serviceCategories: ServiceCategory[] = [
   {
     id: 'administrativos',
-    badge: '01. OPERACIÓN',
+    badge: '01. Operación',
     title: 'Servicios Administrativos',
     description: 'Gestión eficiente y control operativo continuo para la administración de tu personal.',
+    image: serviceImage1,
+    iconSvg: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>`,
     items: [
       'Administración integral de nómina.',
       'Gestión de incidencias.',
       'Altas y bajas de personal.',
-      'Control de expedientes.',
-      'Administración documental.',
+      'Control de expedientes y documentación.',
       'Elaboración de reportes administrativos.',
       'Gestión de contratos laborales.',
       'Control de vacaciones y prestaciones.',
@@ -35,26 +39,28 @@ const serviceCategories: ServiceCategory[] = [
   },
   {
     id: 'contables',
-    badge: '02. FINANZAS',
+    badge: '02. Finanzas',
     title: 'Servicios Contables',
-    description: 'Información financiera precisa, control de ingresos/egresos y cumplimiento fiscal riguroso.',
+    description: 'Información financiera precisa, control de ingresos, egresos y cumplimiento fiscal riguroso.',
+    image: serviceImage2,
+    iconSvg: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>`,
     items: [
       'Contabilidad general.',
       'Elaboración de estados financieros.',
       'Conciliaciones bancarias.',
-      'Declaraciones fiscales.',
-      'Planeación fiscal.',
+      'Declaraciones fiscales y planeación.',
       'Control de ingresos y egresos.',
-      'Facturación electrónica.',
-      'Asesoría contable.',
+      'Facturación electrónica y asesoría.',
       'Cumplimiento de obligaciones fiscales.',
     ],
   },
   {
     id: 'juridicos',
-    badge: '03. LEGAL',
+    badge: '03. Legal',
     title: 'Servicios Jurídicos',
     description: 'Protección legal integral, prevención de riesgos y representación especializada.',
+    image: serviceImage3,
+    iconSvg: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/></svg>`,
     items: [],
     subcategories: [
       {
@@ -62,37 +68,30 @@ const serviceCategories: ServiceCategory[] = [
         items: [
           'Consultoría en materia laboral.',
           'Prevención de riesgos legales.',
-          'Interpretación de la legislación laboral.',
+          'Interpretación de legislación laboral.',
         ],
       },
       {
-        title: 'Apoyo Jurídico',
+        title: 'Apoyo & Gestión Legal',
         items: [
-          'Elaboración de contratos.',
-          'Revisión de documentos legales.',
-          'Atención a requerimientos.',
-        ],
-      },
-      {
-        title: 'Gestión Legal',
-        items: [
-          'Defensa laboral.',
-          'Representación ante autoridades.',
+          'Elaboración y revisión de contratos.',
+          'Defensa laboral ante autoridades.',
           'Atención de auditorías laborales.',
-          'Cumplimiento normativo.',
         ],
       },
     ],
   },
   {
     id: 'nomina',
-    badge: '04. CUMPLIMIENTO',
+    badge: '04. Cumplimiento',
     title: 'Servicios Relacionados con Nómina',
     description: 'Alineación de procesos de nómina con autoridades laborales e instituciones gubernamentales.',
+    image: serviceImage4,
+    iconSvg: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>`,
     items: [
       'Cumplimiento en materia laboral.',
       'Revisión de obligaciones patronales.',
-      'Asesoría en IMSS, INFONAVIT y autoridades laborales.',
+      'Asesoría en IMSS, INFONAVIT y autoridades.',
       'Prevención de contingencias legales.',
     ],
   },
@@ -112,17 +111,30 @@ const serviceCategories: ServiceCategory[] = [
         <div class="services-grid">
             {serviceCategories.map((category) => (
                 <article class="service-card" data-service-id={category.id}>
-                    <div class="card-header">
-                        <span class="category-badge">{category.badge}</span>
-                        <h3 class="category-title">{category.title}</h3>
-                        <p class="category-description">{category.description}</p>
+                    <!-- Header con Imagen, Badge Floating e Ícono -->
+                    <div class="card-image-wrap">
+                        <Image
+                            src={category.image}
+                            alt={category.title}
+                            class="card-image"
+                            loading="lazy"
+                            width="600"
+                            height="380"
+                        />
+                        <div class="card-badge">{category.badge}</div>
+                        <div class="card-icon" aria-hidden="true">
+                            <Fragment set:html={category.iconSvg} />
+                        </div>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-content">
+                        <h3 class="card-title">{category.title}</h3>
+                        <p class="card-desc">{category.description}</p>
+
                         {category.items.length > 0 && (
-                            <ul class="service-item-list">
+                            <ul class="card-list">
                                 {category.items.map((item) => (
-                                    <li class="service-list-item">
+                                    <li class="card-list-item">
                                         <span class="bullet-dot" aria-hidden="true">•</span>
                                         <span>{item}</span>
                                     </li>
@@ -133,9 +145,9 @@ const serviceCategories: ServiceCategory[] = [
                         {category.subcategories && category.subcategories.map((sub) => (
                             <div class="subcategory-block">
                                 <h4 class="subcategory-title">{sub.title}</h4>
-                                <ul class="service-item-list">
+                                <ul class="card-list">
                                     {sub.items.map((item) => (
-                                        <li class="service-list-item">
+                                        <li class="card-list-item">
                                             <span class="bullet-dot" aria-hidden="true">•</span>
                                             <span>{item}</span>
                                         </li>
@@ -143,6 +155,7 @@ const serviceCategories: ServiceCategory[] = [
                                 </ul>
                             </div>
                         ))}
+
                     </div>
                 </article>
             ))}
@@ -152,7 +165,7 @@ const serviceCategories: ServiceCategory[] = [
 
 <style>
     .services-section {
-        background-color: var(--color-white);
+        background-color: var(--color-white, #ffffff);
     }
 
     .services-header {
@@ -172,67 +185,122 @@ const serviceCategories: ServiceCategory[] = [
         opacity: 0.8;
     }
 
+    /* Balanced 2-Column Services Grid (Homologado con ServicesSection.html) */
     .services-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: var(--px-32);
     }
 
+    @media (min-width: 48rem) {
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
     .service-card {
-        padding: var(--px-32);
-        border-radius: var(--radius-lg);
-        background-color: rgba(0, 0, 0, 0.025);
+        background-color: var(--color-white, #ffffff);
+        border-radius: var(--radius-lg, 12px);
         border: 1px solid rgba(0, 0, 0, 0.08);
+        overflow: hidden;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        transition: transform var(--transition-short), box-shadow var(--transition-short);
+        position: relative;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card-header {
-        margin-bottom: var(--px-24);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-        padding-bottom: var(--px-16);
+    .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
     }
 
-    .category-badge {
+    .card-image-wrap {
+        height: 12rem;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: var(--color-background, #f1f1f1);
+    }
+
+    .card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease-out;
+    }
+
+    .service-card:hover .card-image {
+        transform: scale(1.05);
+    }
+
+    .card-badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: var(--px-6) var(--px-16);
+        border-radius: 9999px;
+        z-index: 10;
         font-size: var(--text-xs);
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        opacity: 0.5;
-        display: block;
-        margin-bottom: var(--px-8);
-    }
-
-    .category-title {
-        font-size: var(--text-2xl);
         font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #ffffff;
         margin-bottom: var(--px-8);
-        color: var(--color-text-primary);
     }
 
-    .category-description {
+    .card-icon {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 10px;
+        border-radius: 9999px;
+        z-index: 10;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        color: var(--color-text-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-content {
+        padding: var(--px-32);
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .card-title {
+        font-size: var(--text-xl);
+        font-weight: 600;
+        margin: 0 0 var(--px-12) 0;
+        color: var(--color-text-primary);
+        line-height: 1.25;
+    }
+
+    .card-desc {
         font-size: var(--text-sm);
         line-height: 1.5;
-        opacity: 0.75;
+        opacity: 0.8;
+        margin: 0 0 var(--px-24) 0;
     }
 
-    .card-body {
-        display: flex;
-        flex-direction: column;
-        gap: var(--px-16);
-    }
-
-    .service-item-list {
+    .card-list {
+        margin: 0 0 var(--px-32) 0;
+        padding: 0;
+        list-style: none;
         display: flex;
         flex-direction: column;
         gap: var(--px-10);
-        list-style: none;
-        padding: 0;
-        margin: 0;
     }
 
-    .service-list-item {
+    .card-list-item {
         display: flex;
         align-items: flex-start;
         gap: var(--px-8);
@@ -242,7 +310,7 @@ const serviceCategories: ServiceCategory[] = [
 
     .bullet-dot {
         font-weight: bold;
-        opacity: 0.5;
+        opacity: 0.4;
     }
 
     .subcategory-block {
@@ -258,13 +326,34 @@ const serviceCategories: ServiceCategory[] = [
         color: var(--color-text-primary);
     }
 
-    @media screen and (max-width: 60rem) {
-        .services-grid {
-            grid-template-columns: 1fr;
-            gap: var(--px-24);
-        }
+    .card-cta {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: var(--px-8);
+        color: var(--color-text-primary);
+        font-size: var(--text-xs);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color var(--transition-short);
+    }
 
-        .service-card {
+    .card-cta:hover {
+        color: var(--color-focus, #ff6b35);
+    }
+
+    .card-cta-icon {
+        transition: transform var(--transition-short);
+    }
+
+    .card-cta:hover .card-cta-icon {
+        transform: translateX(4px);
+    }
+
+    @media screen and (max-width: 48rem) {
+        .card-content {
             padding: var(--px-24);
         }
     }

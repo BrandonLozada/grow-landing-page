@@ -1,0 +1,271 @@
+---
+/*
+  Sección: Nuestros Servicios
+  - Presenta las 4 categorías principales de servicios GROW de manera estructurada.
+*/
+
+interface ServiceCategory {
+  id: string;
+  badge: string;
+  title: string;
+  description: string;
+  items: string[];
+  subcategories?: {
+    title: string;
+    items: string[];
+  }[];
+}
+
+const serviceCategories: ServiceCategory[] = [
+  {
+    id: 'administrativos',
+    badge: '01. OPERACIÓN',
+    title: 'Servicios Administrativos',
+    description: 'Gestión eficiente y control operativo continuo para la administración de tu personal.',
+    items: [
+      'Administración integral de nómina.',
+      'Gestión de incidencias.',
+      'Altas y bajas de personal.',
+      'Control de expedientes.',
+      'Administración documental.',
+      'Elaboración de reportes administrativos.',
+      'Gestión de contratos laborales.',
+      'Control de vacaciones y prestaciones.',
+    ],
+  },
+  {
+    id: 'contables',
+    badge: '02. FINANZAS',
+    title: 'Servicios Contables',
+    description: 'Información financiera precisa, control de ingresos/egresos y cumplimiento fiscal riguroso.',
+    items: [
+      'Contabilidad general.',
+      'Elaboración de estados financieros.',
+      'Conciliaciones bancarias.',
+      'Declaraciones fiscales.',
+      'Planeación fiscal.',
+      'Control de ingresos y egresos.',
+      'Facturación electrónica.',
+      'Asesoría contable.',
+      'Cumplimiento de obligaciones fiscales.',
+    ],
+  },
+  {
+    id: 'juridicos',
+    badge: '03. LEGAL',
+    title: 'Servicios Jurídicos',
+    description: 'Protección legal integral, prevención de riesgos y representación especializada.',
+    items: [],
+    subcategories: [
+      {
+        title: 'Asesoría Laboral',
+        items: [
+          'Consultoría en materia laboral.',
+          'Prevención de riesgos legales.',
+          'Interpretación de la legislación laboral.',
+        ],
+      },
+      {
+        title: 'Apoyo Jurídico',
+        items: [
+          'Elaboración de contratos.',
+          'Revisión de documentos legales.',
+          'Atención a requerimientos.',
+        ],
+      },
+      {
+        title: 'Gestión Legal',
+        items: [
+          'Defensa laboral.',
+          'Representación ante autoridades.',
+          'Atención de auditorías laborales.',
+          'Cumplimiento normativo.',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'nomina',
+    badge: '04. CUMPLIMIENTO',
+    title: 'Servicios Relacionados con Nómina',
+    description: 'Alineación de procesos de nómina con autoridades laborales e instituciones gubernamentales.',
+    items: [
+      'Cumplimiento en materia laboral.',
+      'Revisión de obligaciones patronales.',
+      'Asesoría en IMSS, INFONAVIT y autoridades laborales.',
+      'Prevención de contingencias legales.',
+    ],
+  },
+];
+---
+
+<section id="servicios" class="services-section">
+    <div class="section-container">
+        <div class="services-header">
+            <span class="section-tag">SERVICIOS ESPECIALIZADOS</span>
+            <h2 class="section-title">Soluciones integrales para tu empresa.</h2>
+            <p class="services-subtitle-text">
+                Ofrecemos un catálogo completo de servicios diseñados para resolver procesos críticos en materia administrativa, contable y jurídica.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            {serviceCategories.map((category) => (
+                <article class="service-card" data-service-id={category.id}>
+                    <div class="card-header">
+                        <span class="category-badge">{category.badge}</span>
+                        <h3 class="category-title">{category.title}</h3>
+                        <p class="category-description">{category.description}</p>
+                    </div>
+
+                    <div class="card-body">
+                        {category.items.length > 0 && (
+                            <ul class="service-item-list">
+                                {category.items.map((item) => (
+                                    <li class="service-list-item">
+                                        <span class="bullet-dot" aria-hidden="true">•</span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+
+                        {category.subcategories && category.subcategories.map((sub) => (
+                            <div class="subcategory-block">
+                                <h4 class="subcategory-title">{sub.title}</h4>
+                                <ul class="service-item-list">
+                                    {sub.items.map((item) => (
+                                        <li class="service-list-item">
+                                            <span class="bullet-dot" aria-hidden="true">•</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </article>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .services-section {
+        background-color: var(--color-white);
+    }
+
+    .services-header {
+        max-width: 52rem;
+        margin-bottom: var(--px-48);
+    }
+
+    .services-header .section-title {
+        margin-bottom: var(--px-16);
+    }
+
+    .services-subtitle-text {
+        font-size: var(--text-lg);
+        line-height: 1.6;
+        margin-top: 0;
+        margin-bottom: 0;
+        opacity: 0.8;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--px-32);
+    }
+
+    .service-card {
+        padding: var(--px-32);
+        border-radius: var(--radius-lg);
+        background-color: rgba(0, 0, 0, 0.025);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform var(--transition-short), box-shadow var(--transition-short);
+    }
+
+    .card-header {
+        margin-bottom: var(--px-24);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        padding-bottom: var(--px-16);
+    }
+
+    .category-badge {
+        font-size: var(--text-xs);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        opacity: 0.5;
+        display: block;
+        margin-bottom: var(--px-8);
+    }
+
+    .category-title {
+        font-size: var(--text-2xl);
+        font-weight: 600;
+        margin-bottom: var(--px-8);
+        color: var(--color-text-primary);
+    }
+
+    .category-description {
+        font-size: var(--text-sm);
+        line-height: 1.5;
+        opacity: 0.75;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-16);
+    }
+
+    .service-item-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-10);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .service-list-item {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--px-8);
+        font-size: var(--text-sm);
+        line-height: 1.5;
+    }
+
+    .bullet-dot {
+        font-weight: bold;
+        opacity: 0.5;
+    }
+
+    .subcategory-block {
+        margin-top: var(--px-8);
+        padding-top: var(--px-12);
+        border-top: 1px dashed rgba(0, 0, 0, 0.08);
+    }
+
+    .subcategory-title {
+        font-size: var(--text-base);
+        font-weight: 600;
+        margin-bottom: var(--px-10);
+        color: var(--color-text-primary);
+    }
+
+    @media screen and (max-width: 60rem) {
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: var(--px-24);
+        }
+
+        .service-card {
+            padding: var(--px-24);
+        }
+    }
+</style>

@@ -147,7 +147,9 @@ const processSteps = [
     .process-overlay {
         position: absolute;
         inset: 0;
-        background-color: rgba(17, 17, 17, 0.85);
+        background-color: rgba(63, 60, 60, 0.85);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         opacity: 0;
         transition: opacity 0.5s ease;
         display: flex;
