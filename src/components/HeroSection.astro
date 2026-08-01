@@ -1,6 +1,41 @@
 ---
 import { Image } from "astro:assets";
 import heroImage from "/src/assets/images/hero.webp";
+
+const heroServices = [
+    {
+        title: "Nómina",
+        description: "Gestión integral y precisa de nómina.",
+        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V8h16v10zm-6-5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/></svg>`,
+    },
+    {
+        title: "Servicios Contables",
+        description: "Control financiero y cumplimiento fiscal.",
+        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M4 10h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg>`,
+    },
+    {
+        title: "Servicios Jurídicos",
+        description: "Asesoría y representación especializada.",
+        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/></svg>`,
+    },
+    {
+        title: "Cumplimiento",
+        description: "Alineación normativa garantizada.",
+        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>`,
+    },
+    {
+        title: "Administración",
+        description: "Control y gestión operativa de personal.",
+        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>`,
+    },
+];
+
+const heroMetrics = [
+    { number: "+10", label: "Servicios Especializados" },
+    { number: "+15", label: "Empresas & Clientes" },
+    { number: "+10", label: "Años de Experiencia" },
+    { number: "100%", label: "Cumplimiento Normativo" },
+];
 ---
 
 <section id="hero" class="hero">
@@ -73,86 +108,49 @@ import heroImage from "/src/assets/images/hero.webp";
                 </div>
             </div>
 
-            <!-- Core Services Small Cells -->
-            <div class="bento-card bento-service-card">
-                <div class="service-icon-wrapper" aria-hidden="true">
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        width="22"
-                        height="22"
-                    >
-                        <path
-                            d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V8h16v10zm-6-5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"
-                        ></path>
-                    </svg>
+            <!-- Bento Card 1: Slider Horizontal de Servicios -->
+            <div class="bento-card bento-slider-card">
+                <div class="slider-header">
+                    <span class="slider-tag">SERVICIOS DESTACADOS</span>
+                    <span class="slider-hint">Desliza &rarr;</span>
                 </div>
-                <div>
-                    <h3 class="service-title">Nómina</h3>
-                    <p class="service-desc">
-                        Gestión integral y precisa de nómina.
-                    </p>
-                </div>
-            </div>
-
-            <div class="bento-card bento-service-card">
-                <div class="service-icon-wrapper" aria-hidden="true">
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        width="22"
-                        height="22"
-                    >
-                        <path d="M4 10h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"></path>
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="service-title">Servicios Contables</h3>
-                    <p class="service-desc">
-                        Control financiero y cumplimiento fiscal.
-                    </p>
+                <div class="services-slider-track">
+                    {
+                        heroServices.map((service) => (
+                            <div class="slider-item">
+                                <div
+                                    class="service-icon-wrapper"
+                                    aria-hidden="true"
+                                >
+                                    <Fragment set:html={service.svg} />
+                                </div>
+                                <div>
+                                    <h3 class="service-title">
+                                        {service.title}
+                                    </h3>
+                                    <p class="service-desc">
+                                        {service.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
 
-            <div class="bento-card bento-service-card">
-                <div class="service-icon-wrapper" aria-hidden="true">
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        width="22"
-                        height="22"
-                    >
-                        <path
-                            d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"
-                        ></path>
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="service-title">Servicios Jurídicos</h3>
-                    <p class="service-desc">
-                        Asesoría y representación especializada.
-                    </p>
-                </div>
-            </div>
-
-            <div class="bento-card bento-service-card">
-                <div class="service-icon-wrapper" aria-hidden="true">
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        width="22"
-                        height="22"
-                    >
-                        <path
-                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"
-                        ></path>
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="service-title">Cumplimiento</h3>
-                    <p class="service-desc">
-                        Alineación normativa garantizada.
-                    </p>
+            <!-- Bento Card 2: Tarjeta de Métricas GROW -->
+            <div class="bento-card bento-metrics-card">
+                <div class="metrics-grid">
+                    {
+                        heroMetrics.map((metric) => (
+                            <div class="metric-item">
+                                <span class="metric-number">
+                                    {metric.number}
+                                </span>
+                                <span class="metric-label">{metric.label}</span>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>
@@ -354,8 +352,8 @@ import heroImage from "/src/assets/images/hero.webp";
         margin: 0;
     }
 
-    /* Core Service Small Cards */
-    .bento-service-card {
+    /* Bento Slider Card */
+    .bento-slider-card {
         background-color: var(--color-white, #ffffff);
         border: 1px solid rgba(0, 0, 0, 0.08);
         padding: var(--px-24);
@@ -366,27 +364,83 @@ import heroImage from "/src/assets/images/hero.webp";
     }
 
     @media (min-width: 48rem) {
-        .bento-service-card {
-            grid-column: span 6;
+        .bento-slider-card {
+            grid-column: span 12;
         }
     }
 
     @media (min-width: 64rem) {
-        .bento-service-card {
-            grid-column: span 3;
+        .bento-slider-card {
+            grid-column: span 6;
         }
     }
 
+    .slider-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .slider-tag {
+        font-size: var(--text-xs);
+        color: var(--color-text-secondary);
+        font-weight: 500;
+        letter-spacing: 0.075em;
+    }
+
+    .slider-hint {
+        font-size: var(--text-xs);
+        color: var(--color-text-secondary);
+        font-weight: 500;
+        letter-spacing: 0.075em;
+    }
+
+    .services-slider-track {
+        display: flex;
+        gap: var(--px-16);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-block: var(--px-8);
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    }
+
+    .services-slider-track::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .services-slider-track::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+    }
+
+    .slider-item {
+        flex: 0 0 calc(50% - var(--px-8));
+        min-width: 12.5rem;
+        scroll-snap-align: start;
+        background-color: rgba(0, 0, 0, 0.025);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: var(--radius-md);
+        padding: var(--px-16);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: var(--px-12);
+        transition:
+            transform var(--transition-short),
+            box-shadow var(--transition-short);
+    }
+
     @media (hover: hover) and (pointer: fine) {
-        .bento-service-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        .slider-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
         }
     }
 
     .service-icon-wrapper {
-        width: var(--px-44);
-        height: var(--px-44);
+        width: var(--px-40);
+        height: var(--px-40);
         background-color: rgba(0, 0, 0, 0.05);
         border-radius: var(--radius-md);
         display: flex;
@@ -398,20 +452,84 @@ import heroImage from "/src/assets/images/hero.webp";
     .service-title {
         font-size: var(--text-base);
         font-weight: 600;
-        margin: 0 0 var(--px-6) 0;
+        margin: 0 0 var(--px-4) 0;
         color: var(--color-text-primary);
     }
 
     .service-desc {
         font-size: var(--text-xs);
-        line-height: 1.5;
+        line-height: 1.4;
         opacity: 0.75;
         margin: 0;
+    }
+
+    /* Bento Metrics Card */
+    .bento-metrics-card {
+        background-color: var(--color-white, #ffffff);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        padding: var(--px-24);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (min-width: 48rem) {
+        .bento-metrics-card {
+            grid-column: span 12;
+        }
+    }
+
+    @media (min-width: 64rem) {
+        .bento-metrics-card {
+            grid-column: span 6;
+        }
+    }
+
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--px-16);
+        width: 100%;
+    }
+
+    .metric-item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-4);
+        padding: var(--px-14);
+        border-radius: var(--radius-md);
+        background-color: rgba(0, 0, 0, 0.025);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .metric-number {
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        font-weight: 700;
+        line-height: 1;
+        color: var(--color-text-primary);
+        letter-spacing: -0.02em;
+    }
+
+    .metric-label {
+        font-size: var(--text-xs);
+        opacity: 0.75;
+        font-weight: 500;
+        line-height: 1.3;
     }
 
     @media screen and (max-width: 48rem) {
         .hero-card {
             padding: var(--px-24);
+        }
+    }
+
+    @media screen and (max-width: 36rem) {
+        .slider-item {
+            flex: 0 0 calc(85% - var(--px-8));
+        }
+
+        .metrics-grid {
+            gap: var(--px-12);
         }
     }
 </style>
