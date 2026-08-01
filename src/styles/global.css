@@ -10,7 +10,6 @@ html {
 
 body {
   font-size: var(--text-base);
-  color: var(--color-text-dark);
 }
 
 section {
@@ -19,7 +18,7 @@ section {
 
 p {
   line-height: 1.6;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 .section-container {
@@ -32,15 +31,15 @@ p {
   display: inline-block;
   margin-bottom: var(--px-24);
   font-size: var(--text-sm);
-  color: var(--color-blue-main);
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.075em;
 }
 
 .section-title {
   margin-bottom: var(--px-64);
   font-size: clamp(1.75rem, 2.5vw + var(--text-lg), 3.25rem);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
   color: var(--color-text-primary);
 }
@@ -49,7 +48,6 @@ p {
   font-size: var(--text-xl);
   font-weight: 600;
   margin-bottom: var(--px-16);
-  color: var(--color-text-primary);
 }
 
 .no-scroll {
@@ -66,17 +64,16 @@ p {
 }
 
 .btn--primary {
-  background-color: var(--color-blue-main);
+  background-color: var(--color-primary);
   color: var(--color-white);
-  border-radius: var(--radius-md);
+  border-radius: var(--px-4);
   font-size: var(--text-xs);
   letter-spacing: 0.085em;
   font-weight: 700;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: transform var(--transition-short), box-shadow var(--transition-short);
-  box-shadow: 0 4px 14px rgba(42, 125, 225, 0.3);
+  transition: transform var(--transition-short);
 }
 
 .btn--primary:before {
@@ -88,7 +85,7 @@ p {
   top: 0;
   left: 0;
   transform: scale(0.7) translateY(55%);
-  background: var(--gradient-hero);
+  background: var(--color-secondary);
   border-radius: 100%;
   transition: all var(--transition-medium);
   z-index: -1;
@@ -108,7 +105,6 @@ p {
   position: relative;
   overflow: hidden;
   padding-block: var(--px-6);
-  color: var(--color-text-primary);
   transition:
     transform 0.5s var(--ease-elastic-1),
     opacity 0.5s var(--ease-elastic-1),
@@ -120,7 +116,6 @@ p {
   top: 0;
   left: 0;
   opacity: 0;
-  color: var(--color-blue-main);
   transform: translateY(150%) translateZ(0.001px) skewY(10deg);
 }
 
@@ -139,14 +134,14 @@ p {
   height: var(--px-8);
   border-radius: 50%;
   border: none;
-  background-color: rgba(42, 125, 225, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   padding: 0;
   transition: all var(--transition-long);
 }
 
 .indicator.active {
-  background-color: var(--color-blue-main);
+  background-color: black;
   transform: scale(1.5);
 }
 
@@ -157,7 +152,6 @@ p {
 }
 
 .text-link {
-  color: var(--color-blue-main);
   text-decoration: underline;
   text-decoration-color: currentColor;
   transition: text-decoration-color var(--transition-short);
@@ -168,11 +162,6 @@ p {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .btn--primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(225, 74, 140, 0.35);
-  }
-
   .btn--primary:hover:before {
     transform: scaleX(2) scaleY(1) translateY(-15%);
   }

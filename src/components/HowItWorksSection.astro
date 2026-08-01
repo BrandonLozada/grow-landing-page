@@ -1,35 +1,30 @@
 ---
 /*
   Sección: ¿Cómo trabajamos? (Proceso de trabajo GROW)
-  - Basado exclusivamente en el modelo conceptual respaldado por el contenido de GROW:
-    Atención personalizada -> Adaptación -> Gestión de operación -> Acompañamiento estratégico.
+  - Basado exclusivamente en el modelo conceptual respaldado por el contenido de GROW.
 */
 
 const processSteps = [
-    {
-        step: "01",
-        title: "Conocemos las necesidades de tu empresa",
-        description:
-            "Iniciamos con una atención personalizada para identificar los desafíos específicos en materia administrativa, contable o jurídica que enfrenta tu organización.",
-    },
-    {
-        step: "02",
-        title: "Adaptamos la solución a tu medida",
-        description:
-            "Diseñamos un plan de trabajo adaptado a los requerimientos y dimensiones de tu empresa, garantizando soluciones cercanas, eficientes y orientadas a resultados.",
-    },
-    {
-        step: "03",
-        title: "Nos encargamos de la operación",
-        description:
-            "Ejecutamos la gestión integral de tu nómina, procesos contables o aspectos legales con puntualidad, orden y estricto cumplimiento normativo.",
-    },
-    {
-        step: "04",
-        title: "Acompañamiento continuo y crecimiento",
-        description:
-            "Brindamos asesoría permanente y seguimiento cercano, convirtiéndonos en tu aliado estratégico para que puedas enfocarte en hacer crecer tu negocio.",
-    },
+  {
+    step: '01',
+    title: 'Conocemos las necesidades de tu empresa',
+    description: 'Iniciamos con una atención personalizada para identificar los desafíos específicos en materia administrativa, contable o jurídica que enfrenta tu organización.',
+  },
+  {
+    step: '02',
+    title: 'Adaptamos la solución a tu medida',
+    description: 'Diseñamos un plan de trabajo adaptado a los requerimientos y dimensiones de tu empresa, garantizando soluciones cercanas, eficientes y orientadas a resultados.',
+  },
+  {
+    step: '03',
+    title: 'Nos encargamos de la operación',
+    description: 'Ejecutamos la gestión integral de tu nómina, procesos contables o aspectos legales con puntualidad, orden y estricto cumplimiento normativo.',
+  },
+  {
+    step: '04',
+    title: 'Acompañamiento continuo y crecimiento',
+    description: 'Brindamos asesoría permanente y seguimiento cercano, convirtiéndonos en tu aliado estratégico para que puedas enfocarte en hacer crecer tu negocio.',
+  },
 ];
 ---
 
@@ -38,33 +33,30 @@ const processSteps = [
         <div class="process-header">
             <span class="section-tag">NUESTRO PROCESO</span>
             <h2 class="section-title">¿Cómo trabajamos con tu empresa?</h2>
-            <p class="process-subtitle-text">
-                Un esquema de trabajo transparente y orientado a la eficiencia
-                operacional y tranquilidad de nuestros clientes.
+            <p class="process-intro">
+                Un esquema de trabajo transparente y orientado a la eficiencia operacional y tranquilidad de nuestros clientes.
             </p>
         </div>
 
         <div class="process-grid">
-            {
-                processSteps.map((step) => (
-                    <div class="process-card">
-                        <div class="step-header">
-                            <span class="step-number">{step.step}</span>
-                        </div>
-                        <div class="step-content">
-                            <h3 class="step-title">{step.title}</h3>
-                            <p class="step-description">{step.description}</p>
-                        </div>
+            {processSteps.map((step) => (
+                <div class="process-card">
+                    <div class="step-header">
+                        <span class="step-number">{step.step}</span>
                     </div>
-                ))
-            }
+                    <div class="step-content">
+                        <h3 class="step-title">{step.title}</h3>
+                        <p class="step-description">{step.description}</p>
+                    </div>
+                </div>
+            ))}
         </div>
     </div>
 </section>
 
 <style>
     .process-section {
-        background-color: #f8fafc;
+        background-color: var(--color-background);
     }
 
     .process-header {
@@ -76,12 +68,11 @@ const processSteps = [
         margin-bottom: var(--px-16);
     }
 
-    .process-subtitle-text {
+    .process-intro {
         font-size: var(--text-lg);
         line-height: 1.6;
-        margin-top: 0;
-        margin-bottom: 0;
-        opacity: 0.85;
+        opacity: 0.8;
+        margin: 0;
     }
 
     .process-grid {
@@ -98,20 +89,16 @@ const processSteps = [
         flex-direction: column;
         justify-content: space-between;
         gap: var(--px-20);
-        border: 1px solid rgba(122, 122, 122, 0.15);
-        transition:
-            transform var(--transition-short),
-            box-shadow var(--transition-short),
-            border-color var(--transition-short);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        transition: transform var(--transition-short), box-shadow var(--transition-short);
     }
 
     .step-number {
-        font-size: var(--text-3xl);
-        font-weight: 800;
-        background: var(--gradient-hero);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-size: var(--text-2xl);
+        font-weight: 700;
+        opacity: 0.35;
         letter-spacing: 0.05em;
+        color: var(--color-text-primary);
     }
 
     .step-title {
@@ -131,8 +118,7 @@ const processSteps = [
     @media (hover: hover) and (pointer: fine) {
         .process-card:hover {
             transform: translateY(-3px);
-            border-color: var(--color-blue-main);
-            box-shadow: 0 8px 20px rgba(42, 125, 225, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
     }
 

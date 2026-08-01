@@ -8,9 +8,9 @@ export const SITE: Site = {
     'En Servicios Especializados GROW ayudamos a las organizaciones a optimizar sus procesos administrativos mediante la gestión integral de nómina, servicios contables, asesoría jurídica y soluciones especializadas.',
   CANONICAL_URL: import.meta.env.DEV
     ? 'http://localhost:4321'
-    : 'https://grow-landing-page.pages.dev',
+    : 'https://growespecializados.com.mx',
   LOCALE: 'es',
-  TELEPHONE: '+52 (81) 1234 5678',
+  TELEPHONE: '',
   EMAIL: 'administracion@growespecializados.com.mx',
   ADDRESS:
     'Calle Torreón No. 1719, Interior 11, Colonia Mitras Centro, C.P. 64460, Monterrey, Nuevo León, México',

@@ -1,17 +1,17 @@
 ---
 /*
   Sección: Después de contratar GROW / Beneficios
-  - Secciones con fondo blanco y acentos en gradiente para destacar resultados.
+  - Secciones con fondo neutro de la plantilla base.
 */
 
 const benefits = [
-    "Nómina procesada de forma puntual y segura.",
-    "Cumplimiento de obligaciones fiscales y laborales.",
-    "Reducción de errores administrativos.",
-    "Asesoría jurídica permanente.",
-    "Mayor eficiencia operativa.",
-    "Información financiera organizada.",
-    "Más tiempo para enfocarse en el crecimiento del negocio.",
+  'Nómina procesada de forma puntual y segura.',
+  'Cumplimiento de obligaciones fiscales y laborales.',
+  'Reducción de errores administrativos.',
+  'Asesoría jurídica permanente.',
+  'Mayor eficiencia operativa.',
+  'Información financiera organizada.',
+  'Más tiempo para enfocarse en el crecimiento del negocio.',
 ];
 ---
 
@@ -20,26 +20,20 @@ const benefits = [
         <div class="benefits-header">
             <span class="section-tag">RESULTADOS GARANTIZADOS</span>
             <h2 class="section-title">Después de contratar GROW.</h2>
-            <p class="benefits-subtitle-text">
-                Transformamos la gestión interna de tu organización brindándote
-                tranquilidad, precisión operacional y tiempo para enfocarte en
-                tu estrategia comercial.
+            <p class="benefits-intro">
+                Transformamos la gestión interna de tu organización brindándote tranquilidad, precisión operacional y tiempo para enfocarte en tu estrategia comercial.
             </p>
         </div>
 
         <div class="benefits-grid">
-            {
-                benefits.map((benefit) => (
-                    <div class="benefit-card">
-                        <div class="benefit-icon-wrapper" aria-hidden="true">
-                            ✓
-                        </div>
-                        <div class="benefit-content">
-                            <p class="benefit-text">{benefit}</p>
-                        </div>
+            {benefits.map((benefit) => (
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper" aria-hidden="true">✓</div>
+                    <div class="benefit-content">
+                        <p class="benefit-text">{benefit}</p>
                     </div>
-                ))
-            }
+                </div>
+            ))}
         </div>
     </div>
 </section>
@@ -58,12 +52,11 @@ const benefits = [
         margin-bottom: var(--px-16);
     }
 
-    .benefits-subtitle-text {
+    .benefits-intro {
         font-size: var(--text-lg);
         line-height: 1.6;
-        margin-top: 0;
-        margin-bottom: 0;
-        opacity: 0.85;
+        opacity: 0.8;
+        margin: 0;
     }
 
     .benefits-grid {
@@ -75,30 +68,26 @@ const benefits = [
     .benefit-card {
         padding: var(--px-24);
         border-radius: var(--radius-lg);
-        background-color: #fafafa;
+        background-color: rgba(0, 0, 0, 0.025);
         display: flex;
         align-items: center;
         gap: var(--px-16);
-        border: 1px solid rgba(122, 122, 122, 0.15);
-        transition:
-            transform var(--transition-short),
-            box-shadow var(--transition-short),
-            border-color var(--transition-short);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        transition: transform var(--transition-short), box-shadow var(--transition-short);
     }
 
     .benefit-icon-wrapper {
-        width: var(--px-36);
-        height: var(--px-36);
+        width: var(--px-32);
+        height: var(--px-32);
         border-radius: 50%;
-        background: var(--gradient-hero);
+        background: var(--color-primary);
         color: var(--color-white);
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        font-size: var(--text-sm);
+        font-size: var(--text-xs);
         flex-shrink: 0;
-        box-shadow: 0 4px 10px rgba(42, 125, 225, 0.25);
     }
 
     .benefit-text {
@@ -112,8 +101,7 @@ const benefits = [
     @media (hover: hover) and (pointer: fine) {
         .benefit-card:hover {
             transform: translateY(-2px);
-            border-color: var(--color-blue-main);
-            box-shadow: 0 8px 20px rgba(42, 125, 225, 0.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
         }
     }
 

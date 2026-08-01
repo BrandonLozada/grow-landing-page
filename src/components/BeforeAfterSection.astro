@@ -2,78 +2,61 @@
 /*
   Sección: Problemas que resolvemos (Antes de GROW)
   - Muestra los desafíos operativos reales que enfrentan las empresas antes de contratar GROW.
-  - Basado strictly en el contenido oficial proporcionado.
+  - Basado estrictamente en el contenido oficial proporcionado.
 */
 
 const problems = [
-    {
-        title: "Nómina manual",
-        description:
-            "Procesos de nómina realizados manualmente con riesgo constante.",
-    },
-    {
-        title: "Errores y retrasos",
-        description:
-            "Retrasos en pagos a colaboradores y errores de cálculo recurrentes.",
-    },
-    {
-        title: "Riesgo fiscal y laboral",
-        description:
-            "Alto riesgo de incumplimiento ante autoridades fiscales y laborales.",
-    },
-    {
-        title: "Desatención jurídica",
-        description:
-            "Falta de seguimiento legal, contratos desactualizados y vulnerabilidad jurídica.",
-    },
-    {
-        title: "Ineficiencia administrativa",
-        description:
-            "Procesos administrativos lentos que frenan la productividad general.",
-    },
-    {
-        title: "Sobrecarga en RR.HH.",
-        description:
-            "Sobrecarga de trabajo operativo para el departamento de Recursos Humanos.",
-    },
-    {
-        title: "Sobrecostos operativos",
-        description:
-            "Incremento constante en costos operativos por errores e ineficiencias.",
-    },
+  {
+    title: 'Nómina manual',
+    description: 'Procesos de nómina realizados manualmente con riesgo constante.',
+  },
+  {
+    title: 'Errores y retrasos',
+    description: 'Retrasos en pagos a colaboradores y errores de cálculo recurrentes.',
+  },
+  {
+    title: 'Riesgo fiscal y laboral',
+    description: 'Alto riesgo de incumplimiento ante autoridades fiscales y laborales.',
+  },
+  {
+    title: 'Desatención jurídica',
+    description: 'Falta de seguimiento legal, contratos desactualizados y vulnerabilidad jurídica.',
+  },
+  {
+    title: 'Ineficiencia administrativa',
+    description: 'Procesos administrativos lentos que frenan la productividad general.',
+  },
+  {
+    title: 'Sobrecarga en RR.HH.',
+    description: 'Sobrecarga de trabajo operativo para el departamento de Recursos Humanos.',
+  },
+  {
+    title: 'Sobrecostos operativos',
+    description: 'Incremento constante en costos operativos por errores e ineficiencias.',
+  },
 ];
 ---
 
 <section id="problemas" class="problems-section">
     <div class="section-container">
         <div class="problems-header">
-            <span class="section-tag section-tag-neutral"
-                >DESAFÍOS OPERATIVOS</span
-            >
+            <span class="section-tag section-tag-neutral">DESAFÍOS OPERATIVOS</span>
             <h2 class="section-title">Problemas que ayudamos a resolver.</h2>
-            <p class="problems-subtitle-text">
-                Muchas empresas enfrentan obstáculos en sus procesos cotidianos
-                que limitan su capacidad de crecimiento y generan riesgos
-                innecesarios.
+            <p class="section-intro">
+                Muchas empresas enfrentan obstáculos en sus procesos cotidianos que limitan su capacidad de crecimiento y generan riesgos innecesarios.
             </p>
         </div>
 
         <div class="problems-grid">
-            {
-                problems.map((problem, index) => (
-                    <div class="problem-card">
-                        <div class="problem-number">
-                            {String(index + 1).padStart(2, "0")}
-                        </div>
-                        <div class="problem-content">
-                            <h3 class="problem-title">{problem.title}</h3>
-                            <p class="problem-description">
-                                {problem.description}
-                            </p>
-                        </div>
+            {problems.map((problem, index) => (
+                <div class="problem-card">
+                    <div class="problem-number">{String(index + 1).padStart(2, '0')}</div>
+                    <div class="problem-content">
+                        <h3 class="problem-title">{problem.title}</h3>
+                        <p class="problem-description">{problem.description}</p>
                     </div>
-                ))
-            }
+                </div>
+            ))}
         </div>
     </div>
 </section>
@@ -92,16 +75,16 @@ const problems = [
         margin-bottom: var(--px-16);
     }
 
-    .problems-subtitle-text {
-        font-size: var(--text-lg);
-        line-height: 1.6;
-        margin-top: 0;
-        margin-bottom: 0;
-        opacity: 0.85;
-    }
-
     .section-tag-neutral {
         color: var(--color-gray-neutral);
+        background-color: rgba(122, 122, 122, 0.1);
+    }
+
+    .section-intro {
+        font-size: var(--text-lg);
+        line-height: 1.6;
+        opacity: 0.85;
+        margin: 0;
     }
 
     .problems-grid {
@@ -119,21 +102,19 @@ const problems = [
         justify-content: space-between;
         gap: var(--px-16);
         border: 1px solid rgba(122, 122, 122, 0.15);
-        transition:
-            transform var(--transition-short),
-            box-shadow var(--transition-short);
+        transition: transform var(--transition-short), box-shadow var(--transition-short);
     }
 
     .problem-number {
         font-size: var(--text-sm);
-        font-weight: 700;
+        font-weight: 600;
         color: var(--color-pink-main);
         letter-spacing: 0.05em;
     }
 
     .problem-title {
         font-size: var(--text-lg);
-        font-weight: 600;
+        font-weight: 500;
         margin-bottom: var(--px-8);
         color: var(--color-text-primary);
     }
