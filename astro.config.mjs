@@ -4,11 +4,13 @@ import { SITE } from "./src/consts";
 
 import sitemap from "@astrojs/sitemap";
 import favicons from "astro-favicons";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.CANONICAL_URL,
   output: "static",
+  adapter: netlify({ imageCDN: false }),
 
   build: {
     inlineStylesheets: "always",
