@@ -155,13 +155,34 @@ const heroMetrics = [
                 </div>
             </div>
 
-            <!-- Bento Card 1: Slider Horizontal de Servicios -->
+            <!-- Bento Card 1: Carrusel Funcional de Servicios -->
             <div class="bento-card bento-slider-card">
                 <div class="slider-header">
                     <span class="slider-tag">SERVICIOS DESTACADOS</span>
-                    <span class="slider-hint">Desliza &rarr;</span>
+                    <div class="slider-controls">
+                        <button
+                            type="button"
+                            class="slider-btn"
+                            id="hero-slider-prev"
+                            aria-label="Servicio anterior"
+                        >
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button
+                            type="button"
+                            class="slider-btn"
+                            id="hero-slider-next"
+                            aria-label="Servicio siguiente"
+                        >
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <div class="services-slider-track">
+                <div class="services-slider-track" id="hero-services-track">
                     {
                         heroServices.map((service) => (
                             <div class="slider-item">
@@ -436,11 +457,40 @@ const heroMetrics = [
         letter-spacing: 0.075em;
     }
 
-    .slider-hint {
-        font-size: var(--text-xs);
-        color: var(--color-text-secondary);
-        font-weight: 500;
-        letter-spacing: 0.075em;
+    .slider-controls {
+        display: flex;
+        align-items: center;
+        gap: var(--px-8);
+    }
+
+    .slider-btn {
+        background-color: var(--color-white, #ffffff);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--color-text-primary);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition:
+            background-color var(--transition-short),
+            color var(--transition-short),
+            border-color var(--transition-short),
+            transform var(--transition-short);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .slider-btn:hover {
+        background-color: var(--color-text-primary);
+        color: var(--color-white, #ffffff);
+        border-color: var(--color-text-primary);
+        transform: scale(1.05);
+    }
+
+    .slider-btn:active {
+        transform: scale(0.95);
     }
 
     .services-slider-track {
@@ -448,41 +498,42 @@ const heroMetrics = [
         gap: var(--px-16);
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding-block: var(--px-8);
-        scrollbar-width: thin;
-        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        padding-block: var(--px-4);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
     .services-slider-track::-webkit-scrollbar {
-        height: 4px;
-    }
-
-    .services-slider-track::-webkit-scrollbar-thumb {
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 4px;
+        display: none;
     }
 
     .slider-item {
         flex: 0 0 calc(50% - var(--px-8));
         min-width: 12.5rem;
         scroll-snap-align: start;
-        background-color: rgba(0, 0, 0, 0.025);
-        border: 1px solid rgba(0, 0, 0, 0.06);
+        background-color: var(--color-white, #ffffff);
+        border: 1px solid rgba(0, 0, 0, 0.08);
         border-radius: var(--radius-md);
         padding: var(--px-16);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: var(--px-12);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
         transition:
             transform var(--transition-short),
-            box-shadow var(--transition-short);
+            box-shadow var(--transition-short),
+            border-color var(--transition-short);
     }
 
     @media (hover: hover) and (pointer: fine) {
         .slider-item:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+            border-color: rgba(0, 0, 0, 0.15);
         }
     }
 
@@ -669,11 +720,29 @@ const heroMetrics = [
         .hero-card {
             padding: var(--px-24);
         }
+
+        .services-slider-track {
+            padding-bottom: var(--px-8);
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+        }
+
+        .services-slider-track::-webkit-scrollbar {
+            display: block;
+            height: 4px;
+        }
+
+        .services-slider-track::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
     }
 
     @media screen and (max-width: 36rem) {
         .slider-item {
-            flex: 0 0 calc(85% - var(--px-8));
+            flex: 0 0 calc(82% - var(--px-8));
+            min-width: 14rem;
+            scroll-snap-align: start;
         }
 
         .metrics-grid {
@@ -681,3 +750,24 @@ const heroMetrics = [
         }
     }
 </style>
+
+<script>
+    const track = document.getElementById("hero-services-track");
+    const prevBtn = document.getElementById("hero-slider-prev");
+    const nextBtn = document.getElementById("hero-slider-next");
+
+    if (track && prevBtn && nextBtn) {
+        const getScrollDistance = () => {
+            const firstCard = track.querySelector(".slider-item") as HTMLElement;
+            return firstCard ? firstCard.offsetWidth + 16 : 220;
+        };
+
+        prevBtn.addEventListener("click", () => {
+            track.scrollBy({ left: -getScrollDistance(), behavior: "smooth" });
+        });
+
+        nextBtn.addEventListener("click", () => {
+            track.scrollBy({ left: getScrollDistance(), behavior: "smooth" });
+        });
+    }
+</script>
