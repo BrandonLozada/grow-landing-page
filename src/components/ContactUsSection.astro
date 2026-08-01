@@ -5,7 +5,7 @@ import { SITE } from "@consts";
 <section id="contacto" class="contact">
   <div class="section-container contact-container">
     <div class="contact-top">
-      <div class="contact-top-left">
+      <div class="contact-top-left contact-header">
         <span class="section-tag">CONTACTO</span>
         <h2 class="section-title">
           ¿Listo para optimizar la administración de tu empresa?
@@ -168,11 +168,13 @@ import { SITE } from "@consts";
 <style>
   .contact {
     display: grid;
+    overflow-x: hidden;
   }
 
   .section-container.contact-container {
     display: grid;
     grid-template-rows: auto auto;
+    width: 100%;
   }
 
   .contact-top,
@@ -190,15 +192,21 @@ import { SITE } from "@consts";
     grid-template-columns: 1fr 1fr;
   }
 
+  .contact-header .section-title {
+    margin-bottom: var(--px-16);
+  }
+
   .contact-top-left,
   .contact-form {
     margin-right: var(--px-48);
   }
 
   .contact-cta-text {
-    margin-top: calc(-1 * var(--px-32));
+    margin-top: 0;
     margin-bottom: var(--px-32);
     line-height: 1.6;
+    font-size: var(--text-lg);
+    opacity: 0.85;
   }
 
   .contact-form-fields {
@@ -225,6 +233,9 @@ import { SITE } from "@consts";
     border: 1px solid rgba(0, 0, 0, 0.183);
     transition: all var(--transition-short);
     font-size: var(--text-sm);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .form-input:focus {
@@ -311,6 +322,8 @@ import { SITE } from "@consts";
     opacity: 0.8;
     font-size: var(--text-sm);
     transition: opacity var(--transition-short);
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   a.contact-detail:active {
@@ -356,6 +369,8 @@ import { SITE } from "@consts";
   .contact-map {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-md);
   }
 
   .contact-map iframe {
@@ -391,7 +406,7 @@ import { SITE } from "@consts";
 
     .form-submit {
       flex-direction: column;
-      align-items: start;
+      align-items: flex-start;
     }
   }
 
@@ -401,7 +416,13 @@ import { SITE } from "@consts";
     }
 
     .form-submit {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--px-16);
+    }
+
+    .contact-terms {
+      max-width: 100%;
     }
 
     .contact-map iframe {
@@ -413,6 +434,10 @@ import { SITE } from "@consts";
     .contact-info {
       grid-template-columns: 1fr;
       gap: var(--px-32);
+    }
+
+    .contact-info > div {
+      padding-left: var(--px-16);
     }
   }
 </style>

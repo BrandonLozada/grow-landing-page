@@ -54,19 +54,32 @@
     --h-menu-bar: 5.313rem;
     --h-menu-bar-scrolled: 4.063rem;
 
-    /* Colors */
-    --color-primary: #010101;
-    --color-secondary: #333;
-    --color-background: #f1f1f1;
-    --color-white: #fff;
-    --color-text-primary: #010101;
-    --color-text-secondary: #757575;
-    --color-text-dark: #4f4f4f;
-    --color-border: rgba(0, 0, 0, 0.183);
-    --color-border-hover: rgba(0, 0, 0, 0.38);
-    --color-border-focus: rgba(0, 0, 0, 0.7);
-    --color-overlay: rgba(0, 0, 0, 0.5);
-    --color-focus: #ff6b35;
+    /* Paleta cromática corporativa GROW */
+    --color-blue-main: #2A7DE1;
+    --color-blue-light: #5AA9F0;
+    --color-pink-main: #E14A8C;
+    --color-pink-light: #F28DB8;
+    --color-gray-neutral: #7A7A7A;
+    --color-white: #ffffff;
+
+    /* Colors semánticos */
+    --color-primary: #2A7DE1;
+    --color-secondary: #E14A8C;
+    --color-background: #f8fafc;
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #7A7A7A;
+    --color-text-dark: #334155;
+    --color-border: #e2e8f0;
+    --color-border-hover: #5AA9F0;
+    --color-border-focus: #2A7DE1;
+    --color-overlay: rgba(15, 23, 42, 0.6);
+    --color-focus: #2A7DE1;
+
+    /* Gradientes UI */
+    --gradient-hero: linear-gradient(90deg, #2A7DE1 0%, #E14A8C 100%);
+    --gradient-bg-blue: linear-gradient(180deg, #5AA9F0 0%, #2A7DE1 100%);
+    --gradient-accent-pink: linear-gradient(90deg, #F28DB8 0%, #E14A8C 100%);
+    --gradient-card-hover: linear-gradient(180deg, #5AA9F0 0%, #2A7DE1 100%);
 
     /* Transitions */
     --ease-default: cubic-bezier(0, 0, 0.58, 1);
@@ -77,9 +90,9 @@
     --transition-long: 0.3s var(--ease-default);
 
     /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px rgba(42, 125, 225, 0.08);
+    --shadow-md: 0 4px 12px rgba(42, 125, 225, 0.12);
+    --shadow-lg: 0 8px 24px rgba(42, 125, 225, 0.16);
     --shadow-header:
         0px 0px 10px 0px rgba(0, 0, 0, 0.025),
         0px 1px 1px 0px rgba(0, 0, 0, 0.01),

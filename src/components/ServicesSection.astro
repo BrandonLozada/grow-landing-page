@@ -2,8 +2,7 @@
 /*
   Sección: Nuestros Servicios
   - Presenta las 4 categorías principales de servicios GROW de manera estructurada.
-  - Diseñado con jerarquía visual clara y preparado para la incorporación de iconografía,
-    cards interactivas y páginas de detalle en la Iteración 3.
+  - Tarjetas estructuradas con borde gris neutro y acentos en hover con gradiente azul.
 */
 
 interface ServiceCategory {
@@ -114,6 +113,7 @@ const serviceCategories: ServiceCategory[] = [
         <div class="services-grid">
             {serviceCategories.map((category) => (
                 <article class="service-card" data-service-id={category.id}>
+                    <div class="card-accent-bar"></div>
                     <div class="card-header">
                         <span class="category-badge">{category.badge}</span>
                         <h3 class="category-title">{category.title}</h3>
@@ -162,12 +162,16 @@ const serviceCategories: ServiceCategory[] = [
         margin-bottom: var(--px-48);
     }
 
+    .services-header .section-title {
+        margin-bottom: var(--px-16);
+    }
+
     .services-subtitle-text {
         font-size: var(--text-lg);
         line-height: 1.6;
-        margin-top: calc(-1 * var(--px-48));
+        margin-top: 0;
         margin-bottom: 0;
-        opacity: 0.8;
+        opacity: 0.85;
     }
 
     .services-grid {
@@ -177,19 +181,31 @@ const serviceCategories: ServiceCategory[] = [
     }
 
     .service-card {
+        position: relative;
         padding: var(--px-32);
         border-radius: var(--radius-lg);
-        background-color: rgba(0, 0, 0, 0.025);
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        background-color: #fafafa;
+        border: 1px solid rgba(122, 122, 122, 0.2);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition: transform var(--transition-short), box-shadow var(--transition-short);
+        overflow: hidden;
+        transition: transform var(--transition-short), box-shadow var(--transition-short), border-color var(--transition-short);
+    }
+
+    .card-accent-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: transparent;
+        transition: background var(--transition-short);
     }
 
     .card-header {
         margin-bottom: var(--px-24);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(122, 122, 122, 0.15);
         padding-bottom: var(--px-16);
     }
 
@@ -197,7 +213,7 @@ const serviceCategories: ServiceCategory[] = [
         font-size: var(--text-xs);
         font-weight: 700;
         letter-spacing: 0.08em;
-        opacity: 0.5;
+        color: var(--color-blue-main);
         display: block;
         margin-bottom: var(--px-8);
     }
@@ -212,7 +228,7 @@ const serviceCategories: ServiceCategory[] = [
     .category-description {
         font-size: var(--text-sm);
         line-height: 1.5;
-        opacity: 0.75;
+        opacity: 0.8;
     }
 
     .card-body {
@@ -240,13 +256,13 @@ const serviceCategories: ServiceCategory[] = [
 
     .bullet-dot {
         font-weight: bold;
-        opacity: 0.5;
+        color: var(--color-blue-main);
     }
 
     .subcategory-block {
         margin-top: var(--px-8);
         padding-top: var(--px-12);
-        border-top: 1px dashed rgba(0, 0, 0, 0.08);
+        border-top: 1px dashed rgba(122, 122, 122, 0.2);
     }
 
     .subcategory-title {
@@ -254,6 +270,18 @@ const serviceCategories: ServiceCategory[] = [
         font-weight: 600;
         margin-bottom: var(--px-10);
         color: var(--color-text-primary);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-blue-main);
+            box-shadow: 0 12px 28px rgba(42, 125, 225, 0.12);
+        }
+
+        .service-card:hover .card-accent-bar {
+            background: var(--gradient-card-hover);
+        }
     }
 
     @media screen and (max-width: 60rem) {

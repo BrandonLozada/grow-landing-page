@@ -98,7 +98,12 @@
         display: flex;
         padding-inline: var(--px-32);
         z-index: var(--z-max);
-        transition: all var(--transition-short);
+        transition:
+            background-color 0.3s ease,
+            backdrop-filter 0.3s ease,
+            -webkit-backdrop-filter 0.3s ease,
+            height var(--transition-short),
+            box-shadow 0.3s ease;
     }
 
     .nav-container {
@@ -164,7 +169,9 @@
 
     .nav-link:not(.mobile-cta) {
         display: flex;
-        opacity: 0.75;
+        color: var(--color-text-primary);
+        opacity: 0.85;
+        font-weight: 500;
         transition: all var(--transition-short);
         white-space: nowrap;
         font-size: var(--text-sm);
@@ -197,9 +204,9 @@
 
     .scrolled {
         height: var(--h-menu-bar-scrolled) !important;
-        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.7) !important;
         backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.98);
+        -webkit-backdrop-filter: blur(10px);
         box-shadow: var(--shadow-header);
     }
 
@@ -230,6 +237,7 @@
     @media (hover: hover) and (pointer: fine) {
         .nav-link:hover {
             opacity: 1;
+            color: var(--color-blue-main);
         }
     }
 
@@ -305,21 +313,21 @@
 
 <script>
     function observeHeader() {
-        const trigger = document.getElementById("trigger");
         const header = document.getElementById("header");
+        if (!header) return;
 
-        if (!trigger || !header) return;
+        function updateHeader() {
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        }
 
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                header.classList.toggle("scrolled", !entry.isIntersecting);
-            },
-            { threshold: 0 },
-        );
+        window.addEventListener("scroll", updateHeader, { passive: true });
+        updateHeader();
 
-        observer.observe(trigger);
-
-        return () => observer.disconnect();
+        return () => window.removeEventListener("scroll", updateHeader);
     }
 
     function initMobileMenu() {
