@@ -1,0 +1,97 @@
+---
+/*
+  Sección: Después de contratar GROW / Beneficios
+  - Destaca los resultados tangibles y beneficios que experimenta el cliente tras contratar a GROW.
+*/
+
+const benefits = [
+  'Nómina procesada de forma puntual y segura.',
+  'Cumplimiento de obligaciones fiscales y laborales.',
+  'Reducción de errores administrativos.',
+  'Asesoría jurídica permanente.',
+  'Mayor eficiencia operativa.',
+  'Información financiera organizada.',
+  'Más tiempo para enfocarse en el crecimiento del negocio.',
+];
+---
+
+<section id="beneficios" class="benefits-section">
+    <div class="section-container">
+        <span class="section-tag">RESULTADOS GARANTIZADOS</span>
+        <h2 class="section-title">Después de contratar GROW.</h2>
+        <p class="benefits-intro">
+            Transformamos la gestión interna de tu organización brindándote tranquilidad, precisión operacional y tiempo para enfocarte en tu estrategia comercial.
+        </p>
+
+        <div class="benefits-grid">
+            {benefits.map((benefit, index) => (
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper" aria-hidden="true">✓</div>
+                    <div class="benefit-content">
+                        <p class="benefit-text">{benefit}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .benefits-section {
+        background-color: var(--color-background);
+    }
+
+    .benefits-intro {
+        max-width: 40rem;
+        margin-top: calc(-1 * var(--px-48));
+        margin-bottom: var(--px-48);
+        font-size: var(--text-lg);
+        line-height: 1.6;
+        opacity: 0.8;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: var(--px-24);
+    }
+
+    .benefit-card {
+        padding: var(--px-24);
+        border-radius: var(--radius-lg);
+        background-color: var(--color-white);
+        display: flex;
+        align-items: center;
+        gap: var(--px-16);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .benefit-icon-wrapper {
+        width: var(--px-36);
+        height: var(--px-36);
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: var(--text-sm);
+        flex-shrink: 0;
+    }
+
+    .benefit-text {
+        font-size: var(--text-base);
+        font-weight: 500;
+        line-height: 1.4;
+        color: var(--color-text-primary);
+        margin: 0;
+    }
+
+    @media screen and (max-width: 48rem) {
+        .benefits-grid {
+            grid-template-columns: 1fr;
+            gap: var(--px-16);
+        }
+    }
+</style>

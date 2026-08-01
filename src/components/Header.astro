@@ -6,24 +6,46 @@
         aria-label="Navegación principal"
     >
         <div class="logo-container">
-            <a href="/" class="logo" aria-label="Servicios Especializados GROW - Inicio">
-                GROW
+            <a
+                href="/"
+                class="logo"
+                aria-label="Servicios Especializados GROW - Inicio"
+            >
+                <picture>
+                    <source
+                        media="(max-width: 60rem)"
+                        srcset="/grow-logo-mobile.png"
+                    />
+                    <img
+                        src="/grow-logo-mobile.png"
+                        alt="Servicios Especializados GROW"
+                        class="logo-img"
+                        width="180"
+                        height="44"
+                    />
+                </picture>
             </a>
         </div>
 
         <div class="nav-content">
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="/" class="nav-link">Inicio</a>
+                    <a href="#hero" class="nav-link">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a href="#servicios" class="nav-link">Servicios</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#proceso" class="nav-link">¿Cómo trabajamos?</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#por-que-grow" class="nav-link">¿Por qué GROW?</a>
+                </li>
+                <li class="nav-item">
                     <a href="#nosotros" class="nav-link">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#testimonios" class="nav-link">Testimonios</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contacto" class="nav-link">Contacto</a>
@@ -56,11 +78,7 @@
             </span>
         </a>
 
-        <button
-            class="hamburger"
-            aria-label="Abrir menú"
-            aria-expanded="false"
-        >
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -93,6 +111,27 @@
         font-weight: 500;
     }
 
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-img {
+        height: 2.5rem;
+        width: auto;
+        object-fit: contain;
+        transition: height var(--transition-short);
+    }
+
+    .scrolled .logo-img {
+        height: 2.1rem;
+    }
+
     .hamburger {
         display: none;
         flex-direction: column;
@@ -116,16 +155,19 @@
 
     .nav-menu {
         display: flex;
+        align-items: center;
     }
 
     .nav-item {
-        margin-inline: var(--px-16);
+        margin-inline: var(--px-12);
     }
 
     .nav-link:not(.mobile-cta) {
         display: flex;
-        opacity: 0.65;
+        opacity: 0.75;
         transition: all var(--transition-short);
+        white-space: nowrap;
+        font-size: var(--text-sm);
     }
 
     .nav-link:active {
@@ -191,7 +233,7 @@
         }
     }
 
-    @media screen and (max-width: 64rem) {
+    @media screen and (max-width: 68rem) {
         .header {
             padding-inline: var(--px-16);
         }
@@ -205,7 +247,7 @@
         }
 
         .btn--secondary {
-            font-size: var(--text-2xl);
+            font-size: var(--text-xl);
         }
 
         .hamburger {
@@ -234,9 +276,9 @@
 
         .nav-menu {
             flex-direction: column;
-            gap: var(--px-20);
-            margin-bottom: var(--px-40);
-            justify-content: flex-start;
+            gap: var(--px-16);
+            margin-bottom: var(--px-32);
+            align-items: flex-start;
         }
 
         .nav-item {
@@ -244,7 +286,7 @@
         }
 
         .nav-link:not(.mobile-cta) {
-            font-size: var(--text-2xl);
+            font-size: var(--text-lg);
         }
 
         .hamburger.active .hamburger-line:nth-child(1) {
@@ -313,7 +355,6 @@
             }
         };
 
-        // Event delegation for nav links
         navContent.addEventListener("click", (e) => {
             const target = e.target as HTMLElement;
             if (target.classList.contains("nav-link")) {

@@ -1,0 +1,115 @@
+---
+/*
+  Sección: ¿Por qué elegir GROW? (Diferenciadores comerciales)
+  - Destaca los pilares fundamentales que diferencian el servicio de GROW.
+*/
+
+const differentiators = [
+  {
+    title: 'Soluciones a tu medida',
+    text: 'Diseñamos esquemas adaptados a las necesidades particulares de cada organización, sin fórmulas genéricas.',
+  },
+  {
+    title: 'Servicio cercano y confiable',
+    text: 'Brindamos una atención personal y directa, construyendo relaciones de confianza a largo plazo.',
+  },
+  {
+    title: 'Enfoque en resultados',
+    text: 'Orientados a generar una mayor eficiencia operativa y optimización real de recursos en tu negocio.',
+  },
+  {
+    title: 'Tranquilidad y cumplimiento',
+    text: 'Aseguramos procesos eficientes y estricto cumplimiento normativo fiscal, laboral y legal.',
+  },
+];
+---
+
+<section id="por-que-grow" class="why-grow-section">
+    <div class="section-container">
+        <div class="why-grow-header">
+            <span class="section-tag">DIFERENCIADORES</span>
+            <h2 class="section-title">¿Por qué elegir GROW?</h2>
+            <p class="why-grow-main-text">
+                En GROW entendemos que cada empresa enfrenta desafíos distintos. Por ello diseñamos soluciones adaptadas a las necesidades de cada cliente, ofreciendo un servicio cercano, confiable y orientado a resultados.
+            </p>
+            <p class="why-grow-main-text highlight-text">
+                Nuestra prioridad es brindar tranquilidad a nuestros clientes mediante procesos eficientes, cumplimiento normativo y atención personalizada.
+            </p>
+        </div>
+
+        <div class="differentiators-grid">
+            {differentiators.map((diff) => (
+                <div class="diff-card">
+                    <h3 class="diff-title">{diff.title}</h3>
+                    <p class="diff-text">{diff.text}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .why-grow-section {
+        background-color: var(--color-white);
+    }
+
+    .why-grow-header {
+        max-width: 44rem;
+        margin-bottom: var(--px-48);
+    }
+
+    .why-grow-main-text {
+        font-size: var(--text-lg);
+        line-height: 1.6;
+        margin-bottom: var(--px-16);
+        opacity: 0.85;
+    }
+
+    .highlight-text {
+        font-weight: 500;
+        opacity: 1;
+        color: var(--color-text-primary);
+    }
+
+    .differentiators-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--px-24);
+    }
+
+    .diff-card {
+        padding: var(--px-24);
+        border-radius: var(--radius-lg);
+        background-color: rgba(0, 0, 0, 0.025);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-12);
+    }
+
+    .diff-title {
+        font-size: var(--text-lg);
+        font-weight: 600;
+        color: var(--color-text-primary);
+    }
+
+    .diff-text {
+        font-size: var(--text-sm);
+        line-height: 1.5;
+        opacity: 0.8;
+    }
+
+    @media screen and (max-width: 64rem) {
+        .differentiators-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--px-20);
+        }
+    }
+
+    @media screen and (max-width: 36rem) {
+        .differentiators-grid {
+            grid-template-columns: 1fr;
+            gap: var(--px-16);
+        }
+    }
+</style>

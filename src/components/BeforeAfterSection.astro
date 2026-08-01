@@ -1,117 +1,118 @@
 ---
 /*
-  TODO (siguiente iteración):
-  - Rediseñar con un layout visual más impactante (columnas side-by-side, iconografía, colores)
-  - Agregar animaciones de revelación
-  - Considerar un diseño de comparativa visual más elaborado
+  Sección: Problemas que resolvemos (Antes de GROW)
+  - Muestra los desafíos operativos reales que enfrentan las empresas antes de contratar GROW.
+  - Basado estrictamente en el contenido oficial proporcionado.
 */
 
-const beforeItems = [
-  'Procesos de nómina realizados manualmente.',
-  'Retrasos en pagos y errores de cálculo.',
-  'Alto riesgo de incumplimiento fiscal y laboral.',
-  'Falta de seguimiento jurídico.',
-  'Procesos administrativos lentos.',
-  'Sobrecarga de trabajo para Recursos Humanos.',
-  'Incremento en costos operativos.',
-];
-
-const afterItems = [
-  'Nómina procesada de forma puntual y segura.',
-  'Cumplimiento de obligaciones fiscales y laborales.',
-  'Reducción de errores administrativos.',
-  'Asesoría jurídica permanente.',
-  'Mayor eficiencia operativa.',
-  'Información financiera organizada.',
-  'Más tiempo para enfocarse en el crecimiento del negocio.',
+const problems = [
+  {
+    title: 'Nómina manual',
+    description: 'Procesos de nómina realizados manualmente con riesgo constante.',
+  },
+  {
+    title: 'Errores y retrasos',
+    description: 'Retrasos en pagos a colaboradores y errores de cálculo recurrentes.',
+  },
+  {
+    title: 'Riesgo fiscal y laboral',
+    description: 'Alto riesgo de incumplimiento ante autoridades fiscales y laborales.',
+  },
+  {
+    title: 'Desatención jurídica',
+    description: 'Falta de seguimiento legal, contratos desactualizados y vulnerabilidad jurídica.',
+  },
+  {
+    title: 'Ineficiencia administrativa',
+    description: 'Procesos administrativos lentos que frenan la productividad general.',
+  },
+  {
+    title: 'Sobrecarga en RR.HH.',
+    description: 'Sobrecarga de trabajo operativo para el departamento de Recursos Humanos.',
+  },
+  {
+    title: 'Sobrecostos operativos',
+    description: 'Incremento constante en costos operativos por errores e ineficiencias.',
+  },
 ];
 ---
 
-<section id="antes-despues" class="before-after">
+<section id="problemas" class="problems-section">
     <div class="section-container">
-        <span class="section-tag">ANTES Y DESPUÉS</span>
-        <h2 class="section-title">Descubre el impacto de nuestros servicios.</h2>
+        <span class="section-tag">DESAFÍOS OPERATIVOS</span>
+        <h2 class="section-title">Problemas que ayudamos a resolver.</h2>
+        <p class="section-intro">
+            Muchas empresas enfrentan obstáculos en sus procesos cotidianos que limitan su capacidad de crecimiento y generan riesgos innecesarios.
+        </p>
 
-        <div class="comparison-grid">
-            <div class="comparison-column comparison-before">
-                <h3 class="section-subtitle comparison-heading">Antes de GROW</h3>
-                <ul class="comparison-list">
-                    {beforeItems.map((item) => (
-                        <li class="comparison-item comparison-item--before">{item}</li>
-                    ))}
-                </ul>
-            </div>
-            <div class="comparison-column comparison-after">
-                <h3 class="section-subtitle comparison-heading">Después de contratar GROW</h3>
-                <ul class="comparison-list">
-                    {afterItems.map((item) => (
-                        <li class="comparison-item comparison-item--after">{item}</li>
-                    ))}
-                </ul>
-            </div>
+        <div class="problems-grid">
+            {problems.map((problem, index) => (
+                <div class="problem-card">
+                    <div class="problem-number">{String(index + 1).padStart(2, '0')}</div>
+                    <div class="problem-content">
+                        <h3 class="problem-title">{problem.title}</h3>
+                        <p class="problem-description">{problem.description}</p>
+                    </div>
+                </div>
+            ))}
         </div>
     </div>
 </section>
 
 <style>
-    .comparison-grid {
+    .problems-section {
+        background-color: var(--color-background);
+    }
+
+    .section-intro {
+        max-width: 40rem;
+        margin-top: calc(-1 * var(--px-48));
+        margin-bottom: var(--px-48);
+        font-size: var(--text-lg);
+        line-height: 1.6;
+    }
+
+    .problems-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--px-64);
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: var(--px-24);
     }
 
-    .comparison-column {
-        padding: var(--px-32);
+    .problem-card {
+        padding: var(--px-24);
         border-radius: var(--radius-lg);
-    }
-
-    .comparison-before {
-        background-color: rgba(0, 0, 0, 0.03);
-    }
-
-    .comparison-after {
-        background-color: rgba(0, 0, 0, 0.06);
-    }
-
-    .comparison-heading {
-        margin-bottom: var(--px-24);
-    }
-
-    .comparison-list {
+        background-color: var(--color-white);
         display: flex;
         flex-direction: column;
-        gap: var(--px-14);
-        list-style: none;
+        justify-content: space-between;
+        gap: var(--px-16);
+        border: 1px solid rgba(0, 0, 0, 0.06);
     }
 
-    .comparison-item {
-        position: relative;
-        padding-left: var(--px-28);
+    .problem-number {
+        font-size: var(--text-sm);
+        font-weight: 700;
+        opacity: 0.4;
+        letter-spacing: 0.05em;
+    }
+
+    .problem-title {
+        font-size: var(--text-lg);
+        font-weight: 600;
+        margin-bottom: var(--px-8);
+        color: var(--color-text-primary);
+    }
+
+    .problem-description {
+        font-size: var(--text-sm);
         line-height: 1.5;
-    }
-
-    .comparison-item::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0.5em;
-        width: var(--px-8);
-        height: var(--px-8);
-        border-radius: 50%;
-    }
-
-    .comparison-item--before::before {
-        background-color: var(--color-text-secondary);
-    }
-
-    .comparison-item--after::before {
-        background-color: var(--color-text-primary);
+        opacity: 0.8;
     }
 
     @media screen and (max-width: 48rem) {
-        .comparison-grid {
+        .problems-grid {
             grid-template-columns: 1fr;
-            gap: var(--px-32);
+            gap: var(--px-16);
         }
     }
 </style>

@@ -15,7 +15,7 @@ export const SITE: Site = {
   ADDRESS:
     'Calle Torreón No. 1719, Interior 11, Colonia Mitras Centro, C.P. 64460, Monterrey, Nuevo León, México',
 
-  OG_IMAGE: '/og-image.webp',
+  OG_IMAGE: '/grow-logo-og.png',
 };
 
 export const SOCIALS: Socials = [

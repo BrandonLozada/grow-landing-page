@@ -1,6 +1,5 @@
 ---
-import { SITE, SOCIALS } from "@consts";
-import socialIcons from "@assets/socialIcons";
+import { SITE } from "@consts";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -8,31 +7,45 @@ const currentYear = new Date().getFullYear();
 <footer class="main-footer">
     <div class="section-container footer footer-primary">
         <div class="footer-brand">
-            <a href="/" class="headline logo" aria-label="Servicios Especializados GROW - Inicio">
-                Servicios Especializados GROW
+            <a
+                href="/"
+                class="logo-link"
+                aria-label="Servicios Especializados GROW - Inicio"
+            >
+                <img
+                    src="/grow-logo-mobile.png"
+                    alt="Servicios Especializados GROW"
+                    class="footer-logo-img"
+                    width="200"
+                    height="48"
+                />
             </a>
             <p class="site-description">
-                Impulsamos el crecimiento de las empresas mediante soluciones administrativas, contables y jurídicas enfocadas en la eficiencia, el cumplimiento y la mejora continua.
+                Impulsamos el crecimiento de las empresas mediante soluciones
+                administrativas, contables y jurídicas enfocadas en la
+                eficiencia, el cumplimiento y la mejora continua.
             </p>
 
             <address class="footer-nav-list contact-info">
                 <p class="phone">
                     <span class="label">T.</span>
-                    <a href={`tel:${SITE.TELEPHONE.replace(/\s|\(|\)/g, '')}`}>{SITE.TELEPHONE}</a>
+                    <a href={`tel:${SITE.TELEPHONE.replace(/\s|\(|\)/g, "")}`}
+                        >{SITE.TELEPHONE}</a
+                    >
                 </p>
                 <p class="email">
                     <span class="label">E.</span>
                     <a href={`mailto:${SITE.EMAIL}`}>{SITE.EMAIL}</a>
                 </p>
                 <p class="provisional-note">
-                    <small>Datos de contacto provisionales.</small>
+                    <small>Datos de contacto.</small>
                 </p>
             </address>
         </div>
 
         <nav class="footer-navigation" aria-label="Navegación del footer">
             <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Empresa</h2>
+                <h2 class="headline footer-heading">Navegación</h2>
                 <ul class="footer-nav-list">
                     <li>
                         <a href="#hero" class="footer-link">Inicio</a>
@@ -41,42 +54,24 @@ const currentYear = new Date().getFullYear();
                         <a href="#servicios" class="footer-link">Servicios</a>
                     </li>
                     <li>
-                        <a href="#nosotros" class="footer-link"
-                            >Nosotros</a
+                        <a href="#proceso" class="footer-link"
+                            >¿Cómo trabajamos?</a
                         >
                     </li>
                     <li>
-                        <a href="#testimonios" class="footer-link">Testimonios</a>
+                        <a href="#por-que-grow" class="footer-link"
+                            >¿Por qué GROW?</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#nosotros" class="footer-link">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="#faq" class="footer-link">FAQ</a>
                     </li>
                     <li>
                         <a href="#contacto" class="footer-link">Contacto</a>
                     </li>
-                </ul>
-            </div>
-
-            <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Redes Sociales</h2>
-                <ul class="footer-nav-list social-links-list">
-                    {
-                        SOCIALS.map((social) => (
-                            <>
-                                <li class="social-item">
-                                    <a
-                                        href={social.HREF}
-                                        aria-label={social.LABEL}
-                                        class="footer-link social-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Fragment
-                                            set:html={socialIcons[social.ICON]}
-                                        />
-                                        {social.NAME}
-                                    </a>
-                                </li>
-                            </>
-                        ))
-                    }
                 </ul>
             </div>
 
@@ -135,6 +130,10 @@ const currentYear = new Date().getFullYear();
         justify-content: space-between;
     }
 
+    .footer-brand {
+        max-width: 24rem;
+    }
+
     .headline {
         color: var(--color-text-primary);
     }
@@ -147,15 +146,20 @@ const currentYear = new Date().getFullYear();
         margin-bottom: var(--px-112);
     }
 
-    .logo {
+    .logo-link {
         display: inline-block;
-        margin-bottom: var(--px-28);
-        font-size: var(--text-xl);
-        font-weight: 700;
+        margin-bottom: var(--px-20);
+    }
+
+    .footer-logo-img {
+        height: 2.75rem;
+        width: auto;
+        object-fit: contain;
     }
 
     .site-description {
         margin-bottom: var(--px-32);
+        line-height: 1.6;
     }
 
     .provisional-note {

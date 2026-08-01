@@ -1,19 +1,16 @@
 ---
 /*
-  TODO (siguiente iteración):
-  - Rediseñar como sección de servicios completa con:
-    - Iconografía por categoría
-    - Cards interactivas
-    - CTAs por servicio
-    - Posibles páginas/secciones de detalle
-    - Animaciones de entrada
-    - Diseño responsive mejorado
-  - Los servicios jurídicos tienen subcategorías que deberán tener su propia jerarquía visual
+  Sección: Nuestros Servicios
+  - Presenta las 4 categorías principales de servicios GROW de manera estructurada.
+  - Diseñado con jerarquía visual clara y preparado para la incorporación de iconografía,
+    cards interactivas y páginas de detalle en la Iteración 3.
 */
 
 interface ServiceCategory {
-  id: number;
+  id: string;
+  badge: string;
   title: string;
+  description: string;
   items: string[];
   subcategories?: {
     title: string;
@@ -23,8 +20,10 @@ interface ServiceCategory {
 
 const serviceCategories: ServiceCategory[] = [
   {
-    id: 1,
+    id: 'administrativos',
+    badge: '01. OPERACIÓN',
     title: 'Servicios Administrativos',
+    description: 'Gestión eficiente y control operativo continuo para la administración de tu personal.',
     items: [
       'Administración integral de nómina.',
       'Gestión de incidencias.',
@@ -37,8 +36,10 @@ const serviceCategories: ServiceCategory[] = [
     ],
   },
   {
-    id: 2,
+    id: 'contables',
+    badge: '02. FINANZAS',
     title: 'Servicios Contables',
+    description: 'Información financiera precisa, control de ingresos/egresos y cumplimiento fiscal riguroso.',
     items: [
       'Contabilidad general.',
       'Elaboración de estados financieros.',
@@ -52,8 +53,10 @@ const serviceCategories: ServiceCategory[] = [
     ],
   },
   {
-    id: 3,
+    id: 'juridicos',
+    badge: '03. LEGAL',
     title: 'Servicios Jurídicos',
+    description: 'Protección legal integral, prevención de riesgos y representación especializada.',
     items: [],
     subcategories: [
       {
@@ -84,8 +87,10 @@ const serviceCategories: ServiceCategory[] = [
     ],
   },
   {
-    id: 4,
+    id: 'nomina',
+    badge: '04. CUMPLIMIENTO',
     title: 'Servicios Relacionados con Nómina',
+    description: 'Alineación de procesos de nómina con autoridades laborales e instituciones gubernamentales.',
     items: [
       'Cumplimiento en materia laboral.',
       'Revisión de obligaciones patronales.',
@@ -96,111 +101,168 @@ const serviceCategories: ServiceCategory[] = [
 ];
 ---
 
-<section id="servicios" class="services">
+<section id="servicios" class="services-section">
     <div class="section-container">
         <div class="services-header">
-            <span class="section-tag">SERVICIOS</span>
+            <span class="section-tag">SERVICIOS ESPECIALIZADOS</span>
             <h2 class="section-title">Soluciones integrales para tu empresa.</h2>
+            <p class="services-subtitle-text">
+                Ofrecemos un catálogo completo de servicios diseñados para resolver procesos críticos en materia administrativa, contable y jurídica.
+            </p>
         </div>
+
         <div class="services-grid">
             {serviceCategories.map((category) => (
-                <div class="service-category">
-                    <h3 class="section-subtitle service-category-title">{category.title}</h3>
+                <article class="service-card" data-service-id={category.id}>
+                    <div class="card-header">
+                        <span class="category-badge">{category.badge}</span>
+                        <h3 class="category-title">{category.title}</h3>
+                        <p class="category-description">{category.description}</p>
+                    </div>
 
-                    {category.items.length > 0 && (
-                        <ul class="service-list">
-                            {category.items.map((item) => (
-                                <li class="service-item">{item}</li>
-                            ))}
-                        </ul>
-                    )}
-
-                    {category.subcategories && category.subcategories.map((sub) => (
-                        <div class="service-subcategory">
-                            <h4 class="service-subcategory-title">{sub.title}</h4>
-                            <ul class="service-list">
-                                {sub.items.map((item) => (
-                                    <li class="service-item">{item}</li>
+                    <div class="card-body">
+                        {category.items.length > 0 && (
+                            <ul class="service-item-list">
+                                {category.items.map((item) => (
+                                    <li class="service-list-item">
+                                        <span class="bullet-dot" aria-hidden="true">•</span>
+                                        <span>{item}</span>
+                                    </li>
                                 ))}
                             </ul>
-                        </div>
-                    ))}
-                </div>
+                        )}
+
+                        {category.subcategories && category.subcategories.map((sub) => (
+                            <div class="subcategory-block">
+                                <h4 class="subcategory-title">{sub.title}</h4>
+                                <ul class="service-item-list">
+                                    {sub.items.map((item) => (
+                                        <li class="service-list-item">
+                                            <span class="bullet-dot" aria-hidden="true">•</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </article>
             ))}
         </div>
     </div>
 </section>
 
 <style>
+    .services-section {
+        background-color: var(--color-white);
+    }
+
     .services-header {
-        max-width: 37.5rem;
+        max-width: 42rem;
+        margin-bottom: var(--px-48);
+    }
+
+    .services-subtitle-text {
+        font-size: var(--text-lg);
+        line-height: 1.6;
+        margin-top: calc(-1 * var(--px-48));
+        margin-bottom: 0;
+        opacity: 0.8;
     }
 
     .services-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--px-48);
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--px-32);
     }
 
-    .service-category {
+    .service-card {
         padding: var(--px-32);
         border-radius: var(--radius-lg);
-        background-color: rgba(0, 0, 0, 0.03);
+        background-color: rgba(0, 0, 0, 0.025);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform var(--transition-short), box-shadow var(--transition-short);
     }
 
-    .service-category-title {
+    .card-header {
         margin-bottom: var(--px-24);
-        font-size: 1.313rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        padding-bottom: var(--px-16);
     }
 
-    .service-list {
+    .category-badge {
+        font-size: var(--text-xs);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        opacity: 0.5;
+        display: block;
+        margin-bottom: var(--px-8);
+    }
+
+    .category-title {
+        font-size: var(--text-2xl);
+        font-weight: 600;
+        margin-bottom: var(--px-8);
+        color: var(--color-text-primary);
+    }
+
+    .category-description {
+        font-size: var(--text-sm);
+        line-height: 1.5;
+        opacity: 0.75;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px-16);
+    }
+
+    .service-item-list {
         display: flex;
         flex-direction: column;
         gap: var(--px-10);
         list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
-    .service-item {
-        position: relative;
-        padding-left: var(--px-20);
-        line-height: 1.5;
+    .service-list-item {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--px-8);
         font-size: var(--text-sm);
+        line-height: 1.5;
     }
 
-    .service-item::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0.6em;
-        width: var(--px-6);
-        height: var(--px-6);
-        border-radius: 50%;
-        background-color: var(--color-text-secondary);
+    .bullet-dot {
+        font-weight: bold;
+        opacity: 0.5;
     }
 
-    .service-subcategory {
-        margin-top: var(--px-24);
+    .subcategory-block {
+        margin-top: var(--px-8);
+        padding-top: var(--px-12);
+        border-top: 1px dashed rgba(0, 0, 0, 0.08);
     }
 
-    .service-subcategory-title {
-        font-size: var(--text-lg);
-        font-weight: 500;
-        margin-bottom: var(--px-14);
+    .subcategory-title {
+        font-size: var(--text-base);
+        font-weight: 600;
+        margin-bottom: var(--px-10);
+        color: var(--color-text-primary);
     }
 
-    @media screen and (max-width: 64rem) {
-        .services-grid {
-            gap: var(--px-32);
-        }
-    }
-
-    @media screen and (max-width: 48rem) {
+    @media screen and (max-width: 60rem) {
         .services-grid {
             grid-template-columns: 1fr;
             gap: var(--px-24);
         }
 
-        .service-category {
+        .service-card {
             padding: var(--px-24);
         }
     }

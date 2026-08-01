@@ -1,72 +1,63 @@
 ---
-import { Image } from 'astro:assets';
-import twoWomenSittingImage from '/src/assets/images/two-women-sitting.png';
+import { Image } from "astro:assets";
+import ourStoryImage from "/src/assets/images/our-story.webp";
 
 /*
-  TODO (siguiente iteración):
-  - Reemplazar imagen placeholder por imagen corporativa GROW
-  - Considerar separar en secciones independientes (Historia, Misión, Visión, Diferenciadores)
-  - Agregar iconografía para diferenciadores
-  - Mejorar diseño visual de los bloques
+  [TEMPORAL / PLACEHOLDER]
+  - La imagen actual es un asset temporal proveniente de la plantilla original.
+  - Se reemplazará en la Iteración 3 por una fotografía corporativa oficial de GROW.
 */
 
-// Cada bloque está conceptualmente separado para facilitar su futura independencia
-const aboutBlocks = {
+const aboutContent = {
   historia: {
-    tag: 'NUESTRA HISTORIA',
-    title: 'Nuestra historia.',
-    text: 'Servicios Especializados GROW nace con el objetivo de brindar soluciones integrales en materia administrativa, contable y jurídica para empresas que buscan optimizar sus procesos internos. A través de una atención personalizada y un equipo comprometido con la excelencia, hemos construido relaciones de confianza con nuestros clientes, convirtiéndonos en un aliado estratégico para el crecimiento de sus organizaciones.',
+    tag: "NUESTRA HISTORIA",
+    title: "Nuestra historia",
+    text: "Servicios Especializados GROW nace con el objetivo de brindar soluciones integrales en materia administrativa, contable y jurídica para empresas que buscan optimizar sus procesos internos. A través de una atención personalizada y un equipo comprometido con la excelencia, hemos construido relaciones de confianza con nuestros clientes, convirtiéndonos en un aliado estratégico para el crecimiento de sus organizaciones.",
   },
   mision: {
-    title: 'Misión',
-    text: 'Brindar soluciones administrativas, contables y jurídicas de alta calidad que permitan a nuestros clientes operar con eficiencia, seguridad y cumplimiento normativo, contribuyendo al desarrollo sostenible de sus empresas.',
+    title: "Misión",
+    text: "Brindar soluciones administrativas, contables y jurídicas de alta calidad que permitan a nuestros clientes operar con eficiencia, seguridad y cumplimiento normativo, contribuyendo al desarrollo sostenible de sus empresas.",
   },
   vision: {
-    title: 'Visión',
-    text: 'Ser una empresa referente a nivel nacional en servicios especializados, reconocida por la calidad de nuestros procesos, la confianza de nuestros clientes y nuestro compromiso con la mejora continua.',
-  },
-  diferenciadores: {
-    title: '¿Por qué elegir GROW?',
-    text: 'En GROW entendemos que cada empresa enfrenta desafíos distintos. Por ello diseñamos soluciones adaptadas a las necesidades de cada cliente, ofreciendo un servicio cercano, confiable y orientado a resultados. Nuestra prioridad es brindar tranquilidad a nuestros clientes mediante procesos eficientes, cumplimiento normativo y atención personalizada.',
+    title: "Visión",
+    text: "Ser una empresa referente a nivel nacional en servicios especializados, reconocida por la calidad de nuestros procesos, la confianza de nuestros clientes y nuestro compromiso con la mejora continua.",
   },
 };
 ---
 
 <section id="nosotros" class="about">
   <div class="section-container">
-    <span class="section-tag">{aboutBlocks.historia.tag}</span>
-    <h2 class="section-title">{aboutBlocks.historia.title}</h2>
+    <span class="section-tag">{aboutContent.historia.tag}</span>
+    <h2 class="section-title">{aboutContent.historia.title}</h2>
     <div class="about-container">
       <div class="about-image-wrapper">
-        <!-- Placeholder: imagen temporal del template original. Reemplazar con imagen corporativa GROW. -->
+        <!-- Placeholder: imagen temporal del template original -->
         <Image
-          src={twoWomenSittingImage}
-          alt="Equipo de profesionales en un entorno corporativo"
+          src={ourStoryImage}
+          alt="Servicios Especializados GROW - Equipo corporativo"
           class="media"
         />
       </div>
       <div class="about-content">
         <!-- Bloque: Historia -->
         <div class="about-block" data-block="historia">
-          <p class="about-text">{aboutBlocks.historia.text}</p>
+          <p class="about-text">{aboutContent.historia.text}</p>
         </div>
 
         <!-- Bloque: Misión -->
         <div class="about-block" data-block="mision">
-          <h3 class="section-subtitle about-subtitle">{aboutBlocks.mision.title}</h3>
-          <p class="about-text">{aboutBlocks.mision.text}</p>
+          <h3 class="section-subtitle about-subtitle">
+            {aboutContent.mision.title}
+          </h3>
+          <p class="about-text">{aboutContent.mision.text}</p>
         </div>
 
         <!-- Bloque: Visión -->
         <div class="about-block" data-block="vision">
-          <h3 class="section-subtitle about-subtitle">{aboutBlocks.vision.title}</h3>
-          <p class="about-text">{aboutBlocks.vision.text}</p>
-        </div>
-
-        <!-- Bloque: Diferenciadores -->
-        <div class="about-block" data-block="diferenciadores">
-          <h3 class="section-subtitle about-subtitle">{aboutBlocks.diferenciadores.title}</h3>
-          <p class="about-text">{aboutBlocks.diferenciadores.text}</p>
+          <h3 class="section-subtitle about-subtitle">
+            {aboutContent.vision.title}
+          </h3>
+          <p class="about-text">{aboutContent.vision.text}</p>
         </div>
       </div>
     </div>
@@ -89,6 +80,7 @@ const aboutBlocks = {
     aspect-ratio: 4/3;
     position: sticky;
     top: var(--px-96);
+    border-radius: var(--radius-md);
   }
 
   .about-content {
@@ -96,7 +88,7 @@ const aboutBlocks = {
   }
 
   .about-block {
-    margin-bottom: var(--px-48);
+    margin-bottom: var(--px-40);
   }
 
   .about-block:last-child {
