@@ -218,9 +218,21 @@ import benefitImage1 from "/src/assets/images/benefit-1.webp";
         gap: var(--px-16);
         padding-bottom: var(--px-16);
         padding-top: var(--px-8);
+
+        /* Make slider full width on mobile by negating section padding */
+        margin-left: calc(var(--px-20) * -0.5);
+        margin-right: calc(var(--px-20) * -1);
+
         scrollbar-width: thin;
         scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
         -webkit-overflow-scrolling: touch;
+    }
+
+    @media (min-width: 42.188rem) and (max-width: 47.999rem) {
+        .bento-grid {
+            margin-left: calc(var(--px-28) * -1);
+            margin-right: calc(var(--px-28) * -1);
+        }
     }
 
     .bento-grid::-webkit-scrollbar {
@@ -253,6 +265,24 @@ import benefitImage1 from "/src/assets/images/benefit-1.webp";
             border-color 0.3s ease;
     }
 
+    /* Add margins to first and last child on mobile to simulate padding properly inside flex container */
+    .glass-card:first-child {
+        margin-left: var(--px-20);
+    }
+
+    .glass-card:last-child {
+        margin-right: var(--px-20);
+    }
+
+    @media (min-width: 42.188rem) and (max-width: 47.999rem) {
+        .glass-card:first-child {
+            margin-left: var(--px-28);
+        }
+        .glass-card:last-child {
+            margin-right: var(--px-28);
+        }
+    }
+
     @media (min-width: 48rem) {
         .bento-grid {
             display: grid;
@@ -260,6 +290,10 @@ import benefitImage1 from "/src/assets/images/benefit-1.webp";
             scroll-snap-type: none;
             padding-bottom: 0;
             padding-top: 0;
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 0;
+            padding-right: 0;
             grid-template-columns: repeat(3, 1fr);
             gap: var(--px-24);
             grid-auto-rows: minmax(10rem, auto);
@@ -269,6 +303,12 @@ import benefitImage1 from "/src/assets/images/benefit-1.webp";
             flex: initial;
             min-width: auto;
             scroll-snap-align: none;
+        }
+
+        .glass-card:first-child,
+        .glass-card:last-child {
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 
