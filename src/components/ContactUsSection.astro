@@ -307,22 +307,26 @@ import { SITE } from "@consts";
   }
 
   .form-input {
+    background-color: var(--color-white, #ffffff);
     color: var(--color-text-primary);
     padding: var(--px-16) var(--px-20);
-    box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, 0.183);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.16);
     transition: all var(--transition-short);
     font-size: var(--text-sm);
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    border-radius: var(--radius-sm, 4px);
+    border-radius: var(--radius-lg, 16px);
   }
 
   .form-input:focus {
+    background-color: var(--color-white, #ffffff);
     color: var(--color-primary);
-    border-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-grow-blue, #23b5ec);
+    box-shadow:
+      0 0 0 4px rgba(35, 181, 236, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.06);
     outline: none;
   }
 
