@@ -361,6 +361,15 @@ const heroMetrics = [
         height: var(--px-36);
         display: flex;
         align-items: center;
+        color: var(--color-text-primary);
+        opacity: 0.85;
+        transition: color var(--transition-short), opacity var(--transition-short);
+    }
+
+    .btns--secondary:hover,
+    .btns--secondary:focus-visible {
+        color: var(--color-grow-blue, #23b5ec);
+        opacity: 1;
     }
 
     .btn--secondary {
@@ -368,6 +377,7 @@ const heroMetrics = [
         align-items: center;
         justify-content: center;
         gap: var(--px-8);
+        border-bottom: var(--px-2) solid currentColor;
     }
 
     /* Image Card */
