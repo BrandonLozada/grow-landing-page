@@ -59,41 +59,71 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--px-16) var(--px-32);
+  padding: clamp(1rem, 2.2vw, 1.15rem) clamp(2rem, 4vw, 2.75rem);
   cursor: pointer;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .btn--primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border-radius: var(--px-4);
-  font-size: var(--text-xs);
+  background: var(--gradient-grow-primary, linear-gradient(135deg, #23b5ec 0%, #1192cd 100%));
+  color: #ffffff;
+  border-radius: 9999px;
+  font-size: var(--text-xs, 0.875rem);
   letter-spacing: 0.085em;
   font-weight: 700;
+  text-transform: uppercase;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: transform var(--transition-short);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow:
+    0 8px 20px -4px rgba(35, 181, 236, 0.38),
+    0 2px 6px -1px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s var(--ease-default, ease),
+    background 0.3s var(--ease-default, ease),
+    box-shadow 0.3s var(--ease-default, ease),
+    border-color 0.3s var(--ease-default, ease);
 }
 
-.btn--primary:before {
+/* Light shimmer effect on hover */
+.btn--primary::after {
   content: '';
-  display: block;
-  width: 100%;
-  height: 200%;
   position: absolute;
   top: 0;
-  left: 0;
-  transform: scale(0.7) translateY(55%);
-  background: var(--color-secondary);
-  border-radius: 100%;
-  transition: all var(--transition-medium);
-  z-index: -1;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.24) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.65s var(--ease-default, ease);
+  pointer-events: none;
 }
 
-.btn--primary:active:before {
-  transform: scaleX(2) scaleY(1) translateY(-15%);
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:hover {
+    transform: translateY(-3px);
+    background: var(--gradient-grow-hover, linear-gradient(135deg, #2ED0FF 0%, #169DD9 65%, #ec6eba 100%));
+    box-shadow:
+      0 14px 28px -6px rgba(35, 181, 236, 0.48),
+      0 6px 14px -3px rgba(236, 110, 186, 0.32);
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .btn--primary:hover::after {
+    left: 150%;
+  }
+}
+
+.btn--primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 10px -2px rgba(35, 181, 236, 0.3);
 }
 
 .btns--secondary {

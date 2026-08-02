@@ -82,7 +82,15 @@
     --color-footer-dark: #292e49;
     --color-footer-light: #536976;
 
+    /* GROW Brand Logo Colors */
+    --color-grow-blue: #23b5ec;
+    --color-grow-blue-dark: #1292cd;
+    --color-grow-pink: #ec6eba;
+    --color-grow-pink-dark: #d24e9e;
+
     /* Gradients */
+    --gradient-grow-primary: linear-gradient(135deg, #23b5ec 0%, #1192cd 100%);
+    --gradient-grow-hover: linear-gradient(135deg, #2ED0FF 0%, #169DD9 65%, #ec6eba 100%);
     --gradient-primary: linear-gradient(to right, #010101, #333);
     --gradient-secondary: linear-gradient(to right, #333, #666);
     --gradient-accent: linear-gradient(to right, #ff6b35, #ff8e53);
