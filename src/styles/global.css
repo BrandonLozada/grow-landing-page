@@ -79,14 +79,6 @@ section {
   animation: floatOrb3 22s ease-in-out infinite alternate;
 }
 
-.shape-waves {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.85;
-}
 
 @keyframes floatOrb1 {
   0% { transform: translate(0, 0) scale(1); }
