@@ -8,24 +8,24 @@
 */
 
 const testimonials = [
-  {
-    id: 1,
-    content:
-      'Desde que trabajamos con GROW, la administración de nuestra nómina es mucho más eficiente. Su equipo siempre está disponible para resolver cualquier duda.',
-    attribution: 'Cliente del sector industrial',
-  },
-  {
-    id: 2,
-    content:
-      'Encontramos un aliado estratégico que nos ayudó a optimizar nuestros procesos administrativos y mantener el cumplimiento legal.',
-    attribution: 'Empresa de servicios',
-  },
-  {
-    id: 3,
-    content:
-      'La atención personalizada y el profesionalismo de GROW nos brindan la confianza que buscábamos para delegar procesos críticos.',
-    attribution: 'Cliente del sector comercial',
-  },
+    {
+        id: 1,
+        content:
+            "Desde que trabajamos con GROW, la administración de nuestra nómina es mucho más eficiente. Su equipo siempre está disponible para resolver cualquier duda.",
+        attribution: "Cliente del sector industrial",
+    },
+    {
+        id: 2,
+        content:
+            "Encontramos un aliado estratégico que nos ayudó a optimizar nuestros procesos administrativos y mantener el cumplimiento legal.",
+        attribution: "Empresa de servicios",
+    },
+    {
+        id: 3,
+        content:
+            "La atención personalizada y el profesionalismo de GROW nos brindan la confianza que buscábamos para delegar procesos críticos.",
+        attribution: "Cliente del sector comercial",
+    },
 ];
 ---
 
@@ -35,18 +35,20 @@ const testimonials = [
         <h2 class="section-title">Lo que dicen nuestros clientes.</h2>
 
         <div class="testimonials-grid">
-            {testimonials.map((testimonial) => (
-                <article class="testimonial-card">
-                    <blockquote class="testimonial-content">
-                        <p>"{testimonial.content}"</p>
-                    </blockquote>
-                    <footer class="testimonial-footer">
-                        <cite class="testimonial-attribution">
-                            — {testimonial.attribution}
-                        </cite>
-                    </footer>
-                </article>
-            ))}
+            {
+                testimonials.map((testimonial) => (
+                    <article class="testimonial-card">
+                        <blockquote class="testimonial-content">
+                            <p>"{testimonial.content}"</p>
+                        </blockquote>
+                        <footer class="testimonial-footer">
+                            <cite class="testimonial-attribution">
+                                — {testimonial.attribution}
+                            </cite>
+                        </footer>
+                    </article>
+                ))
+            }
         </div>
     </div>
 </section>
@@ -64,8 +66,11 @@ const testimonials = [
         justify-content: space-between;
         padding: var(--px-32);
         border-radius: var(--radius-lg);
-        background-color: rgba(0, 0, 0, 0.03);
+        background-color: rgba(255, 255, 255, 0.719);
+        color: #000000;
         height: 100%;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
 
     .testimonial-content {
