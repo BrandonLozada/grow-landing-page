@@ -792,15 +792,22 @@ const heroMetrics = [
 
         .hero-cta {
             flex-direction: column;
-            align-items: stretch;
-            gap: var(--px-12);
+            align-items: flex-start;
+            gap: var(--px-16);
         }
 
-        .btn,
-        .btns--secondary {
+        .btn {
             width: 100%;
             justify-content: center;
             text-align: center;
+        }
+
+        .btns--secondary {
+            width: auto !important;
+            align-self: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: var(--px-4);
         }
 
         .image-card {
