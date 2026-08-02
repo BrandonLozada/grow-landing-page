@@ -117,14 +117,7 @@ const heroMetrics = [
                     loading="eager"
                 />
                 <div class="image-overlay"></div>
-                <!-- <div class="image-content">
-                    <span class="image-badge">
-                        <span class="image-badge-dot"></span> Equipo Experto
-                    </span>
-                    <p class="image-text">
-                        Conviértenos en tu aliado estratégico.
-                    </p>
-                </div> -->
+
                 <!-- Floating Badge -->
                 <div class="floating-card">
                     <div class="card-content">
@@ -280,7 +273,19 @@ const heroMetrics = [
     /* Hero Card */
     .hero-card {
         background-color: var(--color-white, #ffffff);
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 1) 40%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
+        /* background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 1) 40%,
+            rgba(255, 255, 255, 0.1) 100%
+        ); */
+        /* border: 1px solid rgba(0, 0, 0, 0.08); */
         padding: clamp(1.75rem, 4vw, 2.75rem);
         display: flex;
         flex-direction: column;
@@ -363,7 +368,9 @@ const heroMetrics = [
         align-items: center;
         color: var(--color-text-primary);
         opacity: 0.85;
-        transition: color var(--transition-short), opacity var(--transition-short);
+        transition:
+            color var(--transition-short),
+            opacity var(--transition-short);
     }
 
     .btns--secondary:hover,
@@ -437,13 +444,19 @@ const heroMetrics = [
         max-width: calc(100% - 32px);
         margin: 0 auto;
 
-        background-color: rgba(20, 22, 28, 0.78);
+        /* background-color: rgba(20, 22, 28, 0.78); */
+        background: linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.1) 0%,
+            rgba(51, 98, 143, 0.555) 40%,
+            rgba(48, 90, 204, 0.5) 100%
+        );
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         color: #ffffff;
 
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: var(--radius-md, 12px);
+        /* border: 1px solid rgba(255, 255, 255, 0.18); */
+        border-radius: var(--radius-lg);
         padding: 16px 20px;
         box-shadow:
             0 20px 25px -5px rgba(0, 0, 0, 0.25),
@@ -507,8 +520,6 @@ const heroMetrics = [
         width: 44px;
         height: 44px;
         border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.16);
-        border: 1px solid rgba(255, 255, 255, 0.25);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -540,8 +551,14 @@ const heroMetrics = [
 
     /* Bento Slider Card */
     .bento-slider-card {
-        background-color: var(--color-white, #ffffff);
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: linear-gradient(
+            135deg,
+            rgba(236, 8, 103, 0.034) 0%,
+            rgba(122, 203, 228, 0.349) 40%,
+            rgba(69, 171, 240, 0.26) 100%
+        );
+        /* background-color: var(--color-background); */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         padding: clamp(1.25rem, 3vw, 1.75rem);
         display: flex;
         flex-direction: column;
@@ -634,8 +651,7 @@ const heroMetrics = [
         min-width: 13.5rem;
         scroll-snap-align: start;
         background-color: var(--color-white, #ffffff);
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        border-radius: var(--radius-md);
+        border-radius: var(--radius-lg);
         padding: var(--px-16);
         display: flex;
         flex-direction: column;
@@ -644,8 +660,8 @@ const heroMetrics = [
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
         transition:
             transform var(--transition-short),
-            box-shadow var(--transition-short),
-            border-color var(--transition-short);
+            box-shadow var(--transition-short);
+        /* border-color var(--transition-short); */
     }
 
     @media (min-width: 48rem) {
@@ -665,12 +681,17 @@ const heroMetrics = [
     .service-icon-wrapper {
         width: var(--px-40);
         height: var(--px-40);
-        background-color: rgba(0, 0, 0, 0.05);
-        border-radius: var(--radius-md);
+        background: linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.1) 0%,
+            rgba(67, 106, 143, 0.397) 40%,
+            rgba(204, 48, 183, 0.452) 100%
+        );
+        border-radius: 999999px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-text-primary);
+        color: white;
     }
 
     .service-title {
@@ -692,8 +713,12 @@ const heroMetrics = [
         align-items: center;
         gap: var(--px-8);
         padding: var(--px-6) var(--px-14);
-        background-color: rgba(0, 0, 0, 0.04);
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: linear-gradient(
+            135deg,
+            rgba(236, 8, 103, 0.034) 0%,
+            rgba(122, 203, 228, 0.349) 40%,
+            rgba(69, 171, 240, 0.26) 100%
+        );
         border-radius: 9999px;
         width: fit-content;
         margin-bottom: var(--px-16);
@@ -703,7 +728,11 @@ const heroMetrics = [
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background-color: var(--color-text-primary, #010101);
+        background: linear-gradient(
+            90deg,
+            rgba(151, 187, 228, 0.397) 40%,
+            rgba(48, 110, 204, 0.452) 100%
+        );
         display: inline-block;
         flex-shrink: 0;
         box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
@@ -733,11 +762,7 @@ const heroMetrics = [
 
     /* Bento Metrics Card */
     .bento-metrics-card {
-        /* background-color: var(--color-white, #ffffff); */
-        /* border: 1px solid rgba(0, 0, 0, 0.08); */
-        /* padding: var(--px-24); */
         display: flex;
-        /* align-items: center; */
         justify-content: center;
     }
 
@@ -768,17 +793,21 @@ const heroMetrics = [
         border-radius: var(--radius-md);
         align-items: center;
         justify-content: center;
-        /* background-color: rgba(0, 0, 0, 0.025); */
-        /* border: 1px solid rgba(0, 0, 0, 0.04); */
         background-color: var(--color-white, #ffffff);
-        border: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .metric-number {
         font-size: clamp(1.5rem, 2.8vw, 2.25rem);
         font-weight: 700;
         line-height: 1;
-        color: var(--color-text-primary);
+        background: linear-gradient(
+            75deg,
+            rgba(67, 106, 143, 0.5) 40%,
+            rgba(204, 48, 183, 0.5) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
         letter-spacing: -0.02em;
     }
 
@@ -864,10 +893,6 @@ const heroMetrics = [
         .metrics-grid {
             gap: var(--px-12);
         }
-
-        /* .metric-item {
-            padding: var(--px-12) var(--px-8);
-        } */
     }
 </style>
 
