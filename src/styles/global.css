@@ -10,10 +10,97 @@ html {
 
 body {
   font-size: var(--text-base);
+  background: linear-gradient(
+    135deg,
+    #f8fbff 0%,
+    #f3f8fe 25%,
+    #fcf5fa 60%,
+    #f4f8fe 85%,
+    #fbf6fc 100%
+  );
+  color: var(--color-text-primary);
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 section {
   padding: var(--px-96) var(--px-64);
+  background: transparent !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   Site-Wide Multi-Color Ambient Gradient & Floating SVG Shapes
+   ========================================================================== */
+.site-ambient-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-svg {
+  position: absolute;
+  pointer-events: none;
+}
+
+.shape-orb-1 {
+  top: -15%;
+  left: -10%;
+  width: 55vw;
+  height: 55vw;
+  max-width: 800px;
+  max-height: 800px;
+  animation: floatOrb1 20s ease-in-out infinite alternate;
+}
+
+.shape-orb-2 {
+  top: 35%;
+  right: -15%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  animation: floatOrb2 25s ease-in-out infinite alternate;
+}
+
+.shape-orb-3 {
+  bottom: -10%;
+  left: 20%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 700px;
+  max-height: 700px;
+  animation: floatOrb3 22s ease-in-out infinite alternate;
+}
+
+.shape-waves {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(5%, 8%) scale(1.08); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-7%, -5%) scale(1.06); }
+}
+
+@keyframes floatOrb3 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(6%, -6%) scale(1.05); }
 }
 
 p {

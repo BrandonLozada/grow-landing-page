@@ -108,6 +108,68 @@ const schemaData = {
         }
     </head>
     <body>
+        <!-- Site-wide Multi-color Ambient Background & Geometric SVG Shapes -->
+        <div class="site-ambient-canvas" aria-hidden="true">
+            <!-- Glowing GROW Cyan Ambient Orb 1 (Top Left / Center) -->
+            <svg class="ambient-svg shape-orb-1" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="400" cy="400" r="380" fill="url(#grow-orb-cyan)" />
+                <defs>
+                    <radialGradient id="grow-orb-cyan" cx="0.5" cy="0.5" r="0.5">
+                        <stop offset="0%" stop-color="#23b5ec" stop-opacity="0.18" />
+                        <stop offset="60%" stop-color="#23b5ec" stop-opacity="0.05" />
+                        <stop offset="100%" stop-color="#23b5ec" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+            </svg>
+
+            <!-- Glowing GROW Pink/Magenta Ambient Orb 2 (Center Right) -->
+            <svg class="ambient-svg shape-orb-2" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="450" cy="450" r="420" fill="url(#grow-orb-pink)" />
+                <defs>
+                    <radialGradient id="grow-orb-pink" cx="0.5" cy="0.5" r="0.5">
+                        <stop offset="0%" stop-color="#ec6eba" stop-opacity="0.14" />
+                        <stop offset="65%" stop-color="#ec6eba" stop-opacity="0.04" />
+                        <stop offset="100%" stop-color="#ec6eba" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+            </svg>
+
+            <!-- Glowing Violet/Blue Ambient Orb 3 (Bottom Left) -->
+            <svg class="ambient-svg shape-orb-3" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="350" cy="350" r="330" fill="url(#grow-orb-violet)" />
+                <defs>
+                    <radialGradient id="grow-orb-violet" cx="0.5" cy="0.5" r="0.5">
+                        <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.12" />
+                        <stop offset="70%" stop-color="#7c3aed" stop-opacity="0.03" />
+                        <stop offset="100%" stop-color="#7c3aed" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+            </svg>
+
+            <!-- Geometric Floating SVG Shape: Isometric Tech Contour Waves & Grid -->
+            <svg class="ambient-svg shape-waves" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.45">
+                    <path d="M-200 150 C 200 450, 700 -50, 1600 350" stroke="url(#line-grad-1)" stroke-width="1.5" stroke-dasharray="8 8" fill="none" />
+                    <path d="M-100 300 C 350 650, 900 100, 1700 500" stroke="url(#line-grad-2)" stroke-width="1.5" fill="none" />
+                    <path d="M-150 700 C 400 350, 850 850, 1650 250" stroke="url(#line-grad-1)" stroke-width="1.2" stroke-dasharray="12 6" fill="none" />
+                    <circle cx="15%" cy="25%" r="180" stroke="rgba(35, 181, 236, 0.15)" stroke-width="1" stroke-dasharray="4 6" fill="none" />
+                    <circle cx="85%" cy="65%" r="240" stroke="rgba(236, 110, 186, 0.12)" stroke-width="1" stroke-dasharray="6 8" fill="none" />
+                    <circle cx="50%" cy="85%" r="320" stroke="rgba(35, 181, 236, 0.1)" stroke-width="1" fill="none" />
+                </g>
+                <defs>
+                    <linearGradient id="line-grad-1" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#23b5ec" stop-opacity="0" />
+                        <stop offset="50%" stop-color="#23b5ec" stop-opacity="0.4" />
+                        <stop offset="100%" stop-color="#ec6eba" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="line-grad-2" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#ec6eba" stop-opacity="0" />
+                        <stop offset="50%" stop-color="#ec6eba" stop-opacity="0.35" />
+                        <stop offset="100%" stop-color="#23b5ec" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
         <a href="#main" class="skip-link">Ir al contenido</a>
 
         <Header />
