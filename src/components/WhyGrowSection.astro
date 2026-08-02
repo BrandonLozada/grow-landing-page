@@ -50,11 +50,30 @@ const differentiators = [
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
-                        fill="currentColor"
                         class="quote-icon"
                         aria-hidden="true"
                     >
+                        <defs>
+                            <linearGradient
+                                id="quoteGradient"
+                                x1="0%"
+                                y1="0%"
+                                x2="100%"
+                                y2="100%"
+                            >
+                                <stop offset="0%" stop-color="rgba(15,23,42,.1)"
+                                ></stop>
+                                <stop
+                                    offset="40%"
+                                    stop-color="rgba(67,106,143,.397)"></stop>
+                                <stop
+                                    offset="100%"
+                                    stop-color="rgba(204,48,183,.452)"></stop>
+                            </linearGradient>
+                        </defs>
+
                         <path
+                            fill="url(#quoteGradient)"
                             d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
                         ></path>
                     </svg>
@@ -115,8 +134,8 @@ const differentiators = [
     .intro-quote-card {
         padding: var(--px-24);
         border-radius: var(--radius-lg);
-        background-color: rgba(0, 0, 0, 0.025);
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        background-color: rgba(255, 255, 255, 0.719);
+        color: #000000;
         display: flex;
         gap: var(--px-16);
         align-items: flex-start;
@@ -125,7 +144,6 @@ const differentiators = [
     .quote-icon {
         width: var(--px-32);
         height: var(--px-32);
-        color: var(--color-primary);
         flex-shrink: 0;
         opacity: 0.6;
     }
@@ -148,8 +166,8 @@ const differentiators = [
     .diff-card {
         padding: var(--px-28);
         border-radius: var(--radius-lg);
-        background-color: rgba(0, 0, 0, 0.025);
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        background-color: rgba(255, 255, 255, 0.719);
+        color: #000000;
         display: flex;
         flex-direction: column;
         gap: var(--px-16);
@@ -161,12 +179,17 @@ const differentiators = [
     .diff-icon-badge {
         width: var(--px-40);
         height: var(--px-40);
-        background-color: rgba(0, 0, 0, 0.05);
+        background: linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.1) 0%,
+            rgba(67, 106, 143, 0.397) 40%,
+            rgba(204, 48, 183, 0.452) 100%
+        );
         border-radius: var(--radius-md);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--color-text-primary);
+        color: white;
     }
 
     .diff-icon-badge :global(.diff-icon) {
