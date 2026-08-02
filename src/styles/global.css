@@ -142,11 +142,16 @@ p {
     color 0.2s var(--ease-default);
 }
 
+.btn--secondary-unhovered {
+  display: block;
+}
+
 .btn--secondary-hovered {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
+  display: block;
   transform: translateY(150%) translateZ(0.001px) skewY(10deg);
 }
 
@@ -158,22 +163,6 @@ p {
 .btns--secondary:active .btn--secondary-hovered {
   opacity: 1;
   transform: translateY(0) translateZ(0.001px) skewY(0);
-}
-
-.indicator {
-  width: var(--px-8);
-  height: var(--px-8);
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  padding: 0;
-  transition: all var(--transition-long);
-}
-
-.indicator.active {
-  background-color: black;
-  transform: scale(1.5);
 }
 
 .media {
