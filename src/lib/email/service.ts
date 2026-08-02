@@ -32,8 +32,11 @@ export async function sendEmail(options: SendEmailOptions) {
 
   const defaultFrom =
     import.meta.env.FROM_EMAIL ||
-    process.env.FROM_EMAIL ||
-    'Landing GROW <noreply@growespecializados.com.mx>';
+    process.env.FROM_EMAIL;
+
+  if (!defaultFrom) {
+    throw new Error('La variable de entorno FROM_EMAIL no está configurada.');
+  }
 
   const from = options.from || defaultFrom;
 
@@ -60,8 +63,11 @@ export async function sendEmail(options: SendEmailOptions) {
 export async function sendContactNotification(formData: ContactFormData) {
   const destinationEmail =
     import.meta.env.CONTACT_EMAIL ||
-    process.env.CONTACT_EMAIL ||
-    'administracion@growespecializados.com.mx';
+    process.env.CONTACT_EMAIL;
+
+  if (!destinationEmail) {
+    throw new Error('La variable de entorno CONTACT_EMAIL no está configurada.');
+  }
 
   const html = generateContactEmailHtml(formData);
   const text = generateContactEmailText(formData);

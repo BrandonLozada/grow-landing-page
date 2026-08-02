@@ -1,5 +1,7 @@
 import type { Site, Socials } from './types';
 
+export const CONTACT_EMAIL = import.meta.env.CONTACT_EMAIL ?? "";
+
 export const SITE: Site = {
   COMPANY_NAME: 'Servicios Especializados GROW',
   LEGAL_NAME: 'Servicios Especializados GROW',
@@ -11,7 +13,7 @@ export const SITE: Site = {
     : 'https://growespecializados.com.mx',
   LOCALE: 'es',
   TELEPHONE: '',
-  EMAIL: 'administracion@growespecializados.com.mx',
+  EMAIL: CONTACT_EMAIL,
   ADDRESS:
     'Calle Torreón No. 1719, Interior 11, Colonia Mitras Centro, C.P. 64460, Monterrey, Nuevo León, México',
 
