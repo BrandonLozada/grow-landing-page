@@ -1,127 +1,104 @@
 ---
-title: 'Privacy Policy'
-lastUpdated: '07-04-2025'
+title: 'Política de Privacidad'
+lastUpdated: '02-08-2025'
 ---
 
-> **Note:** This is just an example privacy policy for a website built with
-> Astro and hosted on Cloudflare.
+## Tu Privacidad Es Importante Para Nosotros
 
-## Your Privacy Is Important To Us
+**Servicios Especializados GROW** se ubica en:
 
-**One Space Away Interiors, LLC** is located at:
+Servicios Especializados GROW
+Calle Torreón No. 1719, Interior 11, Colonia Mitras Centro, C.P. 64460
+Monterrey, Nuevo León, México
 
-One Space Away Interiors, LLC  
-456 Camden Drive, Suite 300  
-Beverly Hills, CA 90210  
-United States
+Es política de Servicios Especializados GROW respetar tu privacidad respecto a cualquier información que podamos recopilar mientras operamos nuestro sitio web. Esta Política de Privacidad se aplica a [growespecializados.com.mx](https://growespecializados.com.mx/) (en adelante, "nosotros", "nos" o "growespecializados.com.mx"). Respetamos tu privacidad y nos comprometemos a proteger cualquier información personal identificable que nos proporciones a través del sitio web. Esta Política de Privacidad explica qué información puede ser recopilada en nuestro sitio web, cómo utilizamos esta información y bajo qué circunstancias podemos divulgarla a terceros. Esta Política de Privacidad aplica únicamente a la información recopilada a través del sitio web y no aplica a nuestra recopilación de información de otras fuentes.
 
-It is One Space Away Interiors, LLC's policy to respect your privacy regarding
-any information we may collect while operating our website. This Privacy Policy
-applies to
-[one-space-away-html.pages.dev](https://one-space-away-html.pages.dev/)
-(hereinafter, "us", "we", or "one-space-away-html.pages.dev"). We respect your
-privacy and are committed to protecting any personally identifiable information
-you may provide us through the Website. This Privacy Policy explains what
-information may be collected on our Website, how we use this information, and
-under what circumstances we may disclose the information to third parties. This
-Privacy Policy applies only to information collected through the Website and
-does not apply to our collection of information from other sources.
+Esta Política de Privacidad, junto con los Términos y Condiciones publicados en nuestro sitio web, establecen las reglas y políticas generales que rigen el uso de nuestro sitio web.
 
-This Privacy Policy, together with the Terms of Service posted on our Website,
-set forth the general rules and policies governing your use of our Website.
-Depending on your activities when visiting our Website, you may be required to
-agree to additional terms of service.
+## Contenido
 
-## Contents
+- [1. Información Recopilada](#1-información-recopilada)
+- [2. Uso de la Información](#2-uso-de-la-información)
+- [3. Seguridad](#3-seguridad)
+- [4. Enlaces a Sitios Externos](#4-enlaces-a-sitios-externos)
+- [5. Protección de Información Personal](#5-protección-de-información-personal)
+- [6. Cookies](#6-cookies)
+- [7. Derechos ARCO](#7-derechos-arco)
+- [8. Cambios en la Política de Privacidad](#8-cambios-en-la-política-de-privacidad)
+- [9. Información de Contacto](#9-información-de-contacto)
 
-- [1. Security](#1-security)
-- [2. Links To External Sites](#2-links-to-external-sites)
-- [3. Protection of Certain Personally-Identifying Information](#3-protection-of-certain-personally-identifying-information)
-- [4. Cookies](#4-cookies)
-- [5. Privacy Policy Changes](#5-privacy-policy-changes)
-- [6. Contact Information & Credit](#6-contact-information--credit)
+## 1. Información Recopilada
 
-## 1. Security
+Toda la información personal proporcionada a través de nuestro sitio web, incluyendo el formulario de contacto, será tratada con estricta confidencialidad y utilizada únicamente para fines relacionados con la prestación de nuestros servicios, atención a solicitudes, contacto comercial y cumplimiento de obligaciones legales.
 
-The security of your personal information is important to us. However, no method
-of transmission over the Internet or electronic storage is 100% secure. While we
-strive to use commercially acceptable means to protect your personal
-information, we cannot guarantee its absolute security.
+La información que podemos recopilar incluye, entre otros:
 
-## 2. Links To External Sites
+- Nombre completo
+- Dirección de correo electrónico
+- Número telefónico
+- Nombre de la empresa
+- Mensaje o consulta
 
-Our service may contain links to external sites that are not operated by us. If
-you click on a third-party link, you will be directed to that third party's
-site. We strongly advise you to review the Privacy Policy and Terms of Service
-of every site you visit.
+## 2. Uso de la Información
 
-We have no control over, and assume no responsibility for, the content, privacy
-policies, or practices of any third-party sites, products, or services.
+La información recopilada será utilizada exclusivamente para:
 
-## 3. Protection of Certain Personally-Identifying Information
+- Responder a solicitudes de contacto y consultas comerciales.
+- Brindar información sobre nuestros servicios especializados.
+- Dar seguimiento a prospectos y clientes.
+- Cumplir con obligaciones legales aplicables.
 
-One Space Away Interiors, LLC discloses potentially personally-identifying
-information only to those employees, contractors, and affiliated organizations
-that:
+No compartiremos información personal con terceros sin el consentimiento del titular, salvo en los casos previstos por la legislación aplicable.
 
-- **(i)** Need to know that information in order to process it on One Space Away
-  Interiors, LLC's behalf or to provide services available on our website.
-- **(ii)** Have agreed not to disclose it to others.
+## 3. Seguridad
 
-Some of those employees, contractors, and affiliated organizations may be
-located outside of your home country; by using our website, you consent to the
-transfer of such information to them. One Space Away Interiors, LLC will not
-rent or sell potentially personally-identifying information to anyone. Other
-than to its employees, contractors, and affiliated organizations, as described
-above, One Space Away Interiors, LLC discloses potentially
-personally-identifying information only in response to a subpoena, court order,
-or other governmental request, or when we believe in good faith that disclosure
-is reasonably necessary to protect the property or rights of One Space Away
-Interiors, LLC, third parties, or the public at large.
+La seguridad de tu información personal es importante para nosotros. Implementamos medidas de seguridad administrativas, técnicas y organizativas para proteger los datos personales contra pérdida, alteración, acceso no autorizado o uso indebido. Sin embargo, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro, por lo que no podemos garantizar su seguridad absoluta.
 
-If you are a registered user of
-[one-space-away-html.pages.dev](https://one-space-away-html.pages.dev/) and have
-supplied your email address, we may occasionally send you an email to tell you
-about new features, solicit your feedback, or keep you updated on what's going
-on with One Space Away Interiors, LLC and our products. We primarily use our
-blog to communicate this type of information, so we expect these emails to be
-minimal. If you send us a request (for example, via a support email or through
-one of our feedback mechanisms), we reserve the right to publish it to help
-clarify or respond to your request or to support other users.
+## 4. Enlaces a Sitios Externos
 
-One Space Away Interiors, LLC takes all measures reasonably necessary to protect
-against the unauthorized access, use, alteration, or destruction of potentially
-personally-identifying information.
+Nuestro sitio web puede contener enlaces a sitios externos que no son operados por nosotros. Si haces clic en un enlace de terceros, serás dirigido al sitio de dicho tercero. Te recomendamos encarecidamente revisar la Política de Privacidad y los Términos y Condiciones de cada sitio que visites.
 
-## 4. Cookies
+No tenemos control ni asumimos responsabilidad alguna sobre el contenido, las políticas de privacidad o las prácticas de sitios, productos o servicios de terceros.
 
-To enhance and perfect your online experience, One Space Away Interiors, LLC
-uses "Cookies" and similar technologies to display personalized content, provide
-appropriate advertising, and store your preferences on your computer.
+## 5. Protección de Información Personal
 
-A cookie is a string of information that a website stores on a visitor's
-computer, and that the visitor's browser provides to the website each time the
-visitor returns. We use cookies to help identify and track visitors, their usage
-of [one-space-away-html.pages.dev](https://one-space-away-html.pages.dev/), and
-their website access preferences. Visitors who do not wish to have cookies
-placed on their computers should set their browsers to refuse cookies. However,
-please note that certain features of the website may not function properly
-without the aid of cookies.
+Servicios Especializados GROW divulga información personal potencialmente identificable únicamente a aquellos empleados, contratistas y organizaciones afiliadas que:
 
-By continuing to navigate our website without changing your cookie settings, you
-acknowledge and agree to our use of cookies.
+- **(i)** Necesitan conocer dicha información para procesarla en nombre de Servicios Especializados GROW o para proporcionar los servicios disponibles en nuestro sitio web.
+- **(ii)** Han acordado no divulgarla a terceros.
 
-## 5. Privacy Policy Changes
+Servicios Especializados GROW no alquilará ni venderá información personal potencialmente identificable a ningún tercero. Fuera de sus empleados, contratistas y organizaciones afiliadas, Servicios Especializados GROW divulga información personal potencialmente identificable únicamente en respuesta a un requerimiento judicial, orden de autoridad competente, o cuando creemos de buena fe que la divulgación es razonablemente necesaria para proteger la propiedad o los derechos de Servicios Especializados GROW, de terceros o del público en general.
 
-Although most changes are likely to be minor, One Space Away Interiors, LLC may
-change its Privacy Policy from time to time at our sole discretion. We encourage
-you to check this page frequently for any changes. Your continued use of the
-site after any change in this Privacy Policy will constitute your acceptance of
-such change.
+Si nos envías una solicitud (por ejemplo, a través de un correo electrónico de soporte o mediante nuestro formulario de contacto), nos reservamos el derecho de utilizarla para ayudar a aclarar o responder tu solicitud, o para asistir a otros usuarios.
 
-## 6. Contact Information & Credit
+Servicios Especializados GROW toma todas las medidas razonablemente necesarias para proteger contra el acceso, uso, alteración o destrucción no autorizados de información personal potencialmente identificable.
 
-This privacy policy was created using the
-[privacyterms.io privacy policy generator](https://privacyterms.io/). If you
-have any questions about our Privacy Policy, please contact us via email or
-phone.
+## 6. Cookies
+
+Para mejorar y perfeccionar tu experiencia en línea, Servicios Especializados GROW utiliza "Cookies" y tecnologías similares para mostrar contenido personalizado y almacenar tus preferencias en tu dispositivo.
+
+Una cookie es una cadena de información que un sitio web almacena en la computadora de un visitante, y que el navegador del visitante proporciona al sitio web cada vez que regresa. Utilizamos cookies para ayudar a identificar y rastrear visitantes, su uso de [growespecializados.com.mx](https://growespecializados.com.mx/) y sus preferencias de acceso al sitio web. Los visitantes que no deseen que se coloquen cookies en sus computadoras deben configurar sus navegadores para rechazar cookies. Sin embargo, ten en cuenta que ciertas funcionalidades del sitio web pueden no funcionar correctamente sin el uso de cookies.
+
+Al continuar navegando en nuestro sitio web sin cambiar la configuración de cookies, reconoces y aceptas nuestro uso de cookies.
+
+## 7. Derechos ARCO
+
+Los titulares de los datos podrán ejercer en cualquier momento sus derechos de Acceso, Rectificación, Cancelación u Oposición (ARCO), así como solicitar información sobre el tratamiento de sus datos personales, comunicándose a través del correo electrónico que la empresa designe para tal efecto.
+
+Para ejercer estos derechos, el titular deberá enviar una solicitud al correo electrónico de contacto disponible en nuestro sitio web, indicando:
+
+- Nombre completo del titular.
+- Descripción clara del derecho que desea ejercer.
+- Documentos que acrediten su identidad.
+
+Servicios Especializados GROW responderá en un plazo no mayor a 20 días hábiles contados a partir de la recepción de la solicitud.
+
+## 8. Cambios en la Política de Privacidad
+
+Aunque la mayoría de los cambios serán menores, Servicios Especializados GROW puede modificar su Política de Privacidad de vez en cuando a su entera discreción. Cualquier actualización será publicada oportunamente en este mismo sitio para mantener informados a nuestros usuarios. El uso continuado del sitio después de cualquier cambio en esta Política de Privacidad constituirá tu aceptación de dicho cambio.
+
+## 9. Información de Contacto
+
+Al utilizar este sitio web, el usuario acepta las condiciones establecidas en la presente Política de Privacidad.
+
+Si tienes alguna pregunta sobre nuestra Política de Privacidad, por favor contáctanos a través del correo electrónico o los medios de contacto disponibles en nuestro sitio web [growespecializados.com.mx](https://growespecializados.com.mx/).

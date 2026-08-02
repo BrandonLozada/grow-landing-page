@@ -14,53 +14,107 @@ const { doc } = Astro.props;
 const { Content } = await render(doc);
 ---
 
-<BaseLayout title={doc.data.title}>
+<BaseLayout title={`${doc.data.title} | GROW`}>
   <article class="legal-document">
-    <div>
+    <div class="legal-header">
+      <a href="/" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Volver al inicio
+      </a>
       <h1>{doc.data.title}</h1>
-      <span><strong>Effective Date:</strong> {doc.data.lastUpdated}</span>
+      <span class="legal-date"><strong>Última actualización:</strong> {doc.data.lastUpdated}</span>
     </div>
 
-    <div class="content">
-      <Content />
+    <div class="legal-content-card">
+      <div class="content">
+        <Content />
+      </div>
     </div>
   </article>
 </BaseLayout>
 
 <style>
   .legal-document {
-    max-width: 80ch;
+    max-width: 52rem;
     margin: 0 auto;
     padding: var(--px-32) var(--px-16);
-    margin-top: var(--px-80);
+    padding-top: var(--px-128);
+    padding-bottom: var(--px-96);
+    min-height: 80vh;
   }
 
-  .content {
-    line-height: 1.6;
+  .legal-header {
+    margin-bottom: var(--px-32);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--px-6);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    margin-bottom: var(--px-24);
+    transition: color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.7;
+  }
+
+  .back-link:hover {
+    color: var(--color-text-primary);
+    opacity: 1;
   }
 
   h1 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    margin-bottom: var(--px-24);
-    word-wrap: break-word;
+    font-size: clamp(2rem, 4.2vw, 3rem);
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: var(--color-text-primary);
+    margin-bottom: var(--px-12);
+  }
+
+  .legal-date {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+  }
+
+  .legal-content-card {
+    background-color: rgba(255, 255, 255, 0.719);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: var(--px-48);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .content {
+    line-height: 1.7;
   }
 
   .content :global(h2) {
-    font-size: clamp(1.4rem, 4vw, 1.8rem);
-    margin: var(--px-32) 0 var(--px-16);
-    word-wrap: break-word;
+    font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+    font-weight: 600;
+    margin: var(--px-40) 0 var(--px-16);
+    color: var(--color-text-primary);
+  }
+
+  .content :global(h2:first-child) {
+    margin-top: 0;
   }
 
   .content :global(h3) {
-    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    font-weight: 600;
     margin: var(--px-24) 0 var(--px-12);
-    word-wrap: break-word;
+    color: var(--color-text-primary);
   }
 
   .content :global(p) {
     margin: var(--px-16) 0;
-    opacity: 1;
-    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    opacity: 0.85;
+    font-size: clamp(1rem, 2.5vw, 1.05rem);
+    color: var(--color-text-primary);
   }
 
   .content :global(ul),
@@ -71,69 +125,41 @@ const { Content } = await render(doc);
 
   .content :global(li) {
     margin: var(--px-8) 0;
-    font-size: clamp(1rem, 2.5vw, 1.1rem);
-  }
-
-  .content :global(p),
-  .content :global(li) {
-    max-width: 70ch;
+    font-size: clamp(1rem, 2.5vw, 1.05rem);
+    opacity: 0.85;
   }
 
   .content :global(a) {
-    color: #0066cc;
+    color: var(--color-grow-blue, #23b5ec);
     text-decoration: none;
     word-break: break-word;
+    transition: opacity 0.2s ease;
   }
 
   .content :global(a:hover) {
     text-decoration: underline;
+    opacity: 0.8;
   }
 
   .content :global(blockquote) {
-    border-left: 4px solid hsl(0, 0%, 75%);
+    border-left: 3px solid var(--color-grow-blue, #23b5ec);
     margin: var(--px-24) 0;
     padding: var(--px-8) 0 var(--px-8) var(--px-16);
+    opacity: 0.8;
   }
 
-  .content :global(pre) {
-    background: #f5f5f5;
-    padding: var(--px-16);
-    border-radius: 4px;
-    overflow-x: auto;
-    margin: var(--px-24) 0;
+  .content :global(strong) {
+    font-weight: 600;
+    color: var(--color-text-primary);
   }
 
-  .content :global(code) {
-    font-family: monospace;
-    background: #f5f5f5;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-  }
-
-  @media (max-width: 64rem) {
+  @media (max-width: 48rem) {
     .legal-document {
-      padding: var(--px-16);
-      margin-top: var(--px-64);
+      padding-top: var(--px-96);
     }
 
-    .content :global(ul),
-    .content :global(ol) {
-      padding-left: var(--px-24);
-    }
-  }
-
-  @media (max-width: 30rem) {
-    .legal-document {
-    }
-
-    .content {
-      line-height: 1.5;
-    }
-  }
-
-  @media (min-width: 75px) {
-    .legal-document {
-      max-width: min(80ch, 90vw);
+    .legal-content-card {
+      padding: var(--px-24);
     }
   }
 </style>
