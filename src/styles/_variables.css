@@ -90,7 +90,7 @@
 
     /* Gradients */
     --gradient-grow-primary: linear-gradient(135deg, #23b5ec 0%, #1192cd 100%);
-    --gradient-grow-hover: linear-gradient(135deg, #2ED0FF 0%, #169DD9 65%, #ec6eba 100%);
+    --gradient-grow-hover: linear-gradient(135deg, #2ED0FF 0%, #6384df 65%, #f085c5 100%);
     --gradient-primary: linear-gradient(to right, #010101, #333);
     --gradient-secondary: linear-gradient(to right, #333, #666);
     --gradient-accent: linear-gradient(to right, #ff6b35, #ff8e53);
@@ -100,6 +100,7 @@
     --gradient-primary-footer: linear-gradient(90deg,
             var(--color-footer-dark) 0%,
             var(--color-footer-light) 100%);
+
 
     /* Transitions */
     --ease-default: cubic-bezier(0, 0, 0.58, 1);
