@@ -1,256 +1,254 @@
 ---
+import { Image } from "astro:assets";
+import footerLogo from "../assets/images/grow-logo-desktop.webp";
 import { SITE } from "@consts";
 
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="main-footer">
-    <div class="section-container footer footer-primary">
-        <div class="footer-brand">
-            <a
-                href="/"
-                class="logo-link"
-                aria-label="Servicios Especializados GROW - Inicio"
+  <div class="section-container footer footer-primary">
+    <div class="footer-brand">
+      <a
+        href="/"
+        class="logo-link"
+        aria-label="Servicios Especializados GROW - Inicio"
+      >
+        <Image
+          src={footerLogo}
+          alt="Servicios Especializados GROW"
+          class="footer-logo-img"
+          widths={[160, 200, 260]}
+          sizes="200px"
+          width={200}
+          height={48}
+          loading="lazy"
+        />
+      </a>
+      <p class="site-description">
+        Impulsamos el crecimiento de las empresas mediante soluciones
+        administrativas, contables y jurídicas enfocadas en la eficiencia, el
+        cumplimiento y la mejora continua.
+      </p>
+
+      <address class="footer-nav-list contact-info">
+        <p class="email">
+          <span class="label">C.</span>
+          <a
+            href={`mailto:${SITE.EMAIL}`}
+            class="footer-email-link"
+            title={SITE.EMAIL}>Enviar correo electrónico</a
+          >
+        </p>
+        <p class="provisional-note">
+          <small>Datos de contacto.</small>
+        </p>
+      </address>
+    </div>
+
+    <nav class="footer-navigation" aria-label="Navegación del footer">
+      <div class="footer-nav-section">
+        <h2 class="headline footer-heading">Navegación</h2>
+        <ul class="footer-nav-list">
+          <li>
+            <a href="#hero" class="footer-link">Inicio</a>
+          </li>
+          <li>
+            <a href="#servicios" class="footer-link">Servicios</a>
+          </li>
+          <li>
+            <a href="#proceso" class="footer-link">¿Cómo trabajamos?</a>
+          </li>
+          <li>
+            <a href="#por-que-grow" class="footer-link">¿Por qué GROW?</a>
+          </li>
+          <li>
+            <a href="#nosotros" class="footer-link">Nosotros</a>
+          </li>
+          <li>
+            <a href="#faq" class="footer-link">FAQ</a>
+          </li>
+          <li>
+            <a href="#contacto" class="footer-link">Contacto</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-section">
+        <h2 class="headline footer-heading">Legal</h2>
+        <ul class="footer-nav-list">
+          <li>
+            <a href="/legal/privacy" class="footer-link"
+              >Política de Privacidad</a
             >
-                <img
-                    src="/grow-logo-mobile.png"
-                    alt="Servicios Especializados GROW"
-                    class="footer-logo-img"
-                    width="200"
-                    height="48"
-                />
-            </a>
-            <p class="site-description">
-                Impulsamos el crecimiento de las empresas mediante soluciones
-                administrativas, contables y jurídicas enfocadas en la
-                eficiencia, el cumplimiento y la mejora continua.
-            </p>
+          </li>
+          <li>
+            <a href="/legal/terms" class="footer-link">Términos y Condiciones</a
+            >
+          </li>
+          <li>
+            <a href="/sitemap-index.xml" class="footer-link">Mapa del Sitio</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-            <address class="footer-nav-list contact-info">
-                <p class="email">
-                    <span class="label">C.</span>
-                    <a
-                        href={`mailto:${SITE.EMAIL}`}
-                        class="footer-email-link"
-                        title={SITE.EMAIL}>Enviar correo electrónico</a
-                    >
-                </p>
-                <p class="provisional-note">
-                    <small>Datos de contacto.</small>
-                </p>
-            </address>
-        </div>
-
-        <nav class="footer-navigation" aria-label="Navegación del footer">
-            <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Navegación</h2>
-                <ul class="footer-nav-list">
-                    <li>
-                        <a href="#hero" class="footer-link">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="#servicios" class="footer-link">Servicios</a>
-                    </li>
-                    <li>
-                        <a href="#proceso" class="footer-link"
-                            >¿Cómo trabajamos?</a
-                        >
-                    </li>
-                    <li>
-                        <a href="#por-que-grow" class="footer-link"
-                            >¿Por qué GROW?</a
-                        >
-                    </li>
-                    <li>
-                        <a href="#nosotros" class="footer-link">Nosotros</a>
-                    </li>
-                    <li>
-                        <a href="#faq" class="footer-link">FAQ</a>
-                    </li>
-                    <li>
-                        <a href="#contacto" class="footer-link">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-nav-section">
-                <h2 class="headline footer-heading">Legal</h2>
-                <ul class="footer-nav-list">
-                    <li>
-                        <a href="/legal/privacy" class="footer-link"
-                            >Política de Privacidad</a
-                        >
-                    </li>
-                    <li>
-                        <a href="/legal/terms" class="footer-link"
-                            >Términos y Condiciones</a
-                        >
-                    </li>
-                    <li>
-                        <a href="/sitemap-index.xml" class="footer-link"
-                            >Mapa del Sitio</a
-                        >
-                    </li>
-                </ul>
-            </div>
-        </nav>
+  <div class="footer footer-secondary">
+    <div class="copyright">
+      <p>&copy; {SITE.COMPANY_NAME} {currentYear}.</p>
     </div>
-
-    <div class="footer footer-secondary">
-        <div class="copyright">
-            <p>&copy; {SITE.COMPANY_NAME} {currentYear}.</p>
-        </div>
-        <div class="location">
-            <p>Monterrey, Nuevo León, México.</p>
-        </div>
+    <div class="location">
+      <p>Monterrey, Nuevo León, México.</p>
     </div>
+  </div>
 </footer>
 
 <style>
-    a {
-        transition: all var(--transition-short);
-    }
+  a {
+    transition: all var(--transition-short);
+  }
 
-    a:active {
-        color: var(--color-text-primary);
-    }
+  a:active {
+    color: var(--color-text-primary);
+  }
 
+  .main-footer {
+    background-color: var(--color-background);
+    padding-block: var(--px-112) var(--px-28);
+    padding-inline: var(--px-64);
+    color: var(--color-text-dark);
+    font-size: var(--text-sm);
+    overflow-x: hidden;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-brand {
+    max-width: 24rem;
+    width: 100%;
+  }
+
+  .headline {
+    color: var(--color-text-primary);
+  }
+
+  .main-footer p {
+    opacity: 1;
+  }
+
+  .footer-primary {
+    margin-bottom: var(--px-112);
+  }
+
+  .logo-link {
+    display: inline-block;
+    margin-bottom: var(--px-20);
+  }
+
+  .footer-logo-img {
+    height: 2.75rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .site-description {
+    margin-bottom: var(--px-32);
+    line-height: 1.6;
+  }
+
+  .provisional-note {
+    opacity: 0.5;
+    margin-top: var(--px-4);
+  }
+
+  .footer-navigation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 10%;
+    gap: var(--px-64);
+  }
+
+  .footer-heading {
+    margin-bottom: var(--px-16);
+    font-size: var(--text-lg);
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+
+  .footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--text-sm);
+    gap: var(--px-8);
+  }
+
+  .footer-email-link {
+    text-decoration: underline;
+  }
+
+  .contact-info {
+    font-style: normal;
+  }
+
+  .footer-secondary {
+    font-weight: 500;
+    gap: var(--px-16);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a:hover {
+      color: var(--color-text-primary);
+    }
+  }
+
+  @media screen and (max-width: 64rem) {
     .main-footer {
-        background-color: var(--color-background);
-        padding-block: var(--px-112) var(--px-28);
-        padding-inline: var(--px-64);
-        color: var(--color-text-dark);
-        font-size: var(--text-sm);
-        overflow-x: hidden;
+      padding-top: var(--px-80);
+      padding-inline: var(--px-28);
     }
 
     .footer {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .footer-brand {
-        max-width: 24rem;
-        width: 100%;
-    }
-
-    .headline {
-        color: var(--color-text-primary);
-    }
-
-    .main-footer p {
-        opacity: 1;
-    }
-
-    .footer-primary {
-        margin-bottom: var(--px-112);
-    }
-
-    .logo-link {
-        display: inline-block;
-        margin-bottom: var(--px-20);
-    }
-
-    .footer-logo-img {
-        height: 2.75rem;
-        width: auto;
-        max-width: 100%;
-        object-fit: contain;
-    }
-
-    .site-description {
-        margin-bottom: var(--px-32);
-        line-height: 1.6;
-    }
-
-    .provisional-note {
-        opacity: 0.5;
-        margin-top: var(--px-4);
+      flex-wrap: wrap;
+      gap: var(--px-48);
     }
 
     .footer-navigation {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: space-between;
-        width: 100%;
-        margin-left: 10%;
-        gap: var(--px-64);
+      margin-left: 0;
+      width: 100%;
     }
 
-    .footer-heading {
-        margin-bottom: var(--px-16);
-        font-size: var(--text-lg);
-        letter-spacing: -0.02em;
-        font-weight: 500;
+    .footer-primary {
+      margin-bottom: var(--px-80);
+    }
+  }
+
+  @media screen and (max-width: 37.5rem) {
+    .main-footer {
+      padding-top: var(--px-64);
+      padding-inline: var(--px-16);
     }
 
-    .footer-nav-list {
-        display: flex;
-        flex-direction: column;
-        font-size: var(--text-sm);
-        gap: var(--px-8);
-    }
-
-    .footer-email-link {
-        text-decoration: underline;
-    }
-
-    .contact-info {
-        font-style: normal;
+    .footer-navigation {
+      grid-template-columns: 1fr;
+      width: 100%;
+      gap: var(--px-28);
     }
 
     .footer-secondary {
-        font-weight: 500;
-        gap: var(--px-16);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--px-8);
     }
 
-    @media (hover: hover) and (pointer: fine) {
-        a:hover {
-            color: var(--color-text-primary);
-        }
+    .footer-primary {
+      margin-bottom: var(--px-48);
     }
-
-    @media screen and (max-width: 64rem) {
-        .main-footer {
-            padding-top: var(--px-80);
-            padding-inline: var(--px-28);
-        }
-
-        .footer {
-            flex-wrap: wrap;
-            gap: var(--px-48);
-        }
-
-        .footer-navigation {
-            margin-left: 0;
-            width: 100%;
-        }
-
-        .footer-primary {
-            margin-bottom: var(--px-80);
-        }
-    }
-
-    @media screen and (max-width: 37.5rem) {
-        .main-footer {
-            padding-top: var(--px-64);
-            padding-inline: var(--px-16);
-        }
-
-        .footer-navigation {
-            grid-template-columns: 1fr;
-            width: 100%;
-            gap: var(--px-28);
-        }
-
-        .footer-secondary {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: var(--px-8);
-        }
-
-        .footer-primary {
-            margin-bottom: var(--px-48);
-        }
-    }
+  }
 </style>
