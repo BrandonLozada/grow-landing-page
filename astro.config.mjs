@@ -13,7 +13,7 @@ export default defineConfig({
   adapter: netlify(),
 
   build: {
-    inlineStylesheets: "auto"
+    inlineStylesheets: "always"
   },
   fonts: [
     {
