@@ -10,7 +10,7 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   site: SITE.CANONICAL_URL,
   output: "static",
-  adapter: netlify({ imageCDN: false }),
+  adapter: netlify(),
 
   build: {
     inlineStylesheets: "auto"
@@ -35,21 +35,9 @@ export default defineConfig({
 
   integrations: [sitemap(), favicons()],
 
-  security: {
-    csp: {
-      directives: [
-        "default-src 'self'",
-        "object-src 'self'",
-        "connect-src 'self'",
-        "base-uri 'self'",
-        "img-src 'self' data:",
-        "media-src 'self'",
-        "font-src 'self' data:",
-        "frame-src 'self' https://www.google.com/",
-        "worker-src 'self'",
-        "manifest-src 'none'",
-        "form-action 'self'",
-      ],
+  vite: {
+    ssr: {
+      noExternal: true,
     },
   },
 });
