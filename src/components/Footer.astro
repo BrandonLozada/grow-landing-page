@@ -18,10 +18,9 @@ const currentYear = new Date().getFullYear();
           src={footerLogo}
           alt="Servicios Especializados GROW"
           class="footer-logo-img"
-          widths={[160, 200, 260]}
-          sizes="200px"
-          width={200}
-          height={48}
+          widths={[224, 272, 384, 512]}
+          sizes="(max-width: 600px) 224px, 272px"
+          width={272}
           loading="lazy"
         />
       </a>
@@ -150,8 +149,8 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-logo-img {
-    height: 2.75rem;
-    width: auto;
+    width: 17rem;
+    height: auto;
     max-width: 100%;
     object-fit: contain;
   }
@@ -249,6 +248,10 @@ const currentYear = new Date().getFullYear();
 
     .footer-primary {
       margin-bottom: var(--px-48);
+    }
+
+    .footer-logo-img {
+      width: 14rem;
     }
   }
 </style>
