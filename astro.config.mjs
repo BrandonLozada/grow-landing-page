@@ -6,6 +6,8 @@ import sitemap from "@astrojs/sitemap";
 import favicons from "astro-favicons";
 import netlify from "@astrojs/netlify";
 
+const isBuild = process.argv.includes("build");
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.CANONICAL_URL,
@@ -35,9 +37,13 @@ export default defineConfig({
 
   integrations: [sitemap(), favicons()],
 
-  vite: {
-    ssr: {
-      noExternal: true,
-    },
-  },
+  ...(isBuild
+    ? {
+        vite: {
+          ssr: {
+            noExternal: true,
+          },
+        },
+      }
+    : {}),
 });
