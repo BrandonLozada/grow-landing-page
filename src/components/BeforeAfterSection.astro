@@ -7,41 +7,41 @@
 */
 
 const problems = [
-    {
-        title: "Nómina manual",
-        description:
-            "Procesos de nómina realizados manualmente con riesgo constante.",
-    },
-    {
-        title: "Errores y retrasos",
-        description:
-            "Retrasos en pagos a colaboradores y errores de cálculo recurrentes.",
-    },
-    {
-        title: "Riesgo fiscal y laboral",
-        description:
-            "Alto riesgo de incumplimiento ante autoridades fiscales y laborales.",
-    },
-    {
-        title: "Desatención jurídica",
-        description:
-            "Falta de seguimiento legal, contratos desactualizados y vulnerabilidad jurídica.",
-    },
-    {
-        title: "Ineficiencia administrativa",
-        description:
-            "Procesos administrativos lentos que frenan la productividad general.",
-    },
-    {
-        title: "Sobrecarga en RR.HH.",
-        description:
-            "Sobrecarga de trabajo operativo para el departamento de Recursos Humanos.",
-    },
-    {
-        title: "Sobrecostos operativos",
-        description:
-            "Incremento constante en costos operativos por errores e ineficiencias.",
-    },
+  {
+    title: "Nómina manual",
+    description:
+      "Procesos de nómina realizados manualmente con riesgo constante.",
+  },
+  {
+    title: "Errores y retrasos",
+    description:
+      "Retrasos en pagos a colaboradores y errores de cálculo recurrentes.",
+  },
+  {
+    title: "Riesgo fiscal y laboral",
+    description:
+      "Alto riesgo de incumplimiento ante autoridades fiscales y laborales.",
+  },
+  {
+    title: "Desatención jurídica",
+    description:
+      "Falta de seguimiento legal, contratos desactualizados y vulnerabilidad jurídica.",
+  },
+  {
+    title: "Ineficiencia administrativa",
+    description:
+      "Procesos administrativos lentos que frenan la productividad general.",
+  },
+  {
+    title: "Sobrecarga en RR.HH.",
+    description:
+      "Sobrecarga de trabajo operativo para el departamento de Recursos Humanos.",
+  },
+  {
+    title: "Sobrecostos operativos",
+    description:
+      "Incremento constante en costos operativos por errores e ineficiencias.",
+  },
 ];
 
 // Duplicamos el listado para crear una cinta continua sin saltos visibles
@@ -49,187 +49,181 @@ const duplicatedProblems = [...problems, ...problems];
 ---
 
 <section id="problemas" class="problems-section">
-    <div class="section-container">
-        <div class="problems-header">
-            <span class="section-tag">DESAFÍOS OPERATIVOS</span>
-            <h2 class="section-title">Problemas que ayudamos a resolver.</h2>
-            <p class="section-intro">
-                Muchas empresas enfrentan obstáculos en sus procesos cotidianos
-                que limitan su capacidad de crecimiento y generan riesgos
-                innecesarios.
-            </p>
-        </div>
+  <div class="section-container">
+    <div class="problems-header">
+      <span class="section-tag">DESAFÍOS OPERATIVOS</span>
+      <h2 class="section-title">Problemas que ayudamos a resolver.</h2>
+      <p class="section-intro">
+        Muchas empresas enfrentan obstáculos en sus procesos cotidianos que
+        limitan su capacidad de crecimiento y generan riesgos innecesarios.
+      </p>
     </div>
+  </div>
 
-    <!-- Contenedor del Marquee Horizontal Infinito -->
-    <div class="marquee-wrapper">
-        <div class="marquee-track">
-            {
-                duplicatedProblems.map((problem, index) => (
-                    <div class="problem-card">
-                        <div class="problem-number">
-                            {String((index % problems.length) + 1).padStart(
-                                2,
-                                "0",
-                            )}
-                        </div>
-                        <div class="problem-content">
-                            <h3 class="problem-title">{problem.title}</h3>
-                            <p class="problem-description">
-                                {problem.description}
-                            </p>
-                        </div>
-                    </div>
-                ))
-            }
-        </div>
+  <!-- Contenedor del Marquee Horizontal Infinito -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      {
+        duplicatedProblems.map((problem, index) => (
+          <div class="problem-card">
+            <div class="problem-number">
+              {String((index % problems.length) + 1).padStart(2, "0")}
+            </div>
+            <div class="problem-content">
+              <h3 class="problem-title">{problem.title}</h3>
+              <p class="problem-description">{problem.description}</p>
+            </div>
+          </div>
+        ))
+      }
     </div>
+  </div>
 </section>
 
 <style>
-    .problems-section {
-        background-color: var(--color-background, #f1f1f1);
-        padding-block: var(--px-96);
-        overflow: hidden;
-    }
+  .problems-section {
+    background-color: var(--color-background, #f1f1f1);
+    padding-block: var(--px-96);
+    overflow: hidden;
+  }
 
-    .problems-header {
-        max-width: 52rem;
-        margin-bottom: var(--px-48);
-    }
+  .problems-header {
+    max-width: 52rem;
+    margin-bottom: var(--px-48);
+  }
 
-    .problems-header .section-title {
-        margin-bottom: var(--px-16);
-    }
+  .problems-header .section-title {
+    margin-bottom: var(--px-16);
+  }
 
-    .section-intro {
-        font-size: var(--text-lg);
-        line-height: 1.6;
-        opacity: 0.8;
-        margin: 0;
-    }
+  .section-intro {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    opacity: 0.8;
+    margin: 0;
+  }
 
-    /* Marquee Wrapper */
-    .marquee-wrapper {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        padding-block: var(--px-24);
-        mask-image: linear-gradient(
-            to right,
-            transparent 0%,
-            black 5%,
-            black 95%,
-            transparent 100%
-        );
-        -webkit-mask-image: linear-gradient(
-            to right,
-            transparent 0%,
-            black 5%,
-            black 95%,
-            transparent 100%
-        );
-    }
+  /* Marquee Wrapper */
+  .marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-block: var(--px-24);
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+  }
 
-    /* Pista de Marquee animada */
+  /* Pista de Marquee animada */
+  .marquee-track {
+    display: flex;
+    gap: var(--px-24);
+    width: max-content;
+    animation: marqueeScroll 35s linear infinite;
+    will-change: transform;
+  }
+
+  /* Pausa la animación al pasar el cursor */
+  .marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marqueeScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Estilo de Tarjetas del Marquee */
+  .problem-card {
+    width: 21.5rem;
+    flex-shrink: 0;
+    cursor: default;
+    padding: var(--px-28);
+    border-radius: var(--radius-lg);
+    background-color: rgba(255, 255, 255, 0.719);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--px-20);
+    transition:
+      transform var(--transition-short),
+      box-shadow var(--transition-short),
+      border-color var(--transition-short);
+  }
+
+  .problem-number {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    background: linear-gradient(
+      180deg,
+      rgba(67, 106, 143, 0.397) 40%,
+      rgba(204, 48, 183, 0.452) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.05em;
+  }
+
+  .problem-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--px-8);
+    color: var(--color-text-primary);
+    line-height: 1.3;
+  }
+
+  .problem-description {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    opacity: 0.8;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .problem-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 0, 0, 0.25);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
     .marquee-track {
-        display: flex;
-        gap: var(--px-24);
-        width: max-content;
-        animation: marqueeScroll 35s linear infinite;
-        will-change: transform;
+      animation: none;
+      overflow-x: auto;
+      width: 100%;
     }
 
-    /* Pausa la animación al pasar el cursor */
-    .marquee-wrapper:hover .marquee-track {
-        animation-play-state: paused;
-    }
-
-    @keyframes marqueeScroll {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
-    /* Estilo de Tarjetas del Marquee */
     .problem-card {
-        width: 21.5rem;
-        flex-shrink: 0;
-        padding: var(--px-28);
-        border-radius: var(--radius-lg);
-        background-color: rgba(255, 255, 255, 0.719);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: var(--px-20);
-        transition:
-            transform var(--transition-short),
-            box-shadow var(--transition-short),
-            border-color var(--transition-short);
-        cursor: pointer;
+      width: 18rem;
+    }
+  }
+
+  @media screen and (max-width: 48rem) {
+    .problem-card {
+      width: 18.5rem;
+      padding: var(--px-24);
     }
 
-    .problem-number {
-        font-size: var(--text-sm);
-        font-weight: 700;
-        background: linear-gradient(
-            180deg,
-            rgba(67, 106, 143, 0.397) 40%,
-            rgba(204, 48, 183, 0.452) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        letter-spacing: 0.05em;
+    .marquee-track {
+      animation-duration: 25s;
     }
-
-    .problem-title {
-        font-size: var(--text-lg);
-        font-weight: 600;
-        margin-bottom: var(--px-8);
-        color: var(--color-text-primary);
-        line-height: 1.3;
-    }
-
-    .problem-description {
-        font-size: var(--text-sm);
-        line-height: 1.5;
-        opacity: 0.8;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-        .problem-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 0, 0, 0.25);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .marquee-track {
-            animation: none;
-            overflow-x: auto;
-            width: 100%;
-        }
-
-        .problem-card {
-            width: 18rem;
-        }
-    }
-
-    @media screen and (max-width: 48rem) {
-        .problem-card {
-            width: 18.5rem;
-            padding: var(--px-24);
-        }
-
-        .marquee-track {
-            animation-duration: 25s;
-        }
-    }
+  }
 </style>
