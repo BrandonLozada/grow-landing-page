@@ -9,912 +9,946 @@ let years = today.getFullYear() - foundedDate.getFullYear();
 
 // Si aún no ha llegado el aniversario de este año, resta uno
 const hasHadAnniversary =
-    today.getMonth() > foundedDate.getMonth() ||
-    (today.getMonth() === foundedDate.getMonth() &&
-        today.getDate() >= foundedDate.getDate());
+  today.getMonth() > foundedDate.getMonth() ||
+  (today.getMonth() === foundedDate.getMonth() &&
+    today.getDate() >= foundedDate.getDate());
 
 if (!hasHadAnniversary) {
-    years--;
+  years--;
 }
 
 const heroServices = [
-    {
-        title: "Nómina",
-        description: "Gestión integral y precisa de nómina.",
-        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V8h16v10zm-6-5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/></svg>`,
-    },
-    {
-        title: "Servicios Contables",
-        description: "Control financiero y cumplimiento fiscal.",
-        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M4 10h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg>`,
-    },
-    {
-        title: "Servicios Jurídicos",
-        description: "Asesoría y representación especializada.",
-        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/></svg>`,
-    },
-    {
-        title: "Cumplimiento",
-        description: "Alineación normativa garantizada.",
-        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>`,
-    },
-    {
-        title: "Administración",
-        description: "Control y gestión operativa de personal.",
-        svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>`,
-    },
+  {
+    title: "Nómina",
+    description: "Gestión integral y precisa de nómina.",
+    svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V8h16v10zm-6-5c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/></svg>`,
+  },
+  {
+    title: "Servicios Contables",
+    description: "Control financiero y cumplimiento fiscal.",
+    svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M4 10h16v2H4zm0-4h16v2H4zm0 8h16v2H4z"/></svg>`,
+  },
+  {
+    title: "Servicios Jurídicos",
+    description: "Asesoría y representación especializada.",
+    svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/></svg>`,
+  },
+  {
+    title: "Cumplimiento",
+    description: "Alineación normativa garantizada.",
+    svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>`,
+  },
+  {
+    title: "Administración",
+    description: "Control y gestión operativa de personal.",
+    svg: `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>`,
+  },
 ];
 
 const heroMetrics = [
-    { number: "4", label: "Áreas de Expertise" },
-    { number: "+30", label: "Procesos Empresariales" },
-    { number: "Atención", label: "Personalizada" },
-    { number: "Cumplimiento", label: "Laboral y Fiscal" },
+  { number: "4", label: "Áreas de Expertise" },
+  { number: "+30", label: "Procesos Empresariales" },
+  { number: "Atención", label: "Personalizada" },
+  { number: "Cumplimiento", label: "Laboral y Fiscal" },
 ];
 ---
 
 <section id="hero" class="hero">
-    <div class="section-container">
-        <!-- Bento Grid Hero Section -->
-        <div class="bento-grid">
-            <!-- Main Value Proposition Card -->
-            <div class="bento-card hero-card">
-                <div class="hero-blob"></div>
-                <div class="hero-card-content">
-                    <div class="badge">
-                        <span class="badge-dot"></span>
-                        <span class="badge-text"
-                            >Servicios Especializados GROW</span
-                        >
-                    </div>
-                    <h1 class="hero-title">
-                        Impulsamos el crecimiento de tu empresa
-                    </h1>
-                    <p class="hero-subtitle">
-                        Con soluciones integrales en administración,
-                        contabilidad y derecho, GROW es tu aliado estratégico
-                        para el éxito empresarial.
-                    </p>
-                    <p class="hero-description">
-                        En GROW ayudamos a las organizaciones a optimizar sus
-                        procesos administrativos mediante la gestión integral de
-                        nómina, servicios contables, asesoría jurídica y
-                        soluciones especializadas.
-                    </p>
-                    <p class="hero-description">
-                        Convertimos la operación de tu empresa en una ventaja
-                        competitiva.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#contacto" class="btn btn--primary"
-                            >SOLICITAR COTIZACIÓN</a
-                        >
-                        <a href="#servicios" class="btns--secondary">
-                            <span
-                                class="btn--secondary btn--secondary-unhovered"
-                            >
-                                Conoce nuestros servicios
-                            </span>
-                            <span
-                                class="btn--secondary btn--secondary-hovered"
-                                aria-hidden="true"
-                            >
-                                Conoce nuestros servicios
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Image Cell -->
-            <div class="bento-card image-card">
-                <Image
-                    class="media"
-                    src={heroImage}
-                    alt="Servicios Especializados GROW - Equipo corporativo"
-                    width="1080"
-                    height="720"
-                    loading="eager"
-                />
-                <div class="image-overlay"></div>
-
-                <!-- Floating Badge -->
-                <div class="floating-card">
-                    <div class="card-content">
-                        <div class="card-icon-wrapper" aria-hidden="true">
-                            <svg
-                                class="card-icon"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                width="24"
-                                height="24"
-                            >
-                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"
-                                ></polyline>
-                                <polyline points="17 6 23 6 23 12"></polyline>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="card-title">+{years} Años</h3>
-                            <p class="card-desc">
-                                Experiencia en el mercado impulsando empresas
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bento Card 1: Carrusel Funcional de Servicios -->
-            <div class="bento-card bento-slider-card">
-                <div class="slider-header">
-                    <span class="slider-tag">SERVICIOS DESTACADOS</span>
-                    <div class="slider-controls">
-                        <button
-                            type="button"
-                            class="slider-btn"
-                            id="hero-slider-prev"
-                            aria-label="Servicio anterior"
-                        >
-                            <svg
-                                viewBox="0 0 24 24"
-                                width="16"
-                                height="16"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                        </button>
-                        <button
-                            type="button"
-                            class="slider-btn"
-                            id="hero-slider-next"
-                            aria-label="Servicio siguiente"
-                        >
-                            <svg
-                                viewBox="0 0 24 24"
-                                width="16"
-                                height="16"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="services-slider-track" id="hero-services-track">
-                    {
-                        heroServices.map((service) => (
-                            <div class="slider-item">
-                                <div
-                                    class="service-icon-wrapper"
-                                    aria-hidden="true"
-                                >
-                                    <Fragment set:html={service.svg} />
-                                </div>
-                                <div>
-                                    <h3 class="service-title">
-                                        {service.title}
-                                    </h3>
-                                    <p class="service-desc">
-                                        {service.description}
-                                    </p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-
-            <!-- Bento Card 2: Tarjeta de Métricas GROW -->
-            <div class="bento-card bento-metrics-card">
-                <div class="metrics-grid">
-                    {
-                        heroMetrics.map((metric) => (
-                            <div class="metric-item">
-                                <span class="metric-number">
-                                    {metric.number}
-                                </span>
-                                <span class="metric-label">{metric.label}</span>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
+  <div class="section-container">
+    <!-- Bento Grid Hero Section -->
+    <div class="bento-grid">
+      <!-- Main Value Proposition Card -->
+      <div class="bento-card hero-card">
+        <div class="hero-blob"></div>
+        <div class="hero-card-content">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span class="badge-text">Servicios Especializados GROW</span>
+          </div>
+          <h1 class="hero-title">Impulsamos el crecimiento de tu empresa</h1>
+          <p class="hero-subtitle">
+            Con soluciones integrales en administración, contabilidad y derecho,
+            GROW es tu aliado estratégico para el éxito empresarial.
+          </p>
+          <p class="hero-description">
+            En GROW ayudamos a las organizaciones a optimizar sus procesos
+            administrativos mediante la gestión integral de nómina, servicios
+            contables, asesoría jurídica y soluciones especializadas.
+          </p>
+          <p class="hero-description">
+            Convertimos la operación de tu empresa en una ventaja competitiva.
+          </p>
+          <div class="hero-cta">
+            <a href="#contacto" class="btn btn--primary">SOLICITAR COTIZACIÓN</a
+            >
+            <a href="#servicios" class="btns--secondary">
+              <span class="btn--secondary btn--secondary-unhovered">
+                Conoce nuestros servicios
+              </span>
+              <span
+                class="btn--secondary btn--secondary-hovered"
+                aria-hidden="true"
+              >
+                Conoce nuestros servicios
+              </span>
+            </a>
+          </div>
         </div>
+      </div>
+
+      <!-- Image Cell -->
+      <div class="bento-card image-card">
+        <Image
+          class="media"
+          src={heroImage}
+          alt="Servicios Especializados GROW - Equipo corporativo"
+          width="1080"
+          height="720"
+          loading="eager"
+        />
+        <div class="image-overlay"></div>
+
+        <!-- Floating Badge -->
+        <div class="floating-card">
+          <div class="card-content">
+            <div class="card-icon-wrapper" aria-hidden="true">
+              <svg
+                class="card-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                width="24"
+                height="24"
+              >
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3 class="card-title">+{years} Años</h3>
+              <p class="card-desc">
+                Experiencia en el mercado impulsando empresas
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento Card 1: Carrusel Funcional de Servicios -->
+      <div class="bento-card bento-slider-card">
+        <div class="slider-header">
+          <span class="slider-tag">SERVICIOS DESTACADOS</span>
+          <div class="slider-controls">
+            <button
+              type="button"
+              class="slider-btn"
+              id="hero-slider-prev"
+              aria-label="Servicio anterior"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="slider-btn"
+              id="hero-slider-next"
+              aria-label="Servicio siguiente"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="services-slider-track" id="hero-services-track">
+          {
+            heroServices.map((service) => (
+              <div class="slider-item">
+                <div class="service-icon-wrapper" aria-hidden="true">
+                  <Fragment set:html={service.svg} />
+                </div>
+                <div>
+                  <h3 class="service-title">{service.title}</h3>
+                  <p class="service-desc">{service.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Bento Card 2: Tarjeta de Métricas GROW -->
+      <div class="bento-card bento-metrics-card">
+        <div class="metrics-grid">
+          {
+            heroMetrics.map((metric) => (
+              <div class="metric-item">
+                <span class="metric-number">{metric.number}</span>
+                <span class="metric-label">{metric.label}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <style>
-    .hero {
-        padding-block: calc(var(--h-menu-bar) + 2.5rem) var(--px-80);
-        background-color: var(--color-background, #f1f1f1);
-        position: relative;
-        overflow: visible;
-        z-index: 2;
-    }
+  .hero {
+    padding-block: calc(var(--h-menu-bar) + 2.5rem) var(--px-80);
+    background-color: var(--color-background, #f1f1f1);
+    position: relative;
+    overflow: visible;
+    z-index: 2;
+  }
 
+  .bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--px-20);
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 48rem) {
     .bento-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--px-20);
-        position: relative;
-        z-index: 1;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--px-24);
     }
+  }
 
-    @media (min-width: 48rem) {
-        .bento-grid {
-            grid-template-columns: repeat(12, 1fr);
-            gap: var(--px-24);
-        }
-    }
+  .bento-card {
+    border-radius: var(--radius-lg, 1rem);
+    transition:
+      transform var(--transition-short),
+      box-shadow var(--transition-short);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
 
-    .bento-card {
-        border-radius: var(--radius-lg, 1rem);
-        transition:
-            transform var(--transition-short),
-            box-shadow var(--transition-short);
-        position: relative;
-        overflow: hidden;
-        box-sizing: border-box;
-    }
-
-    /* Hero Card */
-    .hero-card {
-        background-color: var(--color-white, #ffffff);
-        background: linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 1) 40%,
-            rgba(255, 255, 255, 0.1) 100%
-        );
-        /* background: linear-gradient(
+  /* Hero Card */
+  .hero-card {
+    background-color: var(--color-white, #ffffff);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    /* background: linear-gradient(
             90deg,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 1) 40%,
             rgba(255, 255, 255, 0.1) 100%
         ); */
-        /* border: 1px solid rgba(0, 0, 0, 0.08); */
-        padding: clamp(1.75rem, 4vw, 2.75rem);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        box-shadow: var(--shadow-sm);
+    /* border: 1px solid rgba(0, 0, 0, 0.08); */
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (min-width: 48rem) {
+    .hero-card {
+      grid-column: span 12;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .hero-card {
+      grid-column: span 7;
+      grid-row: span 2;
+      min-height: 34rem;
+    }
+  }
+
+  .hero-blob {
+    position: absolute;
+    top: -6rem;
+    right: -6rem;
+    width: 24rem;
+    height: 24rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 50%;
+    filter: blur(48px);
+    pointer-events: none;
+  }
+
+  .hero-card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-title {
+    margin-bottom: var(--px-20);
+    font-size: clamp(2rem, 4.2vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-weight: 500;
+    line-height: 1.45;
+    margin-bottom: var(--px-20);
+    color: var(--color-text-primary);
+  }
+
+  .hero-description {
+    font-size: clamp(0.95rem, 1.2vw, 1.063rem);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--px-16);
+  }
+
+  .hero-description:last-of-type {
+    margin-bottom: var(--px-32);
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--px-16) var(--px-24);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btns--secondary {
+    font-weight: 500;
+    height: var(--px-36);
+    display: flex;
+    align-items: center;
+    color: var(--color-text-primary);
+    opacity: 0.85;
+    transition:
+      color var(--transition-short),
+      opacity var(--transition-short);
+  }
+
+  .btns--secondary:hover,
+  .btns--secondary:focus-visible {
+    color: var(--color-grow-blue, #23b5ec);
+    opacity: 1;
+  }
+
+  .btn--secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--px-8);
+    border-bottom: var(--px-2) solid currentColor;
+  }
+
+  /* Image Card */
+  .image-card {
+    min-height: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  @media (min-width: 48rem) {
+    .image-card {
+      grid-column: span 12;
+      min-height: 25rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .image-card {
+      grid-column: span 5;
+      grid-row: span 2;
+      min-height: 100%;
+    }
+  }
+
+  .image-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+
+  .image-card:hover img {
+    transform: scale(1.04);
+  }
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(1, 1, 1, 0.1) 0%,
+      rgba(1, 1, 1, 0.65) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Floating Card — Perfectly adaptive across all screen sizes */
+  .floating-card {
+    position: absolute;
+    left: var(--px-16);
+    right: var(--px-16);
+    bottom: var(--px-16);
+    width: auto;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+
+    /* background-color: rgba(20, 22, 28, 0.78); */
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.1) 0%,
+      rgba(51, 98, 143, 0.555) 40%,
+      rgba(48, 90, 204, 0.5) 100%
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #ffffff;
+
+    /* border: 1px solid rgba(255, 255, 255, 0.18); */
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.25),
+      0 10px 10px -5px rgba(0, 0, 0, 0.15);
+    transition:
+      transform 0.3s var(--ease-default),
+      box-shadow 0.3s var(--ease-default),
+      border-color 0.3s var(--ease-default);
+    box-sizing: border-box;
+    z-index: 5;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .floating-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.35);
+      box-shadow:
+        0 25px 30px -5px rgba(0, 0, 0, 0.35),
+        0 12px 12px -5px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .floating-card {
+      left: auto;
+      right: var(--px-24);
+      bottom: var(--px-24);
+      width: 340px;
+      max-width: calc(100% - 48px);
+      padding: 20px 24px;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .floating-card {
+      left: var(--px-24);
+      right: var(--px-24);
+      bottom: var(--px-24);
+      width: auto;
+      max-width: calc(100% - 48px);
+      padding: 20px 24px;
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .floating-card {
+      left: auto;
+      right: var(--px-28);
+      bottom: var(--px-28);
+      width: 340px;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .card-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #ffffff;
+  }
+
+  .card-icon {
+    width: 22px;
+    height: 22px;
+    color: #ffffff;
+  }
+
+  .card-title {
+    font-family: var(--font-headline);
+    font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+    line-height: 1.15;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .card-desc {
+    font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+    margin: 4px 0 0 0;
+  }
+
+  /* Bento Slider Card */
+  .bento-slider-card {
+    background: linear-gradient(
+      135deg,
+      rgba(236, 8, 103, 0.034) 0%,
+      rgba(122, 203, 228, 0.349) 40%,
+      rgba(69, 171, 240, 0.26) 100%
+    );
+    /* background-color: var(--color-background); */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--px-16);
+  }
+
+  @media (min-width: 48rem) {
+    .bento-slider-card {
+      grid-column: span 12;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .bento-slider-card {
+      grid-column: span 6;
+    }
+  }
+
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--px-12);
+    flex-wrap: wrap;
+  }
+
+  .slider-tag {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    letter-spacing: 0.075em;
+  }
+
+  .slider-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--px-8);
+  }
+
+  .slider-btn {
+    background-color: var(--color-white, #ffffff);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: var(--color-text-primary);
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transform-origin: center center;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition:
+      background-color var(--transition-short),
+      color var(--transition-short),
+      border-color var(--transition-short),
+      transform var(--transition-short) cubic-bezier(0.4, 0, 0.2, 1),
+      opacity var(--transition-short),
+      box-shadow var(--transition-short);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .slider-btn svg {
+    display: block;
+    margin: auto;
+    flex-shrink: 0;
+    pointer-events: none;
+    transform-origin: center center;
+  }
+
+  .slider-btn:disabled,
+  .slider-btn.is-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none;
+    border-color: rgba(0, 0, 0, 0.08);
+    color: var(--color-text-secondary);
+    pointer-events: none;
+  }
+
+  .slider-btn:hover:not(:disabled):not(.is-disabled) {
+    color: var(--color-grow-blue, #23b5ec);
+    border-color: rgba(35, 181, 236, 0.35);
+    transform: scale(1.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .slider-btn:active:not(:disabled):not(.is-disabled) {
+    transform: scale(0.94);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .services-slider-track {
+    display: flex;
+    gap: var(--px-16);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    padding-block: var(--px-4);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .services-slider-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slider-item {
+    flex: 0 0 calc(60% - var(--px-8));
+    min-width: 13.5rem;
+    scroll-snap-align: start;
+    background-color: var(--color-white, #ffffff);
+    border-radius: var(--radius-lg);
+    padding: var(--px-16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--px-12);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    transition:
+      transform var(--transition-short),
+      box-shadow var(--transition-short);
+    /* border-color var(--transition-short); */
+  }
+
+  @media (min-width: 48rem) {
+    .slider-item {
+      flex: 0 0 calc(50% - var(--px-8));
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .slider-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      border-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .service-icon-wrapper {
+    width: var(--px-40);
+    height: var(--px-40);
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.1) 0%,
+      rgba(67, 106, 143, 0.397) 40%,
+      rgba(204, 48, 183, 0.452) 100%
+    );
+    border-radius: 999999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .service-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin: 0 0 var(--px-4) 0;
+    color: var(--color-text-primary);
+  }
+
+  .service-desc {
+    font-size: var(--text-xs);
+    line-height: 1.4;
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--px-8);
+    padding: var(--px-6) var(--px-14);
+    background: linear-gradient(
+      135deg,
+      rgba(236, 8, 103, 0.034) 0%,
+      rgba(122, 203, 228, 0.349) 40%,
+      rgba(69, 171, 240, 0.26) 100%
+    );
+    border-radius: 9999px;
+    width: fit-content;
+    margin-bottom: var(--px-16);
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: linear-gradient(
+      90deg,
+      rgba(151, 187, 228, 0.397) 40%,
+      rgba(48, 110, 204, 0.452) 100%
+    );
+    display: inline-block;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    animation: pulseDot 2s infinite ease-in-out;
+  }
+
+  @keyframes pulseDot {
+    0% {
+      box-shadow: 0 0 0 0 rgba(1, 1, 1, 0.3);
+    }
+    70% {
+      box-shadow: 0 0 0 6px rgba(1, 1, 1, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(1, 1, 1, 0);
+    }
+  }
+
+  .badge-text {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-text-secondary, #45464d);
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    line-height: 1;
+  }
+
+  /* Bento Metrics Card */
+  .bento-metrics-card {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 48rem) {
+    .bento-metrics-card {
+      grid-column: span 12;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .bento-metrics-card {
+      grid-column: span 6;
+    }
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--px-16);
+    width: 100%;
+  }
+
+  .metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--px-6);
+    padding: var(--px-14);
+    border-radius: var(--radius-md);
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white, #ffffff);
+  }
+
+  .metric-number {
+    font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(
+      75deg,
+      rgba(67, 106, 143, 0.5) 40%,
+      rgba(204, 48, 183, 0.5) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.02em;
+  }
+
+  .metric-label {
+    font-size: var(--text-xs);
+    opacity: 0.75;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--color-text-secondary);
+  }
+
+  /* Small mobile adjustments (< 576px / 36rem) */
+  @media screen and (max-width: 36rem) {
+    .hero {
+      padding-block: calc(var(--h-menu-bar) + 1.5rem) var(--px-48);
     }
 
-    @media (min-width: 48rem) {
-        .hero-card {
-            grid-column: span 12;
-        }
-    }
-
-    @media (min-width: 64rem) {
-        .hero-card {
-            grid-column: span 7;
-            grid-row: span 2;
-            min-height: 34rem;
-        }
-    }
-
-    .hero-blob {
-        position: absolute;
-        top: -6rem;
-        right: -6rem;
-        width: 24rem;
-        height: 24rem;
-        background-color: rgba(0, 0, 0, 0.03);
-        border-radius: 50%;
-        filter: blur(48px);
-        pointer-events: none;
-    }
-
-    .hero-card-content {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .hero-title {
-        margin-bottom: var(--px-20);
-        font-size: clamp(2rem, 4.2vw, 3.5rem);
-        font-weight: 600;
-        line-height: 1.15;
-        letter-spacing: -0.02em;
-        color: var(--color-text-primary);
-    }
-
-    .hero-subtitle {
-        font-size: clamp(1.1rem, 2vw, 1.35rem);
-        font-weight: 500;
-        line-height: 1.45;
-        margin-bottom: var(--px-20);
-        color: var(--color-text-primary);
-    }
-
-    .hero-description {
-        font-size: clamp(0.95rem, 1.2vw, 1.063rem);
-        line-height: 1.6;
-        color: var(--color-text-secondary);
-        margin-bottom: var(--px-16);
-    }
-
-    .hero-description:last-of-type {
-        margin-bottom: var(--px-32);
+    .hero-card {
+      padding: var(--px-24) var(--px-16);
     }
 
     .hero-cta {
-        display: flex;
-        gap: var(--px-16) var(--px-24);
-        flex-wrap: wrap;
-        align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--px-16);
+    }
+
+    .btn {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
     }
 
     .btns--secondary {
-        font-weight: 500;
-        height: var(--px-36);
-        display: flex;
-        align-items: center;
-        color: var(--color-text-primary);
-        opacity: 0.85;
-        transition:
-            color var(--transition-short),
-            opacity var(--transition-short);
+      width: auto !important;
+      align-self: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: var(--px-4);
     }
 
-    .btns--secondary:hover,
-    .btns--secondary:focus-visible {
-        color: var(--color-grow-blue, #23b5ec);
-        opacity: 1;
-    }
-
-    .btn--secondary {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--px-8);
-        border-bottom: var(--px-2) solid currentColor;
-    }
-
-    /* Image Card */
     .image-card {
-        min-height: 22rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+      min-height: 20rem;
     }
 
-    @media (min-width: 48rem) {
-        .image-card {
-            grid-column: span 12;
-            min-height: 25rem;
-        }
-    }
-
-    @media (min-width: 64rem) {
-        .image-card {
-            grid-column: span 5;
-            grid-row: span 2;
-            min-height: 100%;
-        }
-    }
-
-    .image-card img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.7s ease;
-    }
-
-    .image-card:hover img {
-        transform: scale(1.04);
-    }
-
-    .image-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            180deg,
-            rgba(1, 1, 1, 0.1) 0%,
-            rgba(1, 1, 1, 0.65) 100%
-        );
-        pointer-events: none;
-    }
-
-    /* Floating Card — Perfectly adaptive across all screen sizes */
     .floating-card {
-        position: absolute;
-        left: var(--px-16);
-        right: var(--px-16);
-        bottom: var(--px-16);
-        width: auto;
-        max-width: calc(100% - 32px);
-        margin: 0 auto;
-
-        /* background-color: rgba(20, 22, 28, 0.78); */
-        background: linear-gradient(
-            135deg,
-            rgba(15, 23, 42, 0.1) 0%,
-            rgba(51, 98, 143, 0.555) 40%,
-            rgba(48, 90, 204, 0.5) 100%
-        );
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        color: #ffffff;
-
-        /* border: 1px solid rgba(255, 255, 255, 0.18); */
-        border-radius: var(--radius-lg);
-        padding: 16px 20px;
-        box-shadow:
-            0 20px 25px -5px rgba(0, 0, 0, 0.25),
-            0 10px 10px -5px rgba(0, 0, 0, 0.15);
-        transition:
-            transform 0.3s var(--ease-default),
-            box-shadow 0.3s var(--ease-default),
-            border-color 0.3s var(--ease-default);
-        box-sizing: border-box;
-        z-index: 5;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-        .floating-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.35);
-            box-shadow:
-                0 25px 30px -5px rgba(0, 0, 0, 0.35),
-                0 12px 12px -5px rgba(0, 0, 0, 0.2);
-        }
-    }
-
-    @media (min-width: 48rem) {
-        .floating-card {
-            left: auto;
-            right: var(--px-24);
-            bottom: var(--px-24);
-            width: 340px;
-            max-width: calc(100% - 48px);
-            padding: 20px 24px;
-        }
-    }
-
-    @media (min-width: 64rem) {
-        .floating-card {
-            left: var(--px-24);
-            right: var(--px-24);
-            bottom: var(--px-24);
-            width: auto;
-            max-width: calc(100% - 48px);
-            padding: 20px 24px;
-        }
-    }
-
-    @media (min-width: 80rem) {
-        .floating-card {
-            left: auto;
-            right: var(--px-28);
-            bottom: var(--px-28);
-            width: 340px;
-        }
+      padding: 12px 14px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      max-width: calc(100% - 24px);
     }
 
     .card-content {
-        display: flex;
-        align-items: center;
-        gap: 16px;
+      gap: 12px;
     }
 
     .card-icon-wrapper {
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        color: #ffffff;
+      width: 38px;
+      height: 38px;
     }
 
     .card-icon {
-        width: 22px;
-        height: 22px;
-        color: #ffffff;
+      width: 18px;
+      height: 18px;
     }
 
     .card-title {
-        font-family: var(--font-headline);
-        font-size: clamp(1.25rem, 2.4vw, 1.55rem);
-        line-height: 1.15;
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0;
+      font-size: 1.15rem;
     }
 
     .card-desc {
-        font-size: clamp(0.85rem, 1.4vw, 0.95rem);
-        color: rgba(255, 255, 255, 0.85);
-        line-height: 1.4;
-        margin: 4px 0 0 0;
-    }
-
-    /* Bento Slider Card */
-    .bento-slider-card {
-        background: linear-gradient(
-            135deg,
-            rgba(236, 8, 103, 0.034) 0%,
-            rgba(122, 203, 228, 0.349) 40%,
-            rgba(69, 171, 240, 0.26) 100%
-        );
-        /* background-color: var(--color-background); */
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        padding: clamp(1.25rem, 3vw, 1.75rem);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: var(--px-16);
-    }
-
-    @media (min-width: 48rem) {
-        .bento-slider-card {
-            grid-column: span 12;
-        }
-    }
-
-    @media (min-width: 64rem) {
-        .bento-slider-card {
-            grid-column: span 6;
-        }
-    }
-
-    .slider-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: var(--px-12);
-        flex-wrap: wrap;
-    }
-
-    .slider-tag {
-        font-size: var(--text-xs);
-        color: var(--color-text-secondary);
-        font-weight: 600;
-        letter-spacing: 0.075em;
-    }
-
-    .slider-controls {
-        display: flex;
-        align-items: center;
-        gap: var(--px-8);
-    }
-
-    .slider-btn {
-        background-color: var(--color-white, #ffffff);
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        color: var(--color-text-primary);
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition:
-            background-color var(--transition-short),
-            color var(--transition-short),
-            border-color var(--transition-short),
-            transform var(--transition-short);
-        box-shadow: var(--shadow-sm);
-    }
-
-    .slider-btn:hover {
-        background-color: var(--color-text-primary);
-        color: var(--color-white, #ffffff);
-        border-color: var(--color-text-primary);
-        transform: scale(1.05);
-    }
-
-    .slider-btn:active {
-        transform: scale(0.95);
-    }
-
-    .services-slider-track {
-        display: flex;
-        gap: var(--px-16);
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior-x: contain;
-        padding-block: var(--px-4);
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-
-    .services-slider-track::-webkit-scrollbar {
-        display: none;
+      font-size: 0.8rem;
+      line-height: 1.3;
     }
 
     .slider-item {
-        flex: 0 0 calc(60% - var(--px-8));
-        min-width: 13.5rem;
-        scroll-snap-align: start;
-        background-color: var(--color-white, #ffffff);
-        border-radius: var(--radius-lg);
-        padding: var(--px-16);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: var(--px-12);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-        transition:
-            transform var(--transition-short),
-            box-shadow var(--transition-short);
-        /* border-color var(--transition-short); */
-    }
-
-    @media (min-width: 48rem) {
-        .slider-item {
-            flex: 0 0 calc(50% - var(--px-8));
-        }
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-        .slider-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-            border-color: rgba(0, 0, 0, 0.15);
-        }
-    }
-
-    .service-icon-wrapper {
-        width: var(--px-40);
-        height: var(--px-40);
-        background: linear-gradient(
-            135deg,
-            rgba(15, 23, 42, 0.1) 0%,
-            rgba(67, 106, 143, 0.397) 40%,
-            rgba(204, 48, 183, 0.452) 100%
-        );
-        border-radius: 999999px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-    }
-
-    .service-title {
-        font-size: var(--text-base);
-        font-weight: 600;
-        margin: 0 0 var(--px-4) 0;
-        color: var(--color-text-primary);
-    }
-
-    .service-desc {
-        font-size: var(--text-xs);
-        line-height: 1.4;
-        opacity: 0.75;
-        margin: 0;
-    }
-
-    .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--px-8);
-        padding: var(--px-6) var(--px-14);
-        background: linear-gradient(
-            135deg,
-            rgba(236, 8, 103, 0.034) 0%,
-            rgba(122, 203, 228, 0.349) 40%,
-            rgba(69, 171, 240, 0.26) 100%
-        );
-        border-radius: 9999px;
-        width: fit-content;
-        margin-bottom: var(--px-16);
-    }
-
-    .badge-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: linear-gradient(
-            90deg,
-            rgba(151, 187, 228, 0.397) 40%,
-            rgba(48, 110, 204, 0.452) 100%
-        );
-        display: inline-block;
-        flex-shrink: 0;
-        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-        animation: pulseDot 2s infinite ease-in-out;
-    }
-
-    @keyframes pulseDot {
-        0% {
-            box-shadow: 0 0 0 0 rgba(1, 1, 1, 0.3);
-        }
-        70% {
-            box-shadow: 0 0 0 6px rgba(1, 1, 1, 0);
-        }
-        100% {
-            box-shadow: 0 0 0 0 rgba(1, 1, 1, 0);
-        }
-    }
-
-    .badge-text {
-        font-size: var(--text-xs);
-        font-weight: 600;
-        color: var(--color-text-secondary, #45464d);
-        text-transform: uppercase;
-        letter-spacing: 0.075em;
-        line-height: 1;
-    }
-
-    /* Bento Metrics Card */
-    .bento-metrics-card {
-        display: flex;
-        justify-content: center;
-    }
-
-    @media (min-width: 48rem) {
-        .bento-metrics-card {
-            grid-column: span 12;
-        }
-    }
-
-    @media (min-width: 64rem) {
-        .bento-metrics-card {
-            grid-column: span 6;
-        }
+      flex: 0 0 calc(82% - var(--px-8));
+      min-width: 13rem;
+      scroll-snap-align: start;
     }
 
     .metrics-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--px-16);
-        width: 100%;
+      gap: var(--px-12);
     }
-
-    .metric-item {
-        display: flex;
-        flex-direction: column;
-        gap: var(--px-6);
-        padding: var(--px-14);
-        border-radius: var(--radius-md);
-        align-items: center;
-        justify-content: center;
-        background-color: var(--color-white, #ffffff);
-    }
-
-    .metric-number {
-        font-size: clamp(1.5rem, 2.8vw, 2.25rem);
-        font-weight: 700;
-        line-height: 1;
-        background: linear-gradient(
-            75deg,
-            rgba(67, 106, 143, 0.5) 40%,
-            rgba(204, 48, 183, 0.5) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        letter-spacing: -0.02em;
-    }
-
-    .metric-label {
-        font-size: var(--text-xs);
-        opacity: 0.75;
-        font-weight: 500;
-        line-height: 1.3;
-        color: var(--color-text-secondary);
-    }
-
-    /* Small mobile adjustments (< 576px / 36rem) */
-    @media screen and (max-width: 36rem) {
-        .hero {
-            padding-block: calc(var(--h-menu-bar) + 1.5rem) var(--px-48);
-        }
-
-        .hero-card {
-            padding: var(--px-24) var(--px-16);
-        }
-
-        .hero-cta {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: var(--px-16);
-        }
-
-        .btn {
-            width: 100%;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .btns--secondary {
-            width: auto !important;
-            align-self: center;
-            justify-content: center;
-            text-align: center;
-            margin-top: var(--px-4);
-        }
-
-        .image-card {
-            min-height: 20rem;
-        }
-
-        .floating-card {
-            padding: 12px 14px;
-            left: 12px;
-            right: 12px;
-            bottom: 12px;
-            max-width: calc(100% - 24px);
-        }
-
-        .card-content {
-            gap: 12px;
-        }
-
-        .card-icon-wrapper {
-            width: 38px;
-            height: 38px;
-        }
-
-        .card-icon {
-            width: 18px;
-            height: 18px;
-        }
-
-        .card-title {
-            font-size: 1.15rem;
-        }
-
-        .card-desc {
-            font-size: 0.8rem;
-            line-height: 1.3;
-        }
-
-        .slider-item {
-            flex: 0 0 calc(82% - var(--px-8));
-            min-width: 13rem;
-            scroll-snap-align: start;
-        }
-
-        .metrics-grid {
-            gap: var(--px-12);
-        }
-    }
+  }
 </style>
 
 <script>
-    const track = document.getElementById("hero-services-track");
-    const prevBtn = document.getElementById("hero-slider-prev");
-    const nextBtn = document.getElementById("hero-slider-next");
+  const track = document.getElementById("hero-services-track");
+  const prevBtn = document.getElementById("hero-slider-prev");
+  const nextBtn = document.getElementById("hero-slider-next");
 
-    if (track && prevBtn && nextBtn) {
-        const getScrollDistance = () => {
-            const firstCard = track.querySelector(
-                ".slider-item",
-            ) as HTMLElement;
-            return firstCard ? firstCard.offsetWidth + 16 : 220;
-        };
+  if (track && prevBtn && nextBtn) {
+    const getScrollDistance = () => {
+      const firstCard = track.querySelector(".slider-item") as HTMLElement;
+      return firstCard ? firstCard.offsetWidth + 16 : 220;
+    };
 
-        prevBtn.addEventListener("click", () => {
-            track.scrollBy({ left: -getScrollDistance(), behavior: "smooth" });
-        });
+    const updateButtons = () => {
+      const scrollLeft = track.scrollLeft;
+      const maxScrollLeft = track.scrollWidth - track.clientWidth;
 
-        nextBtn.addEventListener("click", () => {
-            track.scrollBy({ left: getScrollDistance(), behavior: "smooth" });
-        });
-    }
+      const isAtStart = scrollLeft <= 5;
+      const isAtEnd = maxScrollLeft - scrollLeft <= 5 || maxScrollLeft <= 0;
+
+      if (prevBtn instanceof HTMLButtonElement) {
+        prevBtn.disabled = isAtStart;
+      }
+      prevBtn.classList.toggle("is-disabled", isAtStart);
+      prevBtn.setAttribute("aria-disabled", String(isAtStart));
+
+      if (nextBtn instanceof HTMLButtonElement) {
+        nextBtn.disabled = isAtEnd;
+      }
+      nextBtn.classList.toggle("is-disabled", isAtEnd);
+      nextBtn.setAttribute("aria-disabled", String(isAtEnd));
+    };
+
+    prevBtn.addEventListener("click", () => {
+      track.scrollBy({ left: -getScrollDistance(), behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      track.scrollBy({ left: getScrollDistance(), behavior: "smooth" });
+    });
+
+    track.addEventListener("scroll", updateButtons, { passive: true });
+    window.addEventListener("resize", updateButtons, { passive: true });
+
+    updateButtons();
+    setTimeout(updateButtons, 150);
+    setTimeout(updateButtons, 500);
+  }
 </script>
